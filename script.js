@@ -1,14 +1,16 @@
 async function fetchPrintfulProducts() {
     try {
-        console.log("Fetching Printful products...");
+        console.log("Fetching Printful products from Netlify function...");
 
         const response = await fetch('/.netlify/functions/getPrintfulProducts');
         const data = await response.json();
 
         console.log("Received Data:", data);
 
-        if (data.error) {
-            console.error("Error fetching Printful products:", data.error);
+        // If API returns an error or no products, show a message
+        if (!data || data.length === 0 || data.error) {
+            console.error("No products found or error:", data.error || "Empty response");
+            document.getElementById("product-list").innerHTML = "<p>No products available.</p>";
             return;
         }
 
@@ -31,6 +33,7 @@ async function fetchPrintfulProducts() {
 
     } catch (error) {
         console.error("Failed to fetch products:", error);
+        document.getElementById("product-list").innerHTML = "<p>Error loading products.</p>";
     }
 }
 
