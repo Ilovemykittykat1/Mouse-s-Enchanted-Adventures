@@ -46,7 +46,6 @@ async function fetchPrintfulProducts() {
     }
 }
 
-// ✅ Only run on `product.html`
 document.addEventListener("DOMContentLoaded", function () {
     if (window.location.pathname.includes("product.html")) {
         console.log("Running fetchPrintfulProducts on product.html...");
