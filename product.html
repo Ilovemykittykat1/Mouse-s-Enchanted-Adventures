@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Mouse's Enchanted Adventures</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            border: 10px solid red;
+            padding: 20px;
+        }
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .product {
+            background: rgba(255, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            border: 2px solid red;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .product a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .product a:hover {
+            background-color: darkred;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+        nav ul li a:hover {
+            background-color: black;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Products</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="product-container">
+            <div class="product">
+                <h2>Mouse's Enchanted Adventures - Paperback</h2>
+                <p>Embark on a magical journey with Mouse in this beautifully illustrated paperback edition of Mouse's Enchanted Adventures.</p>
+                <img src="images/paperback.png" alt="Mouse's Enchanted Adventures Paperback">
+                <a href="https://www.amazon.ca/Mouses-Enchanted-Adventures-Katherine-McNeil/dp/B0DZT81M7F/ref=tmm_pap_swatch_0" target="_blank">Buy Now</a>
+            </div>
+            
+            <div class="product">
+                <h2>Mouse's Enchanted Adventures - eBook</h2>
+                <p>Enjoy Mouse's thrilling adventures in digital format with the eBook edition, perfect for reading on the go.</p>
+                <img src="images/ebook.png" alt="Mouse's Enchanted Adventures eBook">
+                <a href="https://www.amazon.ca/dp/B0DZPBY7RN" target="_blank">Buy Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+    </footer>
+    
+    <!-- Add JavaScript here -->
+    <script src="script.js"></script>
+    </body>
+    </html>
+    

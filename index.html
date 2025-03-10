@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse's Enchanted Adventures</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            border: 10px solid red;
+            padding: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border: 2px solid red;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+        nav ul li a:hover {
+            background-color: black;
+            color: red;
+        }
+        header, footer {
+            border: 2px solid red;
+            padding: 10px;
+        }
+        .intro img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Mouse's Enchanted Adventures</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="product-list"></div>
+
+    <main>
+        <section class="intro">
+            <h2>Meet Mouse</h2>
+            <p>Join Mouse on his magical journeys through enchanted lands!</p>
+            <img src="images/mouse-image.png" alt="Mouse the Cat">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+    </footer>
+    
+    <!-- Add JavaScript here -->
+    <script src="script.js"></script>
+    </body>
+    </html>
+    
