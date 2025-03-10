@@ -1,6 +1,7 @@
 exports.handler = async function () {
     try {
-        const response = await fetch("https://api.printful.com/store/products", {
+        // Fetch products with variants included
+        const response = await fetch("https://api.printful.com/store/products?include=variants", {
             headers: {
                 "Authorization": `Bearer ${process.env.PRINTFUL_API_TOKEN}`
             }
@@ -15,9 +16,20 @@ exports.handler = async function () {
             };
         }
 
+        // Extract necessary product details
+        const products = data.result.map(product => ({
+            id: product.id,
+            name: product.name,
+            thumbnail_url: product.thumbnail_url,
+            retail_price: product.variants?.[0]?.retail_price || "N/A",
+            checkout_link: product.variants?.[0]
+                ? `https://www.printful.com/cart/add?product_variant=${product.variants[0].id}`
+                : "#"
+        }));
+
         return {
             statusCode: 200,
-            body: JSON.stringify(data.result),
+            body: JSON.stringify(products),
         };
 
     } catch (error) {
