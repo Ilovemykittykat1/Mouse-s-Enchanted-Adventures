@@ -7,7 +7,7 @@ async function fetchPrintfulProducts() {
 
         console.log("Received Data:", data);
 
-        // Ensure we have valid products
+        // Check if the response has valid products
         if (!data || data.length === 0 || data.error) {
             console.error("No products found or error:", data.error || "Empty response");
             document.getElementById("product-list").innerHTML = "<p>No products available.</p>";
@@ -15,6 +15,12 @@ async function fetchPrintfulProducts() {
         }
 
         const productContainer = document.getElementById("product-list");
+
+        // Ensure product container exists
+        if (!productContainer) {
+            console.warn("No 'product-list' container found. Are you on product.html?");
+            return;
+        }
 
         // Clear previous content
         productContainer.innerHTML = "";
@@ -42,7 +48,12 @@ async function fetchPrintfulProducts() {
     }
 }
 
-// ✅ Only run on product.html
-if (window.location.pathname.includes("product.html")) {
-    document.addEventListener("DOMContentLoaded", fetchPrintfulProducts);
-}
+// ✅ Only run the function on `product.html`
+document.addEventListener("DOMContentLoaded", function () {
+    if (window.location.pathname.includes("product.html")) {
+        console.log("Running fetchPrintfulProducts on product.html...");
+        fetchPrintfulProducts();
+    } else {
+        console.log("Not on product.html, skipping fetchPrintfulProducts.");
+    }
+});
