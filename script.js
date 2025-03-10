@@ -18,7 +18,7 @@ async function fetchPrintfulProducts() {
                 <img src="${product.thumbnail_url}" alt="${product.name}">
                 <h2>${product.name}</h2>
                 <p>Price: $${product.retail_price}</p>
-                <a href="${product.url}" target="_blank">Buy Now</a>
+                <a href="${product.checkout_link}" target="_blank">Add to Cart</a>
             `;
             productContainer.appendChild(productElement);
         });
@@ -32,4 +32,3 @@ async function fetchPrintfulProducts() {
 if (window.location.pathname.endsWith("product.html") || window.location.pathname.endsWith("/product")) {
     document.addEventListener("DOMContentLoaded", fetchPrintfulProducts);
 }
-
