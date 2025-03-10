@@ -7,23 +7,23 @@ async function fetchPrintfulProducts() {
 
         console.log("Received Data:", data);
 
+        // Ensure we have valid products
+        if (!data || data.length === 0 || data.error) {
+            console.error("No products found or error:", data.error || "Empty response");
+            document.getElementById("product-list").innerHTML = "<p>No products available.</p>";
+            return;
+        }
+
         const productContainer = document.getElementById("product-list");
 
-        // Check if #product-list exists
+        // Make sure the container exists before adding products
         if (!productContainer) {
-            console.warn("No 'product-list' container found. Make sure #product-list exists in product.html.");
+            console.warn("No 'product-list' container found in product.html!");
             return;
         }
 
         // Clear previous content
         productContainer.innerHTML = "";
-
-        // Ensure we have valid products
-        if (!data || data.length === 0 || data.error) {
-            console.error("No products found or error:", data.error || "Empty response");
-            productContainer.innerHTML = "<p>No products available.</p>";
-            return;
-        }
 
         // Loop through products and add them to the page
         data.forEach(product => {
@@ -46,11 +46,10 @@ async function fetchPrintfulProducts() {
     }
 }
 
+
 document.addEventListener("DOMContentLoaded", function () {
     if (window.location.pathname.includes("product.html")) {
         console.log("Running fetchPrintfulProducts on product.html...");
         fetchPrintfulProducts();
-    } else {
-        console.log("Not on product.html, skipping fetchPrintfulProducts.");
     }
 });
