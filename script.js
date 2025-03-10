@@ -7,7 +7,7 @@ async function fetchPrintfulProducts() {
 
         console.log("Received Data:", data);
 
-        // If API returns an error or no products, show a message
+        // Ensure we have valid products
         if (!data || data.length === 0 || data.error) {
             console.error("No products found or error:", data.error || "Empty response");
             document.getElementById("product-list").innerHTML = "<p>No products available.</p>";
@@ -15,18 +15,23 @@ async function fetchPrintfulProducts() {
         }
 
         const productContainer = document.getElementById("product-list");
-        productContainer.innerHTML = ""; // Clear previous content
 
+        // Clear previous content
+        productContainer.innerHTML = "";
+
+        // Loop through products and add them to the page
         data.forEach(product => {
             console.log("Processing Product:", product);
 
             const productElement = document.createElement("div");
             productElement.classList.add("product-item");
             productElement.innerHTML = `
-                <img src="${product.thumbnail_url}" alt="${product.name}">
-                <h2>${product.name}</h2>
-                <p>Price: $${product.retail_price}</p>
-                <a href="${product.checkout_link}" target="_blank" rel="noopener noreferrer">Buy Now</a>
+                <div style="border: 2px solid red; padding: 15px; margin: 10px; border-radius: 10px;">
+                    <img src="${product.thumbnail_url}" alt="${product.name}" style="max-width: 100%;">
+                    <h2>${product.name}</h2>
+                    <p>Price: $${product.retail_price}</p>
+                    <a href="${product.checkout_link}" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 10px 20px; background-color: red; color: white; text-decoration: none; border-radius: 5px;">Buy Now</a>
+                </div>
             `;
             productContainer.appendChild(productElement);
         });
@@ -38,6 +43,6 @@ async function fetchPrintfulProducts() {
 }
 
 // Run function when page loads
-if (window.location.pathname.includes("product.html")) {
+if (document.getElementById("product-list")) {
     document.addEventListener("DOMContentLoaded", fetchPrintfulProducts);
 }
