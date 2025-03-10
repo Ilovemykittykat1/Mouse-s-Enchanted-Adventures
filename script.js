@@ -7,37 +7,35 @@ async function fetchPrintfulProducts() {
 
         console.log("Received Data:", data);
 
-        // Check if the response has valid products
-        if (!data || data.length === 0 || data.error) {
-            console.error("No products found or error:", data.error || "Empty response");
-            document.getElementById("product-list").innerHTML = "<p>No products available.</p>";
-            return;
-        }
-
         const productContainer = document.getElementById("product-list");
 
-        // Ensure product container exists
+        // Check if #product-list exists
         if (!productContainer) {
-            console.warn("No 'product-list' container found. Are you on product.html?");
+            console.warn("No 'product-list' container found. Make sure #product-list exists in product.html.");
             return;
         }
 
         // Clear previous content
         productContainer.innerHTML = "";
 
+        // Ensure we have valid products
+        if (!data || data.length === 0 || data.error) {
+            console.error("No products found or error:", data.error || "Empty response");
+            productContainer.innerHTML = "<p>No products available.</p>";
+            return;
+        }
+
         // Loop through products and add them to the page
         data.forEach(product => {
             console.log("Processing Product:", product);
 
             const productElement = document.createElement("div");
-            productElement.classList.add("product-item");
+            productElement.classList.add("product");
             productElement.innerHTML = `
-                <div style="border: 2px solid red; padding: 15px; margin: 10px; border-radius: 10px;">
-                    <img src="${product.thumbnail_url}" alt="${product.name}" style="max-width: 100%;">
-                    <h2>${product.name}</h2>
-                    <p>Price: $${product.retail_price}</p>
-                    <a href="${product.checkout_link}" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 10px 20px; background-color: red; color: white; text-decoration: none; border-radius: 5px;">Buy Now</a>
-                </div>
+                <h2>${product.name}</h2>
+                <p>Price: $${product.retail_price}</p>
+                <img src="${product.thumbnail_url}" alt="${product.name}" style="max-width: 100%; border-radius: 5px;">
+                <a href="${product.checkout_link}" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 10px 20px; background-color: red; color: white; text-decoration: none; border-radius: 5px;">Buy Now</a>
             `;
             productContainer.appendChild(productElement);
         });
@@ -48,7 +46,7 @@ async function fetchPrintfulProducts() {
     }
 }
 
-// ✅ Only run the function on `product.html`
+// ✅ Only run on `product.html`
 document.addEventListener("DOMContentLoaded", function () {
     if (window.location.pathname.includes("product.html")) {
         console.log("Running fetchPrintfulProducts on product.html...");
