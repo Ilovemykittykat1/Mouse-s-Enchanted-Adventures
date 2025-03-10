@@ -42,7 +42,7 @@ async function fetchPrintfulProducts() {
     }
 }
 
-// Run function when page loads
-if (document.getElementById("product-list")) {
+// ✅ Only run on product.html
+if (window.location.pathname.includes("product.html")) {
     document.addEventListener("DOMContentLoaded", fetchPrintfulProducts);
 }
