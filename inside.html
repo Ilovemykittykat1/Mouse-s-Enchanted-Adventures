@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inside the Enchanted Café</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: linear-gradient(to bottom right, #6e2aa3, #1e2a78);
+      border: 10px solid #8e44ad;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header, footer {
+      border: 2px solid #8e44ad;
+      background-color: #1e2a78;
+      padding: 10px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #ff4d4d;
+    }
+
+    .menu-toggle {
+      display: none;
+      background-color: #8e44ad;
+      color: white;
+      border: none;
+      padding: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 10px 0;
+      background-color: #8e44ad;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      border: 2px solid #8e44ad;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: inline-block;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: black;
+      color: #ff4d4d;
+    }
+
+    .cafe-interior {
+      flex: 1;
+      background: url('images/inside.png') no-repeat center center;
+      background-size: cover;
+      position: relative;
+    }
+
+    .link {
+      position: absolute;
+      color: #ffe6ff;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-shadow: 0 0 5px #ff66ff, 0 0 10px #cc00ff;
+      text-decoration: none;
+      transition: transform 0.3s;
+      z-index: 5;
+    }
+
+    .link:hover {
+      transform: scale(1.1);
+      color: #ffffff;
+    }
+
+    #tarot-link {
+      top: 77%;
+      left: 43%;
+    }
+
+    #story-corner-link {
+      top: 57%;
+      left: 73%;
+    }
+
+    #potion-bar-link {
+      top: 32%;
+      left: 18%;
+    }
+
+    #game-table-link {
+      top: 67%;
+      left: 20%;
+    }
+
+    footer {
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        margin: 10px auto;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 0;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li {
+        width: 100%;
+        text-align: center;
+      }
+
+      .link {
+        font-size: 1rem;
+        margin: 10px auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+  <h1>Welcome to Mouse's Enchanted Adventures</h1>
+
+  <!-- ✅ KEEP THIS ONE -->
+  <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+
+  <!-- ✅ nav stays clean, NO extra toggle inside -->
+  <nav>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="cafe-door.html">Enter Café</a></li>
+      <li><a href="digital-familiar.html">The Digital Familiar</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <div class="cafe-interior">
+    <a href="potion-bar.html" class="link" id="potion-bar-link">🧪 Potion Bar</a>
+    <a href="index1.html" class="link" id="story-corner-link">📖 Story Corner</a>
+    <a href="game.html" class="link" id="game-table-link">🎲 Game Table</a>
+    <a href="tarot.html" class="link" id="tarot-link">🔮 Tarot Card Reading</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-menu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
