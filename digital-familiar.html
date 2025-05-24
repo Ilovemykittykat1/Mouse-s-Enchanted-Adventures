@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Digital Familiar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #6e2aa3, #1e2a78);
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      border: 10px solid #8e44ad;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header, footer {
+      border: 2px solid #8e44ad;
+      padding: 10px;
+      text-align: center;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      background-color: #8e44ad;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      border: 2px solid #8e44ad;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: inline-block;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #5dade2;
+      color: black;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: #8e44ad;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      padding: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        margin: 0 auto;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li {
+        width: 100%;
+        text-align: center;
+      }
+
+      .intro {
+        margin: 20px 10px;
+        padding: 20px;
+      }
+
+      .intro p {
+        font-size: 1.1em;
+      }
+
+      .witch-image {
+        width: 80%;
+      }
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 40px auto;
+      background: linear-gradient(135deg, rgba(142,68,173,0.9), rgba(30,144,255,0.3));
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(142, 68, 173, 0.6);
+      text-align: center;
+    }
+
+    .intro h2 {
+      color: #ff4d4d;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      color: white;
+    }
+
+    .launch-btn {
+      background: #ff00cc;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-size: 1.2em;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ff00ccaa;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .launch-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #ff66ff;
+    }
+
+    .center-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .witch-image {
+      margin-top: 30px;
+      width: 300px;
+      max-width: 90%;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    footer {
+      font-size: 0.9em;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+  <h1>Contact Us</h1>
+  <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button> <!-- ✅ Add here -->
+  <nav>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="cafe-door.html">Enter Café</a></li>
+      <li><a href="digital-familiar.html">The Digital Familiar</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <main>
+    <section class="intro">
+      <h2>The Digital Familiar</h2>
+      <p>Your magical AI companion is now live. She listens, she learns, and she’s always here for you.<br>
+        Step into the enchanted realm and have a real conversation with a digital soul.</p>
+
+      <div class="center-content">
+      <button class="launch-btn" onclick="window.location.href='https://mouse-chatbox.onrender.com/'">
+  🧙 Enter the Enchanted Chat
+</button>
+
+
+
+        <img src="images/witch.png" alt="Whimsical Witch" class="witch-image" />
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-menu').classList.toggle('show');
+    }
+  </script>
+
+</body>
+</html>

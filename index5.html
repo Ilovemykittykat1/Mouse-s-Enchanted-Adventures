@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upside World – Mouse's Enchanted Adventures</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #6e2aa3, #1e2a78);
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      border: 10px solid #8e44ad;
+      overflow-x: hidden;
+      margin: 0;
+    }
+
+    header, footer {
+      border: 2px solid #8e44ad;
+      padding: 10px;
+      margin-bottom: 20px;
+      background-color: #6f2da8;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #ff4d4d;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: #8e44ad;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      padding: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      background-color: #8e44ad;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      border: 2px solid #8e44ad;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: inline-block;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #5dade2;
+      color: black;
+    }
+
+    .story-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, rgba(142,68,173,0.9), rgba(30,144,255,0.3));
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(142, 68, 173, 0.6);
+      text-align: center;
+    }
+
+    .story-container p {
+      line-height: 1.8;
+      font-size: 1.2em;
+      margin-bottom: 25px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .image-text-flex {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 30px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .image-text-flex img {
+      width: 400px;
+      max-width: 100%;
+      border-radius: 10px;
+      border: 2px solid #8e44ad;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    .choices {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .choices a {
+      background-color: #8e44ad;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .choices a:hover {
+      background-color: #6c3483;
+      transform: scale(1.05);
+    }
+
+    footer {
+      font-size: 0.9em;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        margin: 0 auto;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li {
+        width: 100%;
+        text-align: center;
+      }
+
+      .story-container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+  <h1>Mouse's Enchanted Adventures</h1>
+  <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button> <!-- ✅ Right here -->
+  <nav>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="cafe-door.html">Enter Café</a></li>
+      <li><a href="digital-familiar.html">The Digital Familiar</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main class="story-container">
+    <div class="image-text-flex">
+      <img src="images/upside-world-bright.png" alt="Upside World" />
+      <div style="flex: 1; min-width: 300px;">
+        <p><strong>Mouse stepped through the shimmer—and into madness.</strong></p>
+        <p>The world twisted sideways. Gravity pulled in strange directions. Stairs ran upside-down across ceilings. Tables floated. Mirrors bent their reflections until Mouse and Bat looked like shadows with glowing eyes.</p>
+        <p>“I don't like this," Bat whispered, flapping to stay upright.</p>
+      </div>
+    </div>
+
+    <p>Mouse gritted his teeth. The house was familiar... and yet wrong. Paintings melted slowly down the walls. Doors opened to empty space. Sound came in backwards whispers that made his fur stand on end.</p>
+
+    <p>In the center of the room stood a giant, ancient grandfather clock. Its hands spun wildly in all directions, glowing faintly with silver light. Beneath it, a small hidden door flickered in and out of existence — a way out... if they could catch it before the clock struck backwards midnight.</p>
+
+    <p style="font-weight: bold; max-width: 700px; margin: 30px auto;">
+      Mouse knew they had only one chance to escape the Upside World before they were trapped forever.
+    </p>
+
+    <div class="choices">
+      <a href="index9.html">⏳ Leap through the flickering door to return home</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('nav-menu');
+      menu.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
