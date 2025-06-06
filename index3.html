@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mouse's Enchanted Adventures – Stay and Investigate</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #6e2aa3, #1e2a78);
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      border: 10px solid #8e44ad;
+      overflow-x: hidden;
+      margin: 0;
+    }
+
+    header, footer {
+      border: 2px solid #8e44ad;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #ff4d4d;
+      text-align: center;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: #8e44ad;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      padding: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      background-color: #8e44ad;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+      border: 2px solid #8e44ad;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: inline-block;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #5dade2;
+      color: black;
+    }
+
+    .story-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, rgba(142,68,173,0.9), rgba(30,144,255,0.3));
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(142, 68, 173, 0.6);
+      text-align: left;
+    }
+
+    .story-container p {
+      line-height: 1.8;
+      font-size: 1.1em;
+      margin-bottom: 15px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .float-image {
+      float: left;
+      width: 350px;
+      max-width: 100%;
+      margin: 0 20px 20px 0;
+      border-radius: 10px;
+      border: 2px solid #8e44ad;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    .choices {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .choices a {
+      background-color: #8e44ad;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .choices a:hover {
+      background-color: #6c3483;
+      transform: scale(1.05);
+    }
+
+    footer {
+      font-size: 0.9em;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        margin: 0 auto;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li {
+        display: block;
+        width: 100%;
+      }
+
+      nav ul li a {
+        width: 100%;
+        text-align: center;
+      }
+
+      .float-image {
+        float: none;
+        display: block;
+        margin: 20px auto;
+      }
+
+      .story-container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Mouse's Enchanted Adventures</h1>
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cafe-door.html">Enter Café</a></li>
+        <li><a href="digital-familiar.html">The Digital Familiar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="story-container">
+    <div style="overflow: hidden; margin-bottom: 30px;">
+      <img src="images/stayed.png" alt="Mysterious House" class="float-image" />
+
+      <p><strong>Mouse crept further into the house, his fur bristling.</strong> The shimmer behind them pulsed faintly, now sealed off by the thick, wooden door that had quietly shut with a soft <em>thunk</em>. The house held its breath, cloaked in shadows and secrets.</p>
+
+      <p>“We’re not done here,” Mouse said quietly. “Something wants to be found.”</p>
+
+      <p>He didn’t have his cape on now—he had left it near the shimmer, hidden under a pile of leaves. It was too heavy for sneaking, and he had a strange feeling that being seen too clearly inside this house might not be wise. Without the cape, Mouse felt lighter, sharper. Every sense was tingling, like the air itself was charged with secrets.</p>
+
+      <p>A broken chandelier hung overhead like a crooked crown, and long-forgotten furniture sat cloaked in dust sheets like slumbering ghosts. Mouse padded forward cautiously, his paws silent on the warped wooden floor.</p>
+
+      <p>“This place gives me the chills,” Bat murmured, wings tight against his sides. He fluttered just above Mouse’s head, casting a small shadow that danced along the faded wallpaper. “We can still turn around. The shimmer’s still... back there. Sort of.”</p>
+
+      <p>“No,” Mouse whispered. “We came for answers. There’s something in here—something watching.”</p>
+
+      <p>As they crept deeper into the house, the air grew colder. A long hallway stretched out before them, lined with portraits that seemed too lifelike. One painting in particular, a woman with piercing green eyes and an unnerving smile, drew Mouse’s gaze. He stared back at her for a moment... and could’ve sworn she blinked.</p>
+
+      <p>“Did you see that?” Mouse hissed.</p>
+
+      <p>Bat tilted his head. “The creepy lady? Yeah. I don’t like her.”</p>
+
+      <p>Just then, a soft thud echoed from above. Followed by another. And another. Something—or someone—was moving upstairs.</p>
+
+      <p>At the same time, a sweet, pungent scent drifted in from the left. Mouse turned toward a darkened doorway. “Do you smell that?” he asked. “It’s herbs. Mugwort... and something else. It smells like a potion in progress.”</p>
+
+      <p>Bat flapped nervously. “This is definitely a witch’s house. Or it used to be. Or... maybe it still is.”</p>
+
+      <p><strong>Mouse lowered his body and crouched. The house was offering them two choices—and neither one felt safe.</strong></p>
+    </div>
+
+    <div class="choices">
+      <a href="index6.html">🔺 Go upstairs to investigate the sound</a>
+      <a href="index7.html">🌿 Follow the scent to the kitchen</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('nav-menu');
+      menu.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
