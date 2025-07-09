@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mouse’s Enchanted Café – Entrance</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #6e2aa3, #1e2a78);
+      font-family: Arial, sans-serif;
+      color: white;
+      border: 10px solid #8e44ad;
+      overflow-x: hidden;
+      text-align: center;
+    }
+
+    header, footer {
+      border: 2px solid #8e44ad;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #ff4d4d;
+      font-size: 1.5rem;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: #8e44ad;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      padding: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      background-color: #8e44ad;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      border: 2px solid #8e44ad;
+      flex-wrap: wrap;
+      margin: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: inline-block;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #5dade2;
+      color: black;
+    }
+
+    .cafe-scene {
+      position: relative;
+      width: 100vw;
+      height: calc(100vh - 220px);
+      background: url('images/cafe.png') no-repeat center top;
+      background-size: contain;
+      background-color: transparent;
+    }
+
+    .magic-door {
+      position: absolute;
+      top: 72%;
+      left: 50%;
+      width: 7vw;
+      height: 18vh;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      border-radius: 12px;
+      z-index: 2;
+      animation: glowPulse 2s infinite ease-in-out;
+    }
+
+    .door-label {
+      position: absolute;
+      top: 62%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #ffccff;
+      font-size: 1.2rem;
+      text-shadow: 0 0 10px #ff66ff, 0 0 20px #ff33cc;
+      font-weight: bold;
+      animation: pulseText 1.5s infinite ease-in-out;
+      z-index: 3;
+    }
+
+    @keyframes pulseText {
+      0% { opacity: 1; transform: translateX(-50%) scale(1); }
+      50% { opacity: 0.7; transform: translateX(-50%) scale(1.1); }
+      100% { opacity: 1; transform: translateX(-50%) scale(1); }
+    }
+
+    @keyframes glowPulse {
+      0%   { box-shadow: 0 0 12px #ff4d4d; }
+      50%  { box-shadow: 0 0 32px #8e44ad; }
+      100% { box-shadow: 0 0 12px #ff4d4d; }
+    }
+
+    .fade-out {
+      animation: fadeOut 1s forwards;
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; }
+    }
+
+    footer {
+      font-size: 0.9em;
+      margin-top: 50px;
+    }
+
+    /* Mobile Responsive Menu */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        margin: 0 auto;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li {
+        display: block;
+        width: 100%;
+      }
+
+      nav ul li a {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Welcome to Mouse's Enchanted Adventures</h1>
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cafe-door.html">Enter Café</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+  
+
+  <div class="cafe-scene" id="scene">
+    <div class="door-label">✨ Click to Enter ✨</div>
+    <div class="magic-door" onclick="enterCafe()"></div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function enterCafe() {
+      const scene = document.getElementById('scene');
+      scene.classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = 'inside.html';
+      }, 1000);
+    }
+
+    function toggleMenu() {
+      const nav = document.getElementById("nav-menu");
+      nav.classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

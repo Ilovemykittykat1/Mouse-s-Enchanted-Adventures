@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Open Graph Meta Tags for Facebook -->
+  <meta property="og:title" content="Mouse's Enchanted Adventures" />
+  <meta property="og:description" content="From the fog-draped castle to the glowing willow groves, Mouse’s enchanted world is full of secrets and magic." />
+  <meta property="og:image" content="https://mousesenchantedadventures.com/images/hat.png" />
+  <meta property="og:url" content="https://mousesenchantedadventures.com/" />
+  <meta property="og:type" content="website" />
+
+  <title>Mouse's Enchanted Adventures</title>
+
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #6e2aa3, #1e2a78);
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      border: 10px solid #8e44ad;
+      overflow-x: hidden;
+      margin: 0;
+    }
+
+    header, footer {
+      border: 2px solid #8e44ad;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: #8e44ad;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      padding: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      background-color: #8e44ad;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      border: 2px solid #8e44ad;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: inline-block;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #5dade2;
+      color: black;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 40px auto;
+      background: linear-gradient(135deg, rgba(142,68,173,0.9), rgba(30,144,255,0.3));
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(142, 68, 173, 0.6);
+    }
+
+    .intro h2 {
+      color: #ff4d4d;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      font-size: 1.2em;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .top-image-container {
+      width: 100%;
+      max-height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .top-image-container img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 15px;
+      object-fit: contain;
+    }
+
+    #battle-zone {
+      margin: 60px auto;
+      padding: 30px;
+      background: linear-gradient(135deg, rgba(142, 68, 173, 0.8), rgba(255, 0, 0, 0.3));
+      border: 3px solid #ff4d4d;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(142, 68, 173, 0.7);
+      max-width: 600px;
+      text-align: center;
+    }
+
+    #battle-zone h2 {
+      font-size: 2em;
+      color: #ff4d4d;
+      margin-bottom: 20px;
+    }
+
+    canvas#mouseAttackCanvas {
+      display: block;
+      margin: 0 auto;
+      background: transparent;
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
+    }
+
+    footer {
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        margin: 0 auto;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li {
+        width: 100%;
+        text-align: center;
+      }
+
+      .intro {
+        margin: 20px 10px;
+        padding: 20px;
+      }
+
+      .intro p {
+        font-size: 1.1em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Welcome to Mouse's Enchanted Adventures</h1>
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cafe-door.html">Enter Café</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="top-image-container">
+    <img src="images/hat.png" alt="Spooky Castle with Witch Hat" />
+  </div>
+
+  <main>
+    <section class="intro">
+      <h2>Mouse’s World</h2>
+      <p>
+        From the fog-draped castle to the glowing willow groves, Mouse’s enchanted world is filled with secrets. 
+        Each chapter reveals a new corner of the forest — homes of talking animals, hidden coves, and mystical portals that shimmer in moonlight.
+      </p>
+    </section>
+
+    <!-- 🧛 Mouse Attack Animation Section -->
+    <section id="battle-zone">
+      <h2>Mouse Unleashed!</h2>
+      <canvas id="mouseAttackCanvas" width="512" height="512"></canvas>
+    </section>
+  </main>
+
+  <p>
+    <a href="https://www.facebook.com/profile.php?id=61575952349929" target="_blank" style="text-decoration: none;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width: 24px; height: 24px; vertical-align: middle;" />
+      <span style="color: white; margin-left: 8px;">Follow us on Facebook</span>
+    </a>
+  </p>
+
+  <footer>
+    <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-menu').classList.toggle('show');
+    }
+
+    // 🧛‍♂️ Mouse Attack Sprite Animation
+    document.addEventListener("DOMContentLoaded", () => {
+      const canvas = document.getElementById("mouseAttackCanvas");
+      if (!canvas) return;
+
+      const ctx = canvas.getContext("2d");
+      const spriteSheet = new Image();
+      spriteSheet.src = "images/mouse-attack-sprites.png";
+
+      const FRAME_WIDTH = 512;
+      const FRAME_HEIGHT = 512;
+      const totalFrames = 4;
+      let currentFrame = 0;
+
+      spriteSheet.onload = () => {
+        setInterval(() => {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+          const sx = (currentFrame % 2) * FRAME_WIDTH;
+          const sy = Math.floor(currentFrame / 2) * FRAME_HEIGHT;
+
+          ctx.drawImage(
+            spriteSheet,
+            sx, sy, FRAME_WIDTH, FRAME_HEIGHT,
+            0, 0, FRAME_WIDTH, FRAME_HEIGHT
+          );
+
+          currentFrame = (currentFrame + 1) % totalFrames;
+        }, 300);
+      };
+    });
+  </script>
+</body>
+</html>
