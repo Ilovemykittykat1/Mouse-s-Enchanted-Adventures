@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Products - Mouse's Enchanted Adventures</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #6e2aa3, #1e2a78);
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      border: 10px solid #8e44ad;
+      overflow-x: hidden;
+      margin: 0;
+    }
+
+    header, footer {
+      border: 2px solid #8e44ad;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: #8e44ad;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      padding: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      background-color: #8e44ad;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      border: 2px solid #8e44ad;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: inline-block;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #5dade2;
+      color: black;
+    }
+
+    .featured-books {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin: 40px 0 60px 0;
+      flex-wrap: wrap;
+    }
+
+    .featured-book {
+      background: linear-gradient(135deg, #4e2a7a, #2b1f5a);
+      border: 3px solid #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #ffb3ff;
+      padding: 30px;
+      max-width: 380px;
+      color: white;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .featured-book:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 40px #d58cff;
+    }
+
+    .featured-book h2 {
+      color: #ff4d4d;
+      margin-bottom: 15px;
+      font-size: 1.7em;
+    }
+
+    .featured-book p {
+      font-size: 1.1em;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+
+    .featured-book .price {
+      font-weight: bold;
+      margin-bottom: 25px;
+      font-size: 1.2em;
+    }
+
+    .featured-book img {
+      width: 100%;
+      max-height: 440px;
+      object-fit: contain;
+      background: transparent;
+      border-radius: 15px;
+      box-shadow: 0 0 12px #a87ef4cc;
+      margin-bottom: 20px;
+    }
+
+    .featured-book a {
+      display: inline-block;
+      background-color: #8e44ad;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 1.1em;
+      box-shadow: 0 0 12px #8e44adcc;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .featured-book a:hover {
+      background-color: #b368d6;
+      box-shadow: 0 0 25px #d2a1f5;
+      transform: scale(1.1);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+      padding: 0 10px;
+    }
+
+    .product {
+      background: linear-gradient(135deg, rgba(142,68,173,0.9), rgba(30,144,255,0.3));
+      padding: 20px;
+      border-radius: 20px;
+      border: 2px solid #8e44ad;
+      box-shadow: 0 0 20px rgba(142, 68, 173, 0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+    }
+
+    .product img {
+      width: 100%;
+      height: 300px;
+      object-fit: contain;
+      background-color: transparent;
+      border-radius: 10px;
+    }
+
+    .product h2 {
+      font-size: 1.4em;
+      color: #ff4d4d;
+      margin-bottom: 10px;
+    }
+
+    .product p {
+      font-size: 1em;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .price {
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .product a {
+      margin-top: auto;
+      padding: 10px 20px;
+      background-color: #8e44ad;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .product a:hover {
+      background-color: #6c3483;
+      box-shadow: 0 0 10px #8e44ad;
+    }
+
+    footer {
+      font-size: 0.9em;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        margin: 0 auto;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Our Products</h1>
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cafe-door.html">Enter Café</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="featured-books">
+      <div class="featured-book">
+        <h2>Mouse’s Enchanted Adventures - Book 1</h2>
+        <p>Enjoy the magical story of Mouse's first enchanting adventure.</p>
+        <p class="price">Price: C$19.99 each</p>
+        <img src="images/paperback.png" alt="Mouse's Enchanted Adventures Paperback - Book 1" />
+        <a href="https://www.amazon.ca/dp/B0DZT81M7F" target="_blank">Buy on Amazon</a>
+      </div>
+      <div class="featured-book">
+        <h2>Mouse’s Enchanted Adventures - Book 2</h2>
+        <p>Continue the magic with Mouse’s second thrilling adventure.</p>
+        <p class="price">Price: C$19.99 each</p>
+        <img src="images/book2.png" alt="Mouse's Enchanted Adventures Paperback - Book 2" />
+        <a href="https://www.amazon.ca/dp/B0F4DQ3FCD" target="_blank">Buy on Amazon</a>
+      </div>
+      <div class="featured-book">
+        <h2>Mouse’s Enchanted Adventures - Book 3</h2>
+        <p>The adventure continues! Dive into Mouse’s third magical journey.</p>
+        <p class="price">Price: C$19.99 each</p>
+        <img src="images/book 3.PNG" alt="Mouse's Enchanted Adventures Paperback - Book 3" />
+        <a href="https://www.amazon.ca/dp/B0FD9HNJZL" target="_blank">Buy on Amazon</a>
+      </div>
+    </section>
+
+    <section class="product-grid">
+      <div class="product">
+        <h2>Mouse’s Enchanted Backpack</h2>
+        <p>Carry magic wherever you go! Limited edition enchanted design.</p>
+        <p class="price">Price: C$74.03</p>
+        <img src="images/backpack.png" alt="Mouse's Enchanted Adventures Backpack" />
+        <a href="https://square.link/u/ePmYE3tn" target="_blank">Buy the Backpack</a>
+      </div>
+      <div class="product">
+        <h2>Mouse Mug</h2>
+        <p>This adorable ceramic mug features Mouse ready for adventure.</p>
+        <p class="price">Price: C$20.00</p>
+        <img src="images/cup.png" alt="Mouse Mug" />
+        <a href="https://square.link/u/ksg4ic9C" target="_blank">Buy the Mug</a>
+      </div>
+      <div class="product">
+        <h2>Mouse’s Enchanted Throw Blanket</h2>
+        <p>Snuggle up in magic with Mouse and Bat — the ultimate cozy vibes!</p>
+        <p class="price">Price: C$45.50</p>
+        <img src="images/blanket.png" alt="Mouse's Enchanted Throw Blanket" />
+        <a href="https://square.link/u/TpjOqQa5" target="_blank">Buy the Blanket</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-menu').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>

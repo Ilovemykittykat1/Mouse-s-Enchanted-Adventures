@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Mouse's Enchanted Adventures</title>
+  <style>
+    /* Base */
+    * { box-sizing: border-box; }
+    img { max-width: 100%; height: auto; display: block; }
+    :root{
+      --brand-purple:#8e44ad;
+      --bg-a:#6e2aa3;
+      --bg-b:#1e2a78;
+      --accent-red:#ff4d4d;
+      --card-glass: linear-gradient(135deg, rgba(142,68,173,0.9), rgba(30,144,255,0.4));
+      --shadow: 0 0 25px rgba(142,68,173,0.6);
+      --content-max: 1200px;
+    }
+
+    body{
+      background: linear-gradient(to bottom right, var(--bg-a), var(--bg-b));
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      border: 10px solid var(--brand-purple);
+      overflow-x: hidden;
+    }
+
+    header, footer{
+      border: 2px solid var(--brand-purple);
+      padding: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    h1{ color: var(--accent-red); margin: 0; }
+
+    /* Nav (same as home/products) */
+    .menu-toggle{
+      display: none;
+      background: var(--brand-purple);
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      padding: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    nav ul{
+      list-style-type: none;
+      padding: 0;
+      background-color: var(--brand-purple);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      border: 2px solid var(--brand-purple);
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    nav ul li a{
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: inline-block;
+      transition: background-color .3s, color .3s;
+    }
+    nav ul li a:hover{
+      background-color: #5dade2;
+      color: black;
+    }
+
+    main{ max-width: var(--content-max); margin: 0 auto; }
+
+    section{
+      margin: 40px auto;
+      background: var(--card-glass);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+    }
+    section h2{
+      text-align: center;
+      color: var(--accent-red);
+      margin-bottom: 15px;
+    }
+    section p{
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    /* Team banner */
+    .team-img{
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto 30px auto;
+      border: 4px solid #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.8);
+    }
+
+    /* ==== Character Grid (2×2 desktop, 1×4 narrow) ==== */
+    .character-grid{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(420px, 1fr));
+      gap: 40px;
+      width: 100%;
+    }
+
+    /* Card: image on top, text under it (no skinny side columns) */
+    .character-card{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .character-img{
+      width: 100%;
+      border-radius: 12px;
+      border: 3px solid #fff;
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.04);
+      /* keep art intact */
+      object-fit: contain;
+    }
+
+    /* Text block gets a comfy reading width and centers */
+    .character-content{
+      width: 100%;
+      max-width: 65ch;      /* prevents super-wide paragraphs */
+      margin-top: 14px;
+    }
+    .character-content h3{
+      margin: 0 0 10px 0;
+      color: #ffccff;
+      line-height: 1.2;
+      text-align: left;
+    }
+    .character-content p{
+      margin: 0;
+      text-align: left;
+    }
+
+    footer{ font-size: 0.9em; text-align: center; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1100px){
+      .character-grid{ grid-template-columns: 1fr; } /* stack to 1 per row */
+    }
+    @media (max-width: 768px){
+      .menu-toggle{ display:block; margin:0 auto; }
+      nav ul{
+        display:none;
+        flex-direction:column;
+        align-items:center;
+        width:100%;
+      }
+      nav ul.show{ display:flex; }
+      nav ul li{ width:100%; }
+      nav ul li a{ width:100%; text-align:center; }
+
+      .character-content{ max-width: 70ch; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About Mouse's Enchanted Adventures</h1>
+    <nav>
+      <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cafe-door.html">Enter Café</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Our Story</h2>
+      <p>Welcome to a realm where magic swirls in the trees, the moon whispers secrets, and the bravest hero of all is a cat. <strong>Mouse's Enchanted Adventures</strong> is more than a story. It is an immersive fantasy world brought to life by author Katherine McNeil. This whimsical tale follows a vampire tabby cat named Mouse as he navigates danger, friendship, and mystery in a realm forgotten by time. The world expands with Katherina and her son Devlin, spellcasters whose fates intertwine with Mouse’s own.</p>
+    </section>
+
+    <img src="images/team.png" alt="Meet the Team" class="team-img" />
+
+    <section>
+      <h2>The Enchanted World</h2>
+      <p>Set in the 1800s, Mouse’s world is steeped in history and mysticism. Forests shimmer with ancient magic, hidden portals lead to parallel realms, and mystical beings linger in the twilight. Spells are spoken in hushed tones, and every rustling leaf might be a message from beyond.</p>
+    </section>
+
+    <!-- Character grid: 2 across, 2 below (cards stack image -> text) -->
+    <section class="character-grid">
+      <div class="character-card">
+        <img src="images/cat.png" alt="Mouse the Cat" class="character-img" />
+        <div class="character-content">
+          <h3>Mouse the Vampire Cat</h3>
+          <p>More than fur and fangs, Mouse is a legacy wrapped in tabby stripes. Behind his oversized green eyes and polished red bowtie lies the soul of a hero. Born into mystery, raised by moonlight, and marked by destiny, Mouse faces danger with a sharp wit and even sharper claws. Whether leaping into battle or curling up by a potion cauldron, he is cunning and kind and determined to protect the magical balance of his world.</p>
+        </div>
+      </div>
+
+      <div class="character-card">
+        <img src="images/bat.png" alt="Bat the Familiar" class="character-img" />
+        <div class="character-content">
+          <h3>Bat, the Loyal Familiar</h3>
+          <p>Bat is the shadow that follows, the spark that flutters just out of reach. Red winged and full of attitude, he is not just Mouse’s familiar. He is his conscience, his comic relief, and his emergency escape plan all rolled into one. With echolocation sharper than gossip at the village tavern, Bat always knows what is coming. Whether perched on a branch or soaring across stars, he is the perfect companion in mischief and magic alike.</p>
+        </div>
+      </div>
+
+      <div class="character-card">
+        <img src="images/devlin.png" alt="Devlin the Warlock" class="character-img" />
+        <div class="character-content">
+          <h3>Devlin, the Young Warlock</h3>
+          <p>He is the wild spark to Katherina’s calm flame. Devlin is mischievous, clever, and occasionally blows up things unintentionally. He is growing into his powers, with a spellbook in one hand and a bucket of curiosity in the other. Do not let the youth fool you. He is brave, fiercely loyal to Mouse, and slowly discovering he may be the key to unlocking ancient magic that has long been dormant.</p>
+        </div>
+      </div>
+
+      <div class="character-card">
+        <img src="images/katherina.png" alt="Katherina the Witch" class="character-img" />
+        <div class="character-content">
+          <h3>Katherina, the Enchanted Witch</h3>
+          <p>Elegant, enigmatic, and equipped with an endless supply of knowledge and tea, Katherina is the pillar holding up Mouse’s enchanted world. Her calm demeanor hides a past filled with enchanted trials and powerful secrets. As Devlin’s mother, she teaches with compassion and protects with strength. As Mouse’s ally, she bridges the world of spells and stories. Katherina is not just part of the legend. She writes it with every wand wave and whispered incantation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>The Creator</h2>
+      <p>Katherine McNeil is a writer, creator, and imaginative force behind the Mouse universe. With a passion for storytelling and a flair for fantasy, she has brought Mouse and his world to life one magical page at a time.</p>
+      <p>Katherine believes every story holds power. Through Mouse, she invites readers of all ages to embrace the unknown, trust their instincts, and never underestimate a cat in a cape.</p>
+    </section>
+
+    <section>
+      <h2>Join the Adventure</h2>
+      <p>The journey has only just begun. Whether you are discovering the first book, exploring hidden chapters, or browsing magical merchandise, you are now part of Mouse’s enchanted circle.</p>
+      <p>Follow the paw prints. Step through the shimmer. Magic awaits.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu(){
+      document.getElementById('nav-menu').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>

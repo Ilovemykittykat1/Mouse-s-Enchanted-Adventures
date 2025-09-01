@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mouse vs Bat – Tic-Tac-Toe</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      border: 10px solid #8e44ad;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffccff;
+      text-shadow: 0 0 10px #ff66ff, 0 0 20px #ff33cc;
+    }
+
+    #game-board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .cell {
+      background-color: #222;
+      border: 2px solid #8e44ad;
+      font-size: 2.5rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .cell:hover {
+      background-color: #333;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    #reset {
+      margin-top: 15px;
+      background-color: #8e44ad;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    #reset:hover {
+      background-color: #732d91;
+    }
+
+    .back-button {
+      margin-top: 20px;
+      background-color: #8e44ad;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #732d91;
+    }
+  </style>
+</head>
+<body>
+  <h1>🐾 Mouse vs Bat 🦇</h1>
+  <div id="game-board"></div>
+  <div id="message">Mouse goes first!</div>
+  <button id="reset" onclick="startGame()">Play Again</button>
+  <a href="inside.html" class="back-button">🔙 Back to Café</a>
+
+  <script>
+    const board = document.getElementById('game-board');
+    const message = document.getElementById('message');
+    let cells = [];
+    let currentPlayer = '🐾';
+    let gameActive = true;
+
+    const winCombos = [
+      [0,1,2],[3,4,5],[6,7,8],
+      [0,3,6],[1,4,7],[2,5,8],
+      [0,4,8],[2,4,6]
+    ];
+
+    function startGame() {
+      board.innerHTML = '';
+      cells = [];
+      gameActive = true;
+      currentPlayer = '🐾';
+      message.textContent = 'Mouse goes first!';
+
+      for (let i = 0; i < 9; i++) {
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        cell.addEventListener('click', () => handleMove(i));
+        board.appendChild(cell);
+        cells.push(cell);
+      }
+    }
+
+    function handleMove(index) {
+      if (!gameActive || cells[index].textContent) return;
+
+      cells[index].textContent = currentPlayer;
+
+      if (checkWinner(currentPlayer)) {
+        message.textContent = `${currentPlayer === '🐾' ? 'Mouse' : 'Bat'} wins! 🎉`;
+        gameActive = false;
+        return;
+      }
+
+      if (cells.every(cell => cell.textContent)) {
+        message.textContent = "It's a tie! 🐾🦇";
+        gameActive = false;
+        return;
+      }
+
+      currentPlayer = currentPlayer === '🐾' ? '🦇' : '🐾';
+      message.textContent = `${currentPlayer === '🐾' ? 'Mouse' : 'Bat'}'s turn`;
+    }
+
+    function checkWinner(player) {
+      return winCombos.some(combo =>
+        combo.every(i => cells[i].textContent === player)
+      );
+    }
+
+    startGame();
+  </script>
+</body>
+</html>
