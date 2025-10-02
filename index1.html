@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mouse's Enchanted Adventures – The Decision</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff; /* ✅ white background */
+      color: #2c1e4a;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      border-bottom: 2px solid #ff7518;
+      position: relative;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #2c1e4a;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff7518;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #ff7518;
+      margin-right: 15px;
+    }
+
+    .story-container {
+      max-width: 1000px;
+      margin: 30px auto;
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 15px;
+      border: 2px solid #ff7518;
+      box-shadow: 0 0 15px rgba(255,117,24,0.2);
+    }
+
+    .story-container h1 {
+      color: #ff7518;
+      text-align: center;
+      font-family: 'Creepster', cursive, Arial, sans-serif;
+      text-shadow: 0 0 4px rgba(255,117,24,0.4);
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.8;
+      font-size: 1.05em;
+      margin-bottom: 15px;
+    }
+
+    .intro-text {
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      margin: 30px auto;
+      max-width: 700px;
+      padding: 0 20px;
+      color: #2c1e4a;
+    }
+
+    .center-image {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .center-image img {
+      width: 150px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(255,117,24,0.4);
+    }
+
+    .float-image {
+      float: left;
+      width: 360px;
+      max-width: 100%;
+      margin: 0 25px 20px 0;
+      border-radius: 10px;
+      border: 2px solid #ff7518;
+      box-shadow: 0 0 10px rgba(255,117,24,0.3);
+    }
+
+    .choices {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .choices a {
+      background: #ff7518;
+      color: #fff;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-family: 'Creepster', cursive, Arial, sans-serif;
+      font-size: 1.2rem;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .choices a:hover {
+      background-color: #ff4500;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      text-align: center;
+      padding: 15px;
+      background-color: #ff7518;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        border-top: 2px solid #ff7518;
+        padding: 15px;
+        position: absolute;
+        top: 60px;
+        left: 20px;
+        width: 200px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      }
+      nav ul.show { display: flex; }
+      nav ul li a { text-align: left; }
+
+      .float-image {
+        float: none;
+        display: block;
+        margin: 20px auto;
+      }
+
+      .story-container { padding: 20px; }
+      .intro-text { font-size: 1.1em; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cafe-door.html">Enter Café</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="story-container">
+    <div class="center-image">
+      <img src="images/mouse-image.png" alt="Mouse the tabby cat" />
+    </div>
+
+    <p class="intro-text">
+      Get a glimpse into one of Mouse’s enchanted tales, a quiet morning that turns into something quite mysterious.  
+      As you read, you’ll get to decide which path Mouse and Bat take next. Choose wisely or curiously.
+    </p>
+
+    <div style="overflow: hidden; margin-bottom: 30px;">
+      <img src="images/house.png" alt="Mouse's cottage" class="float-image" />
+
+      <p>One early morning, sunlight poured through the windows, casting golden beams across the quiet cottage. The fire hadn’t been stirred. The kettle hadn’t boiled. It was the kind of stillness that held a hint of magic.</p>
+      <p>Mouse blinked slowly from his cozy spot on the wooden floor. His fur was still puffed from sleep, and his ears twitched at every little creak. Bat hung lazily from a ceiling beam, licking honey off his wing from a midnight snack.</p>
+      <p>“Katharina and Devlin are still asleep,” Bat whispered. “Not even a floorboard groaned.”</p>
+    </div>
+
+    <p>Mouse stretched, yawned, and gave a little paw swipe to shake off the sleep. “Then we’ve got the place to ourselves.”</p>
+    <p>The two of them wandered into the main room. The old wooden floor creaked beneath Mouse’s paws, and the air smelled of herbs and candle wax. It was peaceful. Familiar. Comforting.</p>
+    <p>But then… something strange happened.</p>
+    <p>A flicker. A shimmer. Just beside the coat stand near the back door, the air rippled like water disturbed by a pebble.</p>
+    <p>“Bat,” Mouse said quietly, “did you see that?”</p>
+    <p>Bat dropped from the beam and hovered next to him, staring at the shimmer. “That wasn’t here yesterday.”</p>
+    <p>They crept closer. The shimmer buzzed faintly, glowing just enough to make the wood around it seem dim. The surface of it bent light like a mirror dipped in water.</p>
+    <p>“Do you think it’s a portal?” Bat asked.</p>
+    <p>Mouse didn’t answer right away. He stared at it with narrowed eyes. “It’s something. And it wants us to notice it.”</p>
+    <p>The shimmer expanded slightly, showing a faint silhouette on the other side. Something moved. Something waited.</p>
+    <p>“Should we go through?” Bat asked.</p>
+    <p>Mouse hesitated. “We could stay, or we could find out what’s waiting.”</p>
+    <p style="font-weight: bold; text-align: center;">It was time to choose.</p>
+
+    <div class="choices">
+      <a href="index2.html">Step through the shimmer</a>
+      <a href="index3.html">Stay and investigate the house</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-menu').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>

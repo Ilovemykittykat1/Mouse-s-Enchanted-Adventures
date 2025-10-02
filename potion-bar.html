@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Potion Bar – Mix Your Magic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff; /* ✅ switched to white */
+      color: #2c1e4a;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 40px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      color: #ff7518;
+      font-family: 'Creepster', cursive, Arial, sans-serif;
+      text-shadow: 0 0 6px rgba(255,117,24,0.5);
+      font-size: 2.2rem;
+      margin: 20px 0 30px;
+    }
+
+    .potion-scene {
+      position: relative;
+      width: 90%;
+      max-width: 450px;
+      margin: 0 auto;
+    }
+
+    .potion-image {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255,117,24,0.5);
+      display: block;
+    }
+
+    .hotspot {
+      position: absolute;
+      width: 60px;
+      height: 80px;
+      cursor: pointer;
+    }
+
+    .hotspot1 { top: 63%; left: 12%; }
+    .hotspot2 { top: 63%; left: 41%; }
+    .hotspot3 { top: 63%; left: 70%; }
+
+    .message {
+      font-size: 1.2rem;
+      color: #2c1e4a;
+      margin-top: 25px;
+      min-height: 60px;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      font-weight: bold;
+    }
+
+    .message.revealed {
+      opacity: 1;
+    }
+
+    .back-button {
+      margin-top: 25px;
+      background-color: #ff7518;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 24px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      transition: transform 0.3s, background 0.3s;
+      font-family: 'Creepster', cursive, Arial, sans-serif;
+      box-shadow: 0 0 8px rgba(255,117,24,0.5);
+      display: inline-block;
+    }
+
+    .back-button:hover {
+      transform: scale(1.08);
+      background-color: #ff4500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      background: #ff7518;
+      color: #fff;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>🧪 Mix a Potion and Reveal Your Fate</h1>
+
+    <div class="potion-scene">
+      <img src="images/potion.png" alt="Potion Scene" class="potion-image">
+
+      <div class="hotspot hotspot1" onclick="revealPotion(0)"></div>
+      <div class="hotspot hotspot2" onclick="revealPotion(1)"></div>
+      <div class="hotspot hotspot3" onclick="revealPotion(2)"></div>
+    </div>
+
+    <div class="message" id="message">Choose wisely...</div>
+
+    <a href="inside.html" class="back-button">🔙 Back to Café</a>
+  </main>
+
+  <footer>
+    &copy; 2025 Mouse's Enchanted Adventures – Potion Bar
+  </footer>
+
+  <script>
+    const potionMessages = [
+      "🍓 Love Potion: Your heart glows brighter than ever. A sweet surprise is coming!",
+      "💚 Healing Elixir: Peace flows through your veins. Take a deep breath—you’re safe.",
+      "🔵 Dream Drop: Your dreams are about to speak. Pay attention to the signs tonight."
+    ];
+
+    let picked = false;
+
+    function revealPotion(index) {
+      if (picked) return;
+      const messageBox = document.getElementById('message');
+      messageBox.textContent = potionMessages[index];
+      messageBox.classList.add('revealed');
+      picked = true;
+    }
+  </script>
+</body>
+</html>

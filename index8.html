@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Back Through the Silver Tree – Mouse's Enchanted Adventures</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #2c1e4a;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* --- nav/header --- */
+    header {
+      background: #fff;
+      border-bottom: 2px solid #ff7518;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #ff7518;
+      margin-right: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 18px;
+      justify-content: flex-start;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #2c1e4a;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff7518;
+    }
+
+    header h1 {
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.8rem;
+      font-family: 'Creepster', cursive, Arial, sans-serif;
+      color: #ff7518;
+    }
+
+    /* --- story container --- */
+    .story-container {
+      max-width: 1000px;
+      margin: 30px auto;
+      background: #fafafa;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    .story-container p {
+      line-height: 1.7;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .image-text-flex {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .image-text-flex img {
+      width: 360px;
+      max-width: 100%;
+      border-radius: 10px;
+      border: 2px solid #ff7518;
+      box-shadow: 0 0 12px rgba(255,117,24,0.4);
+    }
+
+    .button-home {
+      margin-top: 30px;
+      display: inline-block;
+      background-color: #ff7518;
+      color: #fff;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-family: 'Creepster', cursive, Arial, sans-serif;
+      font-size: 1.1rem;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .button-home:hover {
+      background-color: #ff4500;
+      transform: scale(1.05);
+    }
+
+    /* --- footer --- */
+    footer {
+      background: #ff7518;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    /* --- responsive --- */
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        border-top: 2px solid #ff7518;
+        padding: 15px;
+        position: absolute;
+        top: 60px;
+        left: 20px;
+        width: 200px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      }
+      nav ul.show { display: flex; }
+      nav ul li { width: 100%; }
+      nav ul li a { width: 100%; display: block; }
+      .image-text-flex { flex-direction: column; text-align: center; }
+      .image-text-flex img { margin: 0 auto 20px auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cafe-door.html">Enter Café</a></li>
+      </ul>
+    </nav>
+    <h1>Back Through the Silver Tree</h1>
+  </header>
+
+  <main class="story-container">
+    <div class="image-text-flex">
+      <img src="images/silver-tree.png" alt="Silver Tree Portal" />
+      <div>
+        <p><strong>Mouse and Bat slipped through the Silver Tree, and the world shifted back to normal.</strong></p>
+        <p>The swirling colors faded. The candy skies and humming crystals vanished. In their place: the warm, familiar scent of herbs, woodsmoke, and morning sun spilling through the windows of their cottage.</p>
+      </div>
+    </div>
+
+    <p>Bat fluttered in lazy circles, laughing with relief. “No more bubblegum lightning for me!”</p>
+    <p>Mouse shook out his fur, a small smile tugging at his whiskers. “Adventure is sweet... but home is sweeter.”</p>
+
+    <p><em>And though their paws and wings rested, they both knew: magic never truly ends. It waits for the next curious step.</em></p>
+
+    <a class="button-home" href="index.html">🏡 Return to Home Page</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-menu').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>

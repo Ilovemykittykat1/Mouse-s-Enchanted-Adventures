@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upstairs Secrets Mouse's Enchanted Adventures</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #2c1e4a;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 2px solid #ff7518;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #ff7518;
+      margin-right: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 18px;
+      justify-content: flex-start;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #2c1e4a;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff7518;
+    }
+
+    header h1 {
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.8rem;
+      font-family: 'Creepster', cursive, Arial, sans-serif;
+      color: #ff7518;
+    }
+
+    .story-container {
+      max-width: 1000px;
+      margin: 30px auto;
+      background: #fafafa;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    .story-container p {
+      line-height: 1.7;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .image-text-flex {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .image-text-flex img {
+      width: 360px;
+      max-width: 100%;
+      border-radius: 10px;
+      border: 2px solid #ff7518;
+      box-shadow: 0 0 12px rgba(255,117,24,0.4);
+    }
+
+    .choices {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .choices a {
+      background-color: #ff7518;
+      color: #fff;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-family: 'Creepster', cursive, Arial, sans-serif;
+      font-size: 1.1rem;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .choices a:hover {
+      background-color: #ff4500;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #ff7518;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        border-top: 2px solid #ff7518;
+        padding: 15px;
+        position: absolute;
+        top: 60px;
+        left: 20px;
+        width: 200px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      }
+      nav ul.show { display: flex; }
+      nav ul li { width: 100%; }
+      nav ul li a { width: 100%; display: block; }
+      .image-text-flex { flex-direction: column; text-align: center; }
+      .image-text-flex img { margin: 0 auto 20px auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cafe-door.html">Enter Café</a></li>
+      </ul>
+    </nav>
+    <h1>Upstairs Secrets</h1>
+  </header>
+
+  <main class="story-container">
+    <div class="image-text-flex">
+      <img src="images/upstairs-hallway.png" alt="Creepy Attic Door" />
+      <div>
+        <p><strong>Mouse and Bat reached the top of the stairs, paws and wings trembling.</strong></p>
+        <p>The hallway stretched endlessly, lined with crooked doors. At the far end, a small attic door glowed faintly, as if a lantern burned on the other side.</p>
+      </div>
+    </div>
+
+    <p>Shadows flickered along the ceiling beams. The portraits on the wall seemed to lean closer, their painted eyes watching every move. A whisper slithered through the air, faint words Mouse couldn’t quite understand.</p>
+
+    <p>“That attic door wasn’t here before,” Bat whispered. “Do we… open it?”</p>
+
+    <p>Mouse’s whiskers twitched. His heart beat fast, but curiosity burned brighter than fear.</p>
+
+    <p><strong>The door pulsed once more. This was no ordinary attic.</strong></p>
+
+    <div class="choices">
+      <a href="index5.html">🌀 Open the attic door Upside World</a>
+      <a href="index9.html">🏡 Turn back downstairs Safe at Home</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-menu').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>

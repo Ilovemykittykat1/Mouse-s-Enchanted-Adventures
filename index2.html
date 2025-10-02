@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mouse's Enchanted Adventures: Through the Shimmer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #2c1e4a;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 2px solid #ff7518;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #ff7518;
+      margin-right: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 18px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #2c1e4a;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff7518;
+    }
+
+    header h1 {
+      margin: 0 auto;
+      font-size: 1.8rem;
+      font-family: 'Creepster', cursive, Arial, sans-serif;
+      color: #ff7518;
+    }
+
+    .story-container {
+      max-width: 1000px;
+      margin: 30px auto;
+      background: #f8f8f8;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    .story-container p {
+      line-height: 1.7;
+      font-size: 1.05rem;
+      margin-bottom: 15px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .shimmer-image {
+      float: left;
+      width: 320px;
+      max-width: 100%;
+      margin: 0 20px 20px 0;
+      border-radius: 10px;
+      border: 2px solid #ff7518;
+      box-shadow: 0 0 12px rgba(255,117,24,0.4);
+    }
+
+    .choices {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .choices a {
+      background-color: #ff7518;
+      color: #fff;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-family: 'Creepster', cursive, Arial, sans-serif;
+      font-size: 1.1rem;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .choices a:hover {
+      background-color: #ff4500;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #ff7518;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        border-top: 2px solid #ff7518;
+        padding: 15px;
+        position: absolute;
+        top: 60px;
+        left: 20px;
+        width: 200px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      }
+      nav ul.show { display: flex; }
+      nav ul li { width: 100%; }
+      nav ul li a { width: 100%; display: block; }
+      .shimmer-image {
+        float: none;
+        display: block;
+        margin: 20px auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cafe-door.html">Enter Café</a></li>
+      </ul>
+    </nav>
+    <h1>Through the Shimmer</h1>
+  </header>
+
+  <main class="story-container">
+    <div style="overflow: hidden; margin-bottom: 30px;">
+      <img src="images/shimmer.png" alt="Shimmering Portal" class="shimmer-image" />
+
+      <p><strong>Mouse stepped through the shimmer.</strong></p>
+      <p>The moment his paw touched the surface, the world flickered like candlelight in a draft. Then everything changed.</p>
+      <p>He stumbled forward into a space that looked almost, but not quite, like their own cottage. The walls pulsed softly, as if breathing. The furniture had shifted ever so slightly. The air was thick with electricity and whispers Mouse could not quite hear.</p>
+      <p>Bat flapped in behind him and landed on the edge of a floating book. "Where are we?"</p>
+      <p>Mouse scanned the room, tail flicking. Everything was familiar yet disturbingly wrong. A hallway stretched where there had never been one. Paintings on the walls moved in slow motion, shifting their eyes to follow them. A chair rocked itself gently, creaking like it remembered something.</p>
+      <p>"I think we stepped into a different version of home," Mouse whispered. "A parallel one. And someone, or something, was waiting for us."</p>
+      <p>The shimmer closed behind them with a soft <em>thrum</em>, sealing them in.</p>
+      <p>Bat hovered closer to Mouse’s ear. "Do you feel that?"</p>
+      <p>"Yes," Mouse said. "Magic. But old magic. The kind that remembers."</p>
+    </div>
+
+    <p>Suddenly, the world ahead began to shift again, like glass being warped in slow motion. Two doorways emerged before them, each swirling with wild, unpredictable energy.</p>
+    <p>One was kaleidoscopic, vibrant and alive, pulsing with colors Mouse had never seen before. The air around it buzzed with strange rhythms, and the scent of citrus and stars filled their noses.</p>
+    <p>The other was darker, flipped and distorted, as if gravity itself did not know which way was up. The air felt colder, and everything inside it seemed to drift sideways, like reality was bending inward.</p>
+    <p>"Two parallel realities," Mouse murmured. "Each one calling us in its own way."</p>
+    <p><strong>The choice was theirs.</strong></p>
+
+    <div class="choices">
+      <a href="index4.html">🌈 Enter the Psychedelic World</a>
+      <a href="index5.html">🌀 Enter the Upside World</a>
+      <a href="index3.html">🏚 Stay and Investigate</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-menu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
