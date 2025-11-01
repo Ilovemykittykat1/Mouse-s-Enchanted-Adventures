@@ -1,4 +1,4 @@
-/*
+
  * Copyright (C) 2025 Katherine McNeil
  
  * Author: Katherine McNeil
@@ -7,9 +7,9 @@
  * distributed, or modified without explicit permission.
  
  * © 2025 Katherine McNeil. All rights reserved.
- */
+   
 
-/*  
+
 🐾 Mouse’s Enchanted Adventures 🐾
 
 A whimsical children’s world starring Mouse the vampire cat, Bat the fearless familiar, and their witch and warlock friends Katherina and Devlin. Bright, cozy, and a little spooky in the fun way.
@@ -55,5 +55,6 @@ Scenes should be bright and readable, even at night
 Use high‑density images for both print and web
 
 © 2025 Katherine McNeil — Mouse’s Enchanted Adventures. All rights reserved.
+
 
 
