@@ -4,7 +4,7 @@
  * Author: Katherine McNeil
  
  * This code is the property of Katherine McNeil and may not be copied,
- * distributed, or modified without explicit permission.
+   distributed, or modified without explicit permission.
  
  * © 2025 Katherine McNeil. All rights reserved.
    
@@ -55,6 +55,7 @@ Scenes should be bright and readable, even at night
 Use high‑density images for both print and web
 
 © 2025 Katherine McNeil — Mouse’s Enchanted Adventures. All rights reserved.
+
 
 
 
