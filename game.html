@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mouse vs Bat – Tic-Tac-Toe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #2c1e4a;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* --- nav bar --- */
+    header {
+      background-color: #fff;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #ff7518;
+      position: relative;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #2c1e4a;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff7518;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #ff7518;
+    }
+
+    /* --- game section --- */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-family: 'Creepster', cursive, Arial, sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #ff7518;
+    }
+
+    #game-board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+      gap: 12px;
+    }
+
+    .cell {
+      background: #f9f9f9;
+      border: 3px solid #ff7518;
+      font-size: 2.5rem;
+      color: #2c1e4a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 12px;
+      box-shadow: 0 0 6px rgba(255,117,24,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .cell:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px #ff4500;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #2c1e4a;
+    }
+
+    #reset {
+      margin-top: 20px;
+      background: #ff7518;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-family: 'Creepster', cursive, Arial, sans-serif;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    #reset:hover {
+      background: #ff4500;
+      transform: scale(1.05);
+    }
+
+    .back-button {
+      margin-top: 20px;
+      display: inline-block;
+      background: #f9f9f9;
+      color: #ff7518;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 2px solid #ff7518;
+      font-family: 'Creepster', cursive, Arial, sans-serif;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .back-button:hover {
+      background: #ff7518;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #ff7518;
+      color: #fff;
+    }
+
+    /* --- responsive --- */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        background: #fff;
+        border-top: 2px solid #ff7518;
+        padding: 15px;
+        position: absolute;
+        top: 60px;
+        left: 20px;
+        width: 200px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul li a {
+        text-align: center;
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cafe-door.html">Enter Café</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>🐾 Mouse vs Bat 🦇</h1>
+    <div id="game-board"></div>
+    <div id="message">Mouse goes first!</div>
+    <button id="reset" onclick="startGame()">Play Again</button>
+    <a href="inside.html" class="back-button">🔙 Back to Café</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-menu').classList.toggle('show');
+    }
+
+    const board = document.getElementById('game-board');
+    const message = document.getElementById('message');
+    let cells = [];
+    let currentPlayer = '🐾';
+    let gameActive = true;
+
+    const winCombos = [
+      [0,1,2],[3,4,5],[6,7,8],
+      [0,3,6],[1,4,7],[2,5,8],
+      [0,4,8],[2,4,6]
+    ];
+
+    function startGame() {
+      board.innerHTML = '';
+      cells = [];
+      gameActive = true;
+      currentPlayer = '🐾';
+      message.textContent = 'Mouse goes first!';
+
+      for (let i = 0; i < 9; i++) {
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        cell.addEventListener('click', () => handleMove(i));
+        board.appendChild(cell);
+        cells.push(cell);
+      }
+    }
+
+    function handleMove(index) {
+      if (!gameActive || cells[index].textContent) return;
+
+      cells[index].textContent = currentPlayer;
+
+      if (checkWinner(currentPlayer)) {
+        message.textContent = `${currentPlayer === '🐾' ? 'Mouse' : 'Bat'} wins! 🎉`;
+        gameActive = false;
+        return;
+      }
+
+      if (cells.every(cell => cell.textContent)) {
+        message.textContent = "It's a tie! 🐾🦇";
+        gameActive = false;
+        return;
+      }
+
+      currentPlayer = currentPlayer === '🐾' ? '🦇' : '🐾';
+      message.textContent = `${currentPlayer === '🐾' ? 'Mouse' : 'Bat'}'s turn`;
+    }
+
+    function checkWinner(player) {
+      return winCombos.some(combo =>
+        combo.every(i => cells[i].textContent === player)
+      );
+    }
+
+    startGame();
+  </script>
+</body>
+</html>
