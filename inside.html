@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inside the Enchanted Café</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0c0c0c;
+      color: #e5e5e5;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      background-color: #111;
+      border-bottom: 2px solid #8a0000;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #b30000;
+      margin-right: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 18px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #e5e5e5;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    nav ul li a:hover {
+      color: #b30000;
+    }
+
+    header h1 {
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.8rem;
+      font-family: 'Creepster', cursive;
+      color: #b30000;
+      text-shadow: 0 0 8px rgba(179,0,0,0.6);
+    }
+
+    /* ---------- IMAGE SECTION ---------- */
+    .image-section {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background-color: #0c0c0c;
+      padding: 20px 20px 10px;
+    }
+
+    .image-section img {
+      width: 100%;
+      max-width: 1000px;
+      max-height: 520px;          /* ✅ key fix */
+      object-fit: contain;        /* keeps full image visible */
+      height: auto;
+      display: block;
+    }
+
+    /* ---------- LINKS SECTION ---------- */
+    .link-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+      padding: 30px 20px 60px;
+    }
+
+    .link {
+      color: #b30000;
+      font-family: 'Creepster', cursive;
+      font-size: 1.4rem;
+      text-decoration: none;
+      text-shadow: 0 0 12px rgba(179,0,0,0.7);
+      transition: transform 0.3s, text-shadow 0.3s;
+    }
+
+    .link:hover {
+      transform: scale(1.1);
+      text-shadow: 0 0 16px #ff0000, 0 0 28px #b30000;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background-color: #111;
+      color: #e5e5e5;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      border-top: 2px solid #8a0000;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #111;
+        border-top: 2px solid #8a0000;
+        padding: 15px;
+        position: absolute;
+        top: 60px;
+        left: 20px;
+        width: 200px;
+      }
+
+      nav ul.show { display: flex; }
+
+      .image-section img {
+        max-height: 280px;   /* smaller on mobile */
+      }
+
+      .link {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cafe-door.html">Enter Café</a></li>
+      </ul>
+    </nav>
+    <h1>Inside the Enchanted Café</h1>
+  </header>
+
+  <!-- IMAGE -->
+  <section class="image-section">
+    <img src="images/inside.png" alt="Inside the Enchanted Café">
+  </section>
+
+  <!-- LINKS -->
+  <section class="link-section">
+    <a href="potion-bar.html" class="link">🧪 Potion Bar</a>
+    <a href="game.html" class="link">🎲 Game Table</a>
+    <a href="tarot.html" class="link">🔮 Tarot Reading</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-menu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

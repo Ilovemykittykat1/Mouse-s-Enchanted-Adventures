@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mystic Tarot Reading</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0c0c0c;
+      color: #e5e5e5;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Creepster', cursive, Arial, sans-serif;
+      font-size: 2.2rem;
+      color: #b30000;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px rgba(179,0,0,0.6);
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      width: 120px;
+      height: 180px;
+      background-color: #111;
+      border: 3px solid #8a0000;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 10px rgba(179,0,0,0.6);
+      color: #e5e5e5;
+    }
+
+    .card:hover {
+      transform: scale(1.1) rotate(-2deg);
+      box-shadow: 0 0 16px #b30000;
+    }
+
+    .message {
+      font-size: 1.2rem;
+      color: #e5e5e5;
+      min-height: 60px;
+      margin-top: 15px;
+      text-shadow: 0 0 8px rgba(179,0,0,0.6);
+    }
+
+    .back-button {
+      margin-top: 30px;
+      background-color: #8a0000;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      font-family: 'Creepster', cursive, Arial, sans-serif;
+      transition: background 0.3s, transform 0.3s;
+      box-shadow: 0 0 10px rgba(179,0,0,0.6);
+    }
+
+    .back-button:hover {
+      background-color: #b30000;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #111;
+      color: #e5e5e5;
+      font-size: 0.9rem;
+      border-top: 2px solid #8a0000;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        width: 100px;
+        height: 150px;
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>🔮 Pick a Card to Reveal Your Fortune</h1>
+
+    <div class="cards">
+      <div class="card" onclick="revealCard(0)">🃏</div>
+      <div class="card" onclick="revealCard(1)">🃏</div>
+      <div class="card" onclick="revealCard(2)">🃏</div>
+    </div>
+
+    <div class="message" id="message"></div>
+
+    <a href="inside.html" class="back-button">🔙 Back to Café</a>
+  </main>
+
+  <footer>
+    &copy; 2025 Mouse's Enchanted Adventures – Tarot Game
+  </footer>
+
+  <script>
+    const messages = [
+      "🌞 The Sun: Joy, success, clarity. Your path is shining bright!",
+      "🌑 The Moon: Trust your intuition. Not all is as it seems.",
+      "🧙‍♂️ The Magician: You have all the tools you need. Manifest it!"
+    ];
+
+    let hasPicked = false;
+
+    function revealCard(index) {
+      if (hasPicked) return;
+      const cards = document.querySelectorAll('.card');
+      cards[index].textContent = messages[index].split(":")[0];
+      document.getElementById('message').textContent = messages[index];
+      hasPicked = true;
+    }
+  </script>
+</body>
+</html>

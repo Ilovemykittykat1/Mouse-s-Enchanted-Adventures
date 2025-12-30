@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Mouse's Enchanted Adventures</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0c0c0c;
+      color: #e5e5e5;
+    }
+
+    /* ---------- NAV BAR ---------- */
+    header {
+      background-color: #111;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #8a0000;
+      position: relative;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #e5e5e5;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #b30000;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #b30000;
+    }
+
+    /* ---------- GHOST ---------- */
+    .ghost {
+      position: absolute;
+      top: 40px;
+      left: -120px;
+      width: 100px;
+      opacity: 0.9;
+      animation: floatGhost 14s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes floatGhost {
+      0%   { left: -120px; top: 40px; opacity: 0; }
+      10%  { opacity: 1; }
+      50%  { top: 30px; }
+      90%  { opacity: 1; }
+      100% { left: 100%; top: 40px; opacity: 0; }
+    }
+
+    /* ---------- CONTACT FORM ---------- */
+    .contact-form {
+      max-width: 500px;
+      margin: 150px auto 60px auto;
+      background-color: #111;
+      padding: 30px;
+      border-radius: 15px;
+      border: 2px solid #8a0000;
+      box-shadow: 0 0 20px rgba(138, 0, 0, 0.4);
+      text-align: center;
+    }
+
+    .contact-form h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #b30000;
+      font-family: 'Creepster', cursive, Arial, sans-serif;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0 20px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      font-size: 1em;
+      background-color: #0c0c0c;
+      color: #e5e5e5;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #999;
+    }
+
+    button {
+      background-color: #8a0000;
+      color: #ffffff;
+      padding: 12px 30px;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-family: 'Creepster', cursive, Arial, sans-serif;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    button:hover {
+      background-color: #b30000;
+      transform: scale(1.05);
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background-color: #111;
+      color: #e5e5e5;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      border-top: 2px solid #8a0000;
+    }
+
+    footer a {
+      color: #b30000;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #111;
+        border-top: 2px solid #8a0000;
+        padding: 15px;
+        position: absolute;
+        top: 60px;
+        left: 20px;
+        width: 200px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li a {
+        text-align: center;
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cafe-door.html">Enter Café</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <img src="images/ghost.png" alt="Friendly Ghost" class="ghost" />
+
+  <main>
+    <section class="contact-form">
+      <h2>Get in Touch</h2>
+      <form action="https://formspree.io/f/xqapkayz" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://www.facebook.com/profile.php?id=61575952349929" target="_blank">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+          alt="Facebook"
+          style="width:20px;height:20px;vertical-align:middle;margin-right:8px;"
+        />
+        Follow us on Facebook
+      </a>
+    </p>
+    <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-menu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

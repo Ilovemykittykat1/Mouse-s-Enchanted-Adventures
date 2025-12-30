@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mouse's Enchanted Adventures</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0c0c0c;
+      color: #e5e5e5;
+    }
+
+    /* ---------- NAV BAR ---------- */
+    header {
+      background-color: #111;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #8a0000;
+      position: relative;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #e5e5e5;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #b30000;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #b30000;
+    }
+
+    /* ---------- HERO SECTION ---------- */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 80px;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      max-width: 500px;
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      font-family: 'Creepster', cursive;
+      margin: 0 0 20px;
+      color: #b30000;
+      text-shadow: 0 0 8px rgba(179,0,0,0.6);
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #d0d0d0;
+    }
+
+    .hero-text .btn {
+      display: inline-block;
+      background-color: #8a0000;
+      color: #ffffff;
+      padding: 12px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .hero-text .btn:hover {
+      background-color: #b30000;
+      transform: scale(1.05);
+    }
+
+    .hero img {
+      max-width: 600px;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(138,0,0,0.6);
+      flex: 1;
+    }
+
+    /* ---------- BATTLE ZONE ---------- */
+    #battle-zone {
+      margin: 60px auto;
+      padding: 30px;
+      background-color: #111;
+      border: 3px solid #8a0000;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(138,0,0,0.5);
+      max-width: 600px;
+      text-align: center;
+    }
+
+    #battle-zone h2 {
+      font-size: 2em;
+      color: #b30000;
+      margin-bottom: 20px;
+      font-family: 'Creepster', cursive;
+    }
+
+    canvas#mouseAttackCanvas {
+      display: block;
+      margin: 0 auto;
+      background: transparent;
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(138,0,0,0.6);
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background-color: #111;
+      color: #e5e5e5;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      border-top: 2px solid #8a0000;
+    }
+
+    footer a {
+      color: #b30000;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #111;
+        border-top: 2px solid #8a0000;
+        padding: 15px;
+        position: absolute;
+        top: 60px;
+        left: 20px;
+        width: 200px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.7);
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+      }
+
+      .hero img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cafe-door.html">Enter Café</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>A World of Secrets and Wonder</h1>
+      <p>
+        From fog-draped castles to moonlit forests, Mouse’s world hides secrets in every shadow.
+        Each chapter reveals enchanted paths, whispering trees, and portals that glow beneath the night sky.
+      </p>
+      <a href="cafe-door.html" class="btn">Enter the Adventure</a>
+    </div>
+    <img src="images/hat.png" alt="Mouse Adventure Artwork" />
+  </section>
+
+  <section id="battle-zone">
+    <h2>Mouse Unleashed</h2>
+    <canvas id="mouseAttackCanvas" width="512" height="512"></canvas>
+  </section>
+
+  <footer>
+    <p>
+      <a href="https://www.facebook.com/profile.php?id=61575952349929" target="_blank">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+          alt="Facebook"
+          style="width:20px;height:20px;vertical-align:middle;margin-right:8px;"
+        />
+        Follow us on Facebook
+      </a>
+    </p>
+    <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-menu").classList.toggle("show");
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const canvas = document.getElementById("mouseAttackCanvas");
+      if (!canvas) return;
+
+      const ctx = canvas.getContext("2d");
+      const spriteSheet = new Image();
+      spriteSheet.src = "images/mouse-attack-sprites.png";
+
+      const FRAME_WIDTH = 512;
+      const FRAME_HEIGHT = 512;
+      const totalFrames = 4;
+      let currentFrame = 0;
+
+      spriteSheet.onload = () => {
+        setInterval(() => {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+          const sx = (currentFrame % 2) * FRAME_WIDTH;
+          const sy = Math.floor(currentFrame / 2) * FRAME_HEIGHT;
+
+          ctx.drawImage(
+            spriteSheet,
+            sx, sy, FRAME_WIDTH, FRAME_HEIGHT,
+            0, 0, FRAME_WIDTH, FRAME_HEIGHT
+          );
+
+          currentFrame = (currentFrame + 1) % totalFrames;
+        }, 300);
+      };
+    });
+  </script>
+</body>
+</html>
