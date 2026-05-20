@@ -1,236 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mouse’s Enchanted Café – Entrance</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
-
+  <title>Mouse's Enchanted Café – Entrance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --red-dark: #8a0000;
-      --red-glow: #b30000;
-      --black-main: #0c0c0c;
-      --black-soft: #111;
-      --text-light: #e5e5e5;
-    }
-
-    /* Flexbox layout for sticky footer */
-    body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      font-family: Arial, sans-serif;
-      background-color: var(--black-main);
-      color: var(--text-light);
-    }
-
-    main {
-      flex: 1;
-    }
-
-    /* ---------- NAVBAR ---------- */
-    header {
-      background-color: var(--black-soft);
-      border-bottom: 3px solid var(--red-dark);
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      position: relative;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: var(--text-light);
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: var(--red-glow);
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--red-glow);
-    }
-
-    /* ---------- CAFÉ SCENE ---------- */
-    .cafe-scene {
-      position: relative;
-      width: 100%;
-      height: 70vh;
-      max-height: 600px;
-      background: url('images/cafe.png') no-repeat center top;
-      background-size: contain;
-      background-color: transparent;
-    }
-
-    .magic-door {
-      position: absolute;
-      top: 72%;
-      left: 50%;
-      width: 80px;
-      height: 140px;
-      transform: translate(-50%, -50%);
-      cursor: pointer;
-      border-radius: 12px;
-      animation: glowPulse 2s infinite ease-in-out;
-      z-index: 2;
-    }
-
-    .door-label {
-      position: absolute;
-      top: 62%;
-      left: 50%;
-      transform: translateX(-50%);
-      color: var(--red-glow);
-      font-size: 1.4rem;
-      font-weight: bold;
-      font-family: 'Creepster', cursive, Arial, sans-serif;
-      text-shadow: 0 0 10px var(--red-dark), 0 0 20px #ff0000;
-      animation: pulseText 1.5s infinite ease-in-out;
-      z-index: 3;
-    }
-
-    @keyframes pulseText {
-      0% { opacity: 1; transform: translateX(-50%) scale(1); }
-      50% { opacity: 0.7; transform: translateX(-50%) scale(1.1); }
-      100% { opacity: 1; transform: translateX(-50%) scale(1); }
-    }
-
-    @keyframes glowPulse {
-      0%   { box-shadow: 0 0 12px var(--red-dark); }
-      50%  { box-shadow: 0 0 32px var(--red-glow); }
-      100% { box-shadow: 0 0 12px var(--red-dark); }
-    }
-
-    .fade-out {
-      animation: fadeOut 1s forwards;
-    }
-
-    @keyframes fadeOut {
-      to { opacity: 0; }
-    }
-
-    /* ---------- FOOTER ---------- */
-    footer {
-      background-color: var(--black-soft);
-      color: var(--text-light);
-      text-align: center;
-      padding: 15px;
-      border-top: 2px solid var(--red-dark);
-    }
-
-    footer a {
-      color: var(--red-glow);
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* ---------- RESPONSIVE ---------- */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: var(--black-soft);
-        border-top: 2px solid var(--red-dark);
-        padding: 15px;
-        position: absolute;
-        top: 60px;
-        left: 20px;
-        width: 200px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.7);
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      nav ul li {
-        width: 100%;
-      }
-
-      nav ul li a {
-        width: 100%;
-        text-align: left;
-      }
+    :root{--red-dark:#8a0000;--red-glow:#cc0000;--red-bright:#ff3333;--amber:#ffaa00;--purple:#6600cc;--purple-light:#9933ff;--black-main:#1c2340;--black-card:#1e2a50;--text-light:#ffffff;--shadow-3d:4px 4px 0px #000,6px 6px 0px rgba(0,0,0,0.4);}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Nunito',sans-serif;background-color:#1a1a3e;color:var(--text-light);overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column;}
+    .stars{position:fixed;inset:0;pointer-events:none;z-index:0;}
+    .star{position:absolute;background:white;border-radius:50%;animation:twinkle var(--d,3s) var(--delay,0s) infinite;}
+    @keyframes twinkle{0%,100%{opacity:0.2;}50%{opacity:0.8;}}
+    header{background:linear-gradient(180deg,#1e2a4a,#1a2040);border-bottom:3px solid #3a6fd8;padding:0 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(58,111,216,0.4);}
+    .site-logo{font-family:'Cinzel Decorative',serif;font-size:1.5rem;color:var(--amber);text-decoration:none;text-shadow:2px 2px 0 var(--red-dark);padding:14px 0;}
+    nav ul{list-style:none;display:flex;gap:4px;}
+    nav ul li a{text-decoration:none;color:var(--text-light);font-weight:700;font-family:'Cinzel',serif;font-size:0.95rem;padding:8px 14px;border-radius:8px;transition:all 0.2s;display:block;}
+    nav ul li a:hover{color:var(--amber);background:rgba(255,170,0,0.1);}
+    nav ul li a.cafe-link{background:linear-gradient(135deg,var(--red-dark),#3a6fd8);border:2px solid rgba(255,80,80,0.5);box-shadow:var(--shadow-3d);}
+    nav ul li a.cafe-link:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #000;color:var(--amber);}
+    .menu-toggle{display:none;font-size:1.5rem;background:none;border:none;cursor:pointer;color:var(--amber);}
+    
+    main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;z-index:1;padding:30px 20px;}
+    .entrance-title{font-family:'Cinzel Decorative',serif;font-size:2.8rem;color:var(--amber);text-align:center;margin-bottom:8px;text-shadow:3px 3px 0 var(--red-dark),0 0 30px rgba(255,170,0,0.5);letter-spacing:1px;}
+    .entrance-sub{color:rgba(200,184,232,0.7);font-size:1rem;font-weight:600;text-align:center;margin-bottom:30px;}
+    
+    .cafe-scene{position:relative;width:100%;max-width:700px;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-3d),0 0 60px rgba(58,111,216,0.25);border:3px solid rgba(80,140,255,0.4);}
+    .cafe-scene img{width:100%;display:block;max-height:480px;object-fit:cover;}
+    
+    .door-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:40px;background:linear-gradient(to top,rgba(10,10,18,0.5) 0%,transparent 50%);}
+    .door-btn{background:linear-gradient(135deg,var(--red-bright),var(--red-dark));color:white;border:3px solid rgba(255,120,120,0.5);border-radius:20px;padding:18px 50px;font-family:'Cinzel Decorative',serif;font-size:1.8rem;letter-spacing:1px;cursor:pointer;box-shadow:var(--shadow-3d),0 0 40px rgba(200,0,0,0.5);animation:doorPulse 2s ease-in-out infinite;transition:all 0.15s;text-shadow:2px 2px 0 #600;}
+    @keyframes doorPulse{0%,100%{box-shadow:var(--shadow-3d),0 0 30px rgba(200,0,0,0.4);}50%{box-shadow:var(--shadow-3d),0 0 60px rgba(200,0,0,0.7);}}
+    .door-btn:hover{transform:translate(-3px,-3px) scale(1.05);box-shadow:7px 7px 0 #000,0 0 60px rgba(255,50,50,0.8);}
+    
+    .magic-particles{position:absolute;inset:0;pointer-events:none;}
+    .particle{position:absolute;border-radius:50%;animation:particleFloat var(--d,4s) var(--delay,0s) ease-in-out infinite;}
+    @keyframes particleFloat{0%,100%{transform:translateY(0) scale(1);opacity:0.6;}50%{transform:translateY(-20px) scale(1.5);opacity:1;}}
+    
+    .fade-out{animation:fadeOut 1s forwards;}
+    @keyframes fadeOut{to{opacity:0;}}
+    
+    footer{background:linear-gradient(180deg,#1a2040,#1e2a4a);color:rgba(200,184,232,0.7);text-align:center;padding:20px;border-top:3px solid #3a6fd8;position:relative;z-index:1;}
+    footer a{color:var(--amber);font-weight:700;text-decoration:none;}
+    .footer-fb{display:inline-flex;align-items:center;gap:8px;background:rgba(255,170,0,0.08);padding:8px 16px;border-radius:8px;border:1px solid rgba(255,170,0,0.25);margin-bottom:12px;transition:all 0.2s;}
+    .footer-fb:hover{background:rgba(255,170,0,0.15);transform:translateY(-2px);}
+    @media(max-width:768px){
+      .menu-toggle{display:block;}
+      nav ul{display:none;flex-direction:column;gap:4px;background:#1e2a4a;border:2px solid #3a6fd8;border-radius:12px;padding:12px;position:absolute;top:65px;right:20px;width:220px;box-shadow:var(--shadow-3d);z-index:999;}
+      nav ul.show{display:flex;}
+      .entrance-title{font-size:2rem;}
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <nav>
-      <ul id="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="product.html">Products</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="cafe-door.html">Enter Café</a></li>
-      </ul>
-    </nav>
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-  </header>
-
-  <main>
-    <div class="cafe-scene" id="scene">
-      <div class="door-label">Click to Enter</div>
-      <div class="magic-door" onclick="enterCafe()"></div>
+<div class="stars" id="stars"></div>
+<header>
+  <a href="index.html" class="site-logo">🐾 Mouse's Enchanted Adventures</a>
+  <nav>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Books</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cafe-door.html" class="cafe-link">✨ Enter Café</a></li>
+    </ul>
+  </nav>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+</header>
+<main>
+  <h1 class="entrance-title">🏚️ The Enchanted Café 🏚️</h1>
+  <p class="entrance-sub">A magical realm awaits beyond this door... dare you enter?</p>
+  <div class="cafe-scene" id="scene">
+    <img src="images/cafe.png" alt="The Enchanted Café">
+    <div class="magic-particles" id="particles"></div>
+    <div class="door-overlay">
+      <button class="door-btn" onclick="enterCafe()">🚪 Click to Enter!</button>
     </div>
-  </main>
-
-  <footer>
-    <p>
-      <a href="https://www.facebook.com/profile.php?id=61575952349929" target="_blank">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-          alt="Facebook"
-          style="width:20px;height:20px;vertical-align:middle;margin-right:8px;"
-        />
-        Follow us on Facebook
-      </a>
-    </p>
-    <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
-  </footer>
-
-  <script>
-    function enterCafe() {
-      const scene = document.getElementById('scene');
-      scene.classList.add('fade-out');
-      setTimeout(() => {
-        window.location.href = 'inside.html';
-      }, 1000);
-    }
-
-    function toggleMenu() {
-      document.getElementById("nav-menu").classList.toggle("show");
-    }
-  </script>
+  </div>
+</main>
+<footer>
+  <a href="https://www.facebook.com/profile.php?id=61575952349929" target="_blank" class="footer-fb">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width:20px;height:20px;">
+    Follow us on Facebook
+  </a>
+  <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+</footer>
+<script>
+function toggleMenu(){document.getElementById('nav-menu').classList.toggle('show');}
+// Stars
+const sc=document.getElementById('stars');
+for(let i=0;i<60;i++){const s=document.createElement('div');s.className='star';const sz=Math.random()*2+0.5;s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${Math.random()*4+2}s;--delay:${Math.random()*5}s;`;sc.appendChild(s);}
+// Particles
+const colors=['#ffaa00','#cc0000','#9933ff','#ff3333','#ffcc44'];
+const pc=document.getElementById('particles');
+for(let i=0;i<20;i++){const p=document.createElement('div');p.className='particle';const sz=Math.random()*8+4;const col=colors[Math.floor(Math.random()*colors.length)];p.style.cssText=`width:${sz}px;height:${sz}px;background:${col};left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${Math.random()*3+2}s;--delay:${Math.random()*3}s;box-shadow:0 0 ${sz*2}px ${col};`;pc.appendChild(p);}
+function enterCafe(){document.getElementById('scene').classList.add('fade-out');setTimeout(()=>{window.location.href='inside.html';},1000);}
+</script>
 </body>
 </html>

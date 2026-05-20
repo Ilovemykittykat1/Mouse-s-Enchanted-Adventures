@@ -1,284 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Products - Mouse's Enchanted Adventures</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
-
+  <title>Books & Merch - Mouse's Enchanted Adventures</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0c0c0c;
-      color: #e5e5e5;
-    }
-
-    /* ---------- HEADER & NAV ---------- */
-    header {
-      background-color: #111;
-      padding: 12px 20px;
-      display: flex;
+    :root{--red-dark:#8a0000;--red-glow:#cc0000;--red-bright:#ff3333;--amber:#ffaa00;--purple:#6600cc;--purple-light:#9933ff;--black-main:#1c2340;--black-soft:#1e2a4a;--black-card:#1e2a50;--text-light:#ffffff;--text-muted:#b8d0f0;--shadow-3d:4px 4px 0px #000,6px 6px 0px rgba(0,0,0,0.4);}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Nunito',sans-serif;background-color:#1a1a3e;color:var(--text-light);overflow-x:hidden;}
+    .stars{position:fixed;inset:0;pointer-events:none;z-index:0;}
+    .star{position:absolute;background:white;border-radius:50%;animation:twinkle var(--d,3s) var(--delay,0s) infinite;}
+    @keyframes twinkle{0%,100%{opacity:0.2;}50%{opacity:0.8;}}
+    header{background:linear-gradient(180deg,#1e2a4a,#1a2040);border-bottom:3px solid #3a6fd8;padding:0 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(58,111,216,0.4);}
+    .site-logo{font-family:'Cinzel Decorative',serif;font-size:1.5rem;color:var(--amber);text-decoration:none;text-shadow:2px 2px 0 var(--red-dark);padding:14px 0;}
+    nav ul{list-style:none;display:flex;gap:4px;}
+    nav ul li a{text-decoration:none;color:var(--text-light);font-weight:700;font-family:'Cinzel',serif;font-size:0.95rem;padding:8px 14px;border-radius:8px;transition:all 0.2s;display:block;}
+    nav ul li a:hover{color:var(--amber);background:rgba(255,170,0,0.1);}
+    nav ul li a.cafe-link{background:linear-gradient(135deg,var(--red-dark),#3a6fd8);border:2px solid rgba(255,80,80,0.5);box-shadow:var(--shadow-3d);}
+    nav ul li a.cafe-link:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #000;color:var(--amber);}
+    .menu-toggle{display:none;font-size:1.5rem;background:none;border:none;cursor:pointer;color:var(--amber);}
+    
+    /* CALENDAR BUTTON STYLE */
+    .calendar-container { text-align: center; margin-bottom: 40px; }
+    .btn-calendar {
+      display: inline-flex;
       align-items: center;
-      border-bottom: 2px solid #8a0000;
-      position: relative;
-      z-index: 10;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #b30000;
-      margin-right: 15px;
-    }
-
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav ul li a {
+      gap: 10px;
+      background: linear-gradient(135deg, #3a6fd8, #1e2a4a);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 50px;
       text-decoration: none;
-      color: #e5e5e5;
-      font-weight: bold;
-      font-size: 0.95rem;
-      transition: color 0.3s;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      border: 2px solid var(--amber);
+      box-shadow: var(--shadow-3d);
+      transition: 0.2s;
     }
+    .btn-calendar:hover { transform: scale(1.05); color: var(--amber); }
 
-    nav ul li a:hover {
-      color: #b30000;
-    }
-
-    /* ---------- SPIDER ---------- */
-    .hanging-spider {
-      position: fixed;
-      top: 0;
-      right: 80px;
-      width: 50px;
-      z-index: 9999;
-      animation: dropDown 3s ease-in-out infinite alternate;
-    }
-
-    .hanging-spider::before {
-      content: "";
-      position: absolute;
-      top: -120px;
-      left: 50%;
-      width: 2px;
-      height: 120px;
-      background: #444;
-      transform: translateX(-50%);
-    }
-
-    @keyframes dropDown {
-      0%   { transform: translateY(0); }
-      100% { transform: translateY(80px); }
-    }
-
-    /* ---------- PRODUCT GRID ---------- */
-    main {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    h1 {
-      font-size: 2.2rem;
-      font-family: 'Creepster', cursive, Arial, sans-serif;
-      color: #b30000;
-      text-align: center;
-      margin-bottom: 40px;
-      text-shadow: 0 0 8px rgba(179,0,0,0.6);
-    }
-
-    .featured-books {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-
-    .featured-book {
-      background-color: #111;
-      border: 2px solid #8a0000;
-      border-radius: 15px;
-      padding: 20px;
-      max-width: 300px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(138,0,0,0.4);
-    }
-
-    .featured-book h2 {
-      font-family: 'Creepster', cursive, Arial, sans-serif;
-      color: #b30000;
-      margin-bottom: 15px;
-    }
-
-    .featured-book img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: contain;
-      margin-bottom: 15px;
-      border-radius: 10px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.6);
-    }
-
-    .featured-book p {
-      margin: 10px 0;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: #d0d0d0;
-    }
-
-    .featured-book .price {
-      font-weight: bold;
-      margin: 15px 0;
-      font-size: 1.1rem;
-      color: #b30000;
-    }
-
-    .featured-book a {
-      display: inline-block;
-      background-color: #8a0000;
-      color: #ffffff;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s, transform 0.3s;
-    }
-
-    .featured-book a:hover {
-      background-color: #b30000;
-      transform: scale(1.05);
-    }
-
-    /* ---------- FOOTER ---------- */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #111;
-      color: #e5e5e5;
-      margin-top: 50px;
-      border-top: 2px solid #8a0000;
-    }
-
-    footer a {
-      color: #b30000;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* ---------- RESPONSIVE NAV ---------- */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: #111;
-        border: 2px solid #8a0000;
-        border-radius: 8px;
-        padding: 12px;
-        position: absolute;
-        top: 55px;
-        left: 20px;
-        width: 160px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.7);
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      nav ul li a {
-        text-align: left;
-        padding: 8px 10px;
-        display: block;
-      }
+    .hanging-spider{position:fixed;top:0;right:80px;width:50px;z-index:1001;animation:dropDown 3s ease-in-out infinite alternate;}
+    .hanging-spider::before{content:'';position:absolute;top:-120px;left:50%;width:2px;height:120px;background:linear-gradient(180deg,transparent,rgba(80,140,255,0.55));transform:translateX(-50%);}
+    @keyframes dropDown{0%{transform:translateY(0);}100%{transform:translateY(80px);}}
+    
+    main{max-width:1200px;margin:0 auto;padding:50px 30px;position:relative;z-index:1;}
+    .page-title{font-family:'Cinzel Decorative',serif;font-size:3rem;color:var(--amber);text-align:center;margin-bottom:20px;text-shadow:3px 3px 0 var(--red-dark),0 0 30px rgba(255,170,0,0.4);letter-spacing:1px;}
+    .section-header { font-family: 'Cinzel Decorative', serif; color: var(--amber); text-align: center; margin: 60px 0 30px; font-size: 2.2rem; text-decoration: underline; }
+    
+    .books-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:36px;justify-items:center;}
+    .book-card{background:linear-gradient(145deg,var(--black-card),#162040);border:2px solid rgba(80,140,255,0.4);border-radius:22px;padding:30px 24px;text-align:center;transition:all 0.2s cubic-bezier(0.34,1.56,0.64,1);box-shadow:var(--shadow-3d),0 0 30px rgba(58,111,216,0.1);position:relative;overflow:hidden;max-width:320px;width:100%;}
+    .book-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--amber),transparent);}
+    .book-card:hover{transform:translate(-4px,-4px);box-shadow:7px 7px 0 #000,9px 9px 0 rgba(0,0,0,0.3),0 0 40px rgba(80,140,255,0.25);}
+    .book-badge{position:absolute;top:18px;right:18px;background:linear-gradient(135deg,var(--red-glow),var(--red-dark));color:white;font-family:'Cinzel',serif;font-size:0.75rem;padding:4px 10px;border-radius:20px;box-shadow:2px 2px 0 #000;letter-spacing:0.5px;}
+    .book-card h2{font-family:'Cinzel Decorative',serif;color:var(--amber);font-size:1.4rem;margin-bottom:18px;text-shadow:1px 1px 0 var(--red-dark);line-height:1.3;}
+    .book-card img{width:100%;max-height:300px;object-fit:contain;border-radius:12px;margin-bottom:18px;box-shadow:var(--shadow-3d);border:2px solid rgba(200,0,0,0.2);transition:transform 0.3s;}
+    .book-card:hover img{transform:scale(1.03);}
+    .book-card p{font-size:0.95rem;line-height:1.6;color:var(--text-muted);margin-bottom:14px;font-weight:600;min-height: 80px;}
+    .price-tag{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,rgba(255,170,0,0.15),rgba(200,0,0,0.1));border:1px solid rgba(255,170,0,0.4);color:var(--amber);font-weight:800;font-size:1.3rem;padding:8px 20px;border-radius:12px;margin-bottom:20px;font-family:'Cinzel',serif;}
+    .btn-amazon{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--red-bright),var(--red-dark));color:white;padding:13px 28px;border-radius:12px;text-decoration:none;font-weight:800;font-family:'Cinzel',serif;font-size:1rem;letter-spacing:0.5px;border:2px solid rgba(255,80,80,0.4);box-shadow:var(--shadow-3d),inset 0 1px 0 rgba(255,255,255,0.1);transition:all 0.15s cubic-bezier(0.34,1.56,0.64,1);}
+    .btn-amazon:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 #000;}
+    
+    footer{background:linear-gradient(180deg,#1a2040,#1e2a4a);color:var(--text-muted);text-align:center;padding:30px 20px;border-top:3px solid #3a6fd8;position:relative;z-index:1;margin-top:60px;}
+    footer a{color:var(--amber);font-weight:700;text-decoration:none;}
+    .footer-fb{display:inline-flex;align-items:center;gap:8px;background:rgba(255,170,0,0.08);padding:8px 16px;border-radius:8px;border:1px solid rgba(255,170,0,0.25);margin-bottom:12px;transition:all 0.2s;}
+    .footer-fb:hover{background:rgba(255,170,0,0.15);transform:translateY(-2px);}
+    @media(max-width:768px){
+      .menu-toggle{display:block;}
+      nav ul{display:none;flex-direction:column;gap:4px;background:#1e2a4a;border:2px solid #3a6fd8;border-radius:12px;padding:12px;position:absolute;top:65px;right:20px;width:220px;box-shadow:var(--shadow-3d);z-index:999;}
+      nav ul.show{display:flex;}
+      .page-title{font-size:2.2rem;}
     }
   </style>
 </head>
-
 <body>
+<div class="stars" id="stars"></div>
+<img src="images/spider.png" alt="Spider" class="hanging-spider"/>
+<header>
+  <a href="index.html" class="site-logo">🐾 Mouse's Enchanted Adventures</a>
+  <nav>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Books</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cafe-door.html" class="cafe-link">✨ Enter Café</a></li>
+    </ul>
+  </nav>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+</header>
 
-  <!-- 🕷️ Hanging Spider -->
-  <img src="images/spider.png" alt="Hanging Spider" class="hanging-spider" />
+<main>
+  <h1 class="page-title">📚 Enchanted Treasures 📚</h1>
 
-  <header>
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    <nav>
-      <ul id="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="product.html">Products</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="cafe-door.html">Enter Café</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- NEW CALENDAR BUTTON -->
+  <div class="calendar-container">
+    <a href="calander.html" class="btn-calendar">📅 View Adventure Calendar</a>
+  </div>
 
-  <main>
-    <h1>Our Books</h1>
+  <div class="books-grid">
+    <div class="book-card">
+      <div class="book-badge">Book 1</div>
+      <h2>Mouse's Enchanted Adventures</h2>
+      <img src="images/paperback.png" alt="Book 1"/>
+      <p>The magical story that started it all — Mouse's first enchanting adventure into a world of mystery.</p>
+      <div class="price-tag">C$19.99</div><br>
+      <a href="https://www.amazon.ca/dp/B0DZT81M7F" target="_blank" class="btn-amazon">🛒 Buy on Amazon</a>
+    </div>
+    <div class="book-card">
+      <div class="book-badge">Book 2</div>
+      <h2>Mouse's Enchanted Adventures – Book 2</h2>
+      <img src="images/book2.png" alt="Book 2"/>
+      <p>Continue the magic with Mouse's second thrilling adventure — deeper into the enchanted realm!</p>
+      <div class="price-tag">C$19.99</div><br>
+      <a href="https://www.amazon.ca/dp/B0GXZ9BXK4" target="_blank" class="btn-amazon">🛒 Buy on Amazon</a>
+    </div>
+    <div class="book-card">
+      <div class="book-badge">Book 3</div>
+      <h2>Mouse's Enchanted Adventures – Book 3</h2>
+      <img src="images/book 3.PNG" alt="Book 3"/>
+      <p>The adventure continues with Mouse's third magical journey into the unknown mysteries beyond!</p>
+      <div class="price-tag">C$19.99</div><br>
+      <a href="https://www.amazon.ca/dp/B0FD9HNJZL" target="_blank" class="btn-amazon">🛒 Buy on Amazon</a>
+    </div>
+  </div>
 
-    <section class="featured-books">
-      <div class="featured-book">
-        <h2>Mouse’s Enchanted Adventures - Book 1</h2>
-        <img src="images/paperback.png" alt="Book 1" />
-        <p>Enjoy the magical story of Mouse's first enchanting adventure.</p>
-        <p class="price">Price: C$19.99</p>
-        <a href="https://www.amazon.ca/dp/B0DZT81M7F" target="_blank">Buy on Amazon</a>
-      </div>
+  <h2 class="section-header">✨ Exclusive Item ✨</h2>
+  
+  <div style="display:flex;justify-content:center;align-items:center;margin:40px 0;">
+    <div class="book-card" style="max-width:320px;">
+      <h2>Magic Brew Mug</h2>
+      <img src="images/cup.png" alt="Cup"/>
+      <p>The perfect vessel for your morning tea or enchanted potions.</p>
+      <div class="price-tag">C$33.52</div><br>
+      <a href="https://square.link/u/q5h5IGCe" target="_blank" class="btn-amazon">🛒 Buy Now</a>
+    </div>
+  </div>
+</main>
 
-      <div class="featured-book">
-        <h2>Mouse’s Enchanted Adventures - Book 2</h2>
-        <img src="images/book2.png" alt="Book 2" />
-        <p>Continue the magic with Mouse’s second thrilling adventure.</p>
-        <p class="price">Price: C$19.99</p>
-        <a href="https://www.amazon.ca/dp/B0F4DQ3FCD" target="_blank">Buy on Amazon</a>
-      </div>
+<footer>
+  <a href="https://www.facebook.com/profile.php?id=61575952349929" target="_blank" class="footer-fb">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width:20px;height:20px;">
+    Follow us on Facebook
+  </a>
+  <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+</footer>
 
-      <div class="featured-book">
-        <h2>Mouse’s Enchanted Adventures - Book 3</h2>
-        <img src="images/book 3.PNG" alt="Book 3" />
-        <p>The adventure continues with Mouse’s third magical journey.</p>
-        <p class="price">Price: C$19.99</p>
-        <a href="https://www.amazon.ca/dp/B0FD9HNJZL" target="_blank">Buy on Amazon</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>
-      <a href="https://www.facebook.com/profile.php?id=61575952349929" target="_blank">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-          alt="Facebook"
-          style="width:20px;height:20px;vertical-align:middle;margin-right:8px;"
-        />
-        Follow us on Facebook
-      </a>
-    </p>
-    <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      document.getElementById("nav-menu").classList.toggle("show");
-    }
-  </script>
+<script>
+function toggleMenu(){document.getElementById('nav-menu').classList.toggle('show');}
+const sc=document.getElementById('stars');
+for(let i=0;i<60;i++){const s=document.createElement('div');s.className='star';const sz=Math.random()*2+0.5;s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${Math.random()*4+2}s;--delay:${Math.random()*5}s;`;sc.appendChild(s);}
+</script>
 </body>
 </html>

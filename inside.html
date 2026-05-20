@@ -1,189 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Inside the Enchanted Café</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0c0c0c;
-      color: #e5e5e5;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    /* ---------- HEADER ---------- */
-    header {
-      background-color: #111;
-      border-bottom: 2px solid #8a0000;
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-      position: relative;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #b30000;
-      margin-right: 15px;
-    }
-
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 18px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #e5e5e5;
-      font-weight: bold;
-      font-size: 0.95rem;
-    }
-
-    nav ul li a:hover {
-      color: #b30000;
-    }
-
-    header h1 {
-      margin-left: auto;
-      margin-right: auto;
-      font-size: 1.8rem;
-      font-family: 'Creepster', cursive;
-      color: #b30000;
-      text-shadow: 0 0 8px rgba(179,0,0,0.6);
-    }
-
-    /* ---------- IMAGE SECTION ---------- */
-    .image-section {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      background-color: #0c0c0c;
-      padding: 20px 20px 10px;
-    }
-
-    .image-section img {
-      width: 100%;
-      max-width: 1000px;
-      max-height: 520px;          /* ✅ key fix */
-      object-fit: contain;        /* keeps full image visible */
-      height: auto;
-      display: block;
-    }
-
-    /* ---------- LINKS SECTION ---------- */
-    .link-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 22px;
-      padding: 30px 20px 60px;
-    }
-
-    .link {
-      color: #b30000;
-      font-family: 'Creepster', cursive;
-      font-size: 1.4rem;
-      text-decoration: none;
-      text-shadow: 0 0 12px rgba(179,0,0,0.7);
-      transition: transform 0.3s, text-shadow 0.3s;
-    }
-
-    .link:hover {
-      transform: scale(1.1);
-      text-shadow: 0 0 16px #ff0000, 0 0 28px #b30000;
-    }
-
-    /* ---------- FOOTER ---------- */
-    footer {
-      background-color: #111;
-      color: #e5e5e5;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9rem;
-      border-top: 2px solid #8a0000;
-    }
-
-    /* ---------- RESPONSIVE ---------- */
-    @media (max-width: 768px) {
-      .menu-toggle { display: block; }
-
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: #111;
-        border-top: 2px solid #8a0000;
-        padding: 15px;
-        position: absolute;
-        top: 60px;
-        left: 20px;
-        width: 200px;
-      }
-
-      nav ul.show { display: flex; }
-
-      .image-section img {
-        max-height: 280px;   /* smaller on mobile */
-      }
-
-      .link {
-        font-size: 1.2rem;
-      }
+    :root{--red-dark:#8a0000;--red-glow:#cc0000;--red-bright:#ff3333;--amber:#ffaa00;--purple:#6600cc;--purple-light:#9933ff;--black-main:#1c2340;--black-card:#1e2a50;--text-light:#ffffff;--text-muted:#b8d0f0;--shadow-3d:4px 4px 0px #000,6px 6px 0px rgba(0,0,0,0.4);}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Nunito',sans-serif;background-color:#1a1a3e;color:var(--text-light);overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column;}
+    .stars{position:fixed;inset:0;pointer-events:none;z-index:0;}
+    .star{position:absolute;background:white;border-radius:50%;animation:twinkle var(--d,3s) var(--delay,0s) infinite;}
+    @keyframes twinkle{0%,100%{opacity:0.2;}50%{opacity:0.8;}}
+    header{background:linear-gradient(180deg,#1e2a4a,#1a2040);border-bottom:3px solid #3a6fd8;padding:0 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(58,111,216,0.4);}
+    .site-logo{font-family:'Cinzel Decorative',serif;font-size:1.5rem;color:var(--amber);text-decoration:none;text-shadow:2px 2px 0 var(--red-dark);padding:14px 0;}
+    .header-title{font-family:'Cinzel Decorative',serif;font-size:1.4rem;color:var(--amber);text-shadow:2px 2px 0 var(--red-dark);}
+    nav ul{list-style:none;display:flex;gap:4px;}
+    nav ul li a{text-decoration:none;color:var(--text-light);font-weight:700;font-family:'Cinzel',serif;font-size:0.9rem;padding:7px 12px;border-radius:8px;transition:all 0.2s;display:block;}
+    nav ul li a:hover{color:var(--amber);background:rgba(255,170,0,0.1);}
+    .menu-toggle{display:none;font-size:1.5rem;background:none;border:none;cursor:pointer;color:var(--amber);}
+    
+    main{flex:1;position:relative;z-index:1;}
+    .cafe-image-wrap{width:100%;display:flex;justify-content:center;padding:24px 20px 12px;background:linear-gradient(180deg,rgba(102,0,204,0.05),transparent);}
+    .cafe-image-wrap img{width:100%;max-width:900px;max-height:500px;object-fit:contain;border-radius:20px;box-shadow:var(--shadow-3d),0 0 40px rgba(102,0,204,0.2);border:3px solid rgba(80,140,255,0.4);}
+    
+    .activities-title{font-family:'Cinzel Decorative',serif;font-size:2rem;color:var(--amber);text-align:center;margin:36px 0 28px;text-shadow:2px 2px 0 var(--red-dark),0 0 20px rgba(255,170,0,0.3);}
+    
+    .activities-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:860px;margin:0 auto;padding:0 20px 60px;}
+    .activity-card{background:linear-gradient(145deg,var(--black-card),#162040);border:2px solid rgba(80,140,255,0.3);border-radius:20px;padding:32px 20px;text-align:center;text-decoration:none;transition:all 0.2s cubic-bezier(0.34,1.56,0.64,1);box-shadow:var(--shadow-3d),0 0 20px rgba(102,0,204,0.08);position:relative;overflow:hidden;}
+    .activity-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--amber),transparent);}
+    .activity-card:hover{transform:translate(-4px,-4px) scale(1.03);box-shadow:7px 7px 0 #000,0 0 40px rgba(80,140,255,0.25);}
+    .activity-icon{font-size:2.8rem;display:block;margin-bottom:14px;animation:bob var(--anim-d,3s) ease-in-out infinite;}
+    @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+    .activity-name{font-family:'Cinzel Decorative',serif;font-size:1.4rem;color:var(--amber);text-shadow:1px 1px 0 var(--red-dark);margin-bottom:8px;}
+    .activity-desc{font-size:0.85rem;color:var(--text-muted);font-weight:600;line-height:1.5;}
+    
+    footer{background:linear-gradient(180deg,#1a2040,#1e2a4a);color:var(--text-muted);text-align:center;padding:20px;border-top:3px solid #3a6fd8;position:relative;z-index:1;}
+    footer a{color:var(--amber);font-weight:700;text-decoration:none;}
+    @media(max-width:768px){
+      .menu-toggle{display:block;}
+      nav ul{display:none;flex-direction:column;gap:4px;background:#1e2a4a;border:2px solid #3a6fd8;border-radius:12px;padding:12px;position:absolute;top:65px;right:20px;width:220px;box-shadow:var(--shadow-3d);z-index:999;}
+      nav ul.show{display:flex;}
+      .activities-grid{grid-template-columns:1fr;max-width:340px;}
+      .header-title{display:none;}
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    <nav>
-      <ul id="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="product.html">Products</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="cafe-door.html">Enter Café</a></li>
-      </ul>
-    </nav>
-    <h1>Inside the Enchanted Café</h1>
-  </header>
-
-  <!-- IMAGE -->
-  <section class="image-section">
+<div class="stars" id="stars"></div>
+<header>
+  <a href="index.html" class="site-logo">🐾 MEA</a>
+  <div class="header-title">☕ Inside the Enchanted Café</div>
+  <nav>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Books</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="cafe-door.html">← Back to Door</a></li>
+    </ul>
+  </nav>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+</header>
+<main>
+  <section class="cafe-image-wrap">
     <img src="images/inside.png" alt="Inside the Enchanted Café">
   </section>
-
-  <!-- LINKS -->
-  <section class="link-section">
-    <a href="potion-bar.html" class="link">🧪 Potion Bar</a>
-    <a href="game.html" class="link">🎲 Game Table</a>
-    <a href="tarot.html" class="link">🔮 Tarot Reading</a>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      document.getElementById("nav-menu").classList.toggle("show");
-    }
-  </script>
+  <h2 class="activities-title">✨ What would you like to do? ✨</h2>
+  <div class="activities-grid">
+    <a href="potion-bar.html" class="activity-card">
+      <span class="activity-icon" style="--anim-d:3.2s;">🧪</span>
+      <div class="activity-name">Potion Bar</div>
+      <div class="activity-desc">Mix a magical potion and reveal your fate!</div>
+    </a>
+    <a href="game.html" class="activity-card">
+      <span class="activity-icon" style="--anim-d:2.8s;">🎲</span>
+      <div class="activity-name">Game Table</div>
+      <div class="activity-desc">Challenge Mouse or Bat in a magical game of tic-tac-toe!</div>
+    </a>
+    <a href="tarot.html" class="activity-card">
+      <span class="activity-icon" style="--anim-d:3.6s;">🔮</span>
+      <div class="activity-name">Tarot Reading</div>
+      <div class="activity-desc">Pick a card and reveal your enchanted fortune!</div>
+    </a>
+  </div>
+</main>
+<footer>
+  <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+</footer>
+<script>
+function toggleMenu(){document.getElementById('nav-menu').classList.toggle('show');}
+const sc=document.getElementById('stars');
+for(let i=0;i<60;i++){const s=document.createElement('div');s.className='star';const sz=Math.random()*2+0.5;s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${Math.random()*4+2}s;--delay:${Math.random()*5}s;`;sc.appendChild(s);}
+</script>
 </body>
 </html>

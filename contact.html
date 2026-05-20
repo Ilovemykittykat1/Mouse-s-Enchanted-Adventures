@@ -1,230 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us - Mouse's Enchanted Adventures</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Mouse's Enchanted Adventures</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0c0c0c;
-      color: #e5e5e5;
-    }
-
-    /* ---------- NAV BAR ---------- */
-    header {
-      background-color: #111;
-      padding: 12px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #8a0000;
-      position: relative;
-    }
-
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #e5e5e5;
-      font-weight: bold;
-      font-size: 0.95rem;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #b30000;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #b30000;
-    }
-
-    /* ---------- GHOST ---------- */
-    .ghost {
-      position: absolute;
-      top: 40px;
-      left: -120px;
-      width: 100px;
-      opacity: 0.9;
-      animation: floatGhost 14s linear infinite;
-      pointer-events: none;
-    }
-
-    @keyframes floatGhost {
-      0%   { left: -120px; top: 40px; opacity: 0; }
-      10%  { opacity: 1; }
-      50%  { top: 30px; }
-      90%  { opacity: 1; }
-      100% { left: 100%; top: 40px; opacity: 0; }
-    }
-
-    /* ---------- CONTACT FORM ---------- */
-    .contact-form {
-      max-width: 500px;
-      margin: 150px auto 60px auto;
-      background-color: #111;
-      padding: 30px;
-      border-radius: 15px;
-      border: 2px solid #8a0000;
-      box-shadow: 0 0 20px rgba(138, 0, 0, 0.4);
-      text-align: center;
-    }
-
-    .contact-form h2 {
-      margin-bottom: 20px;
-      font-size: 2rem;
-      color: #b30000;
-      font-family: 'Creepster', cursive, Arial, sans-serif;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0 20px;
-      border: 1px solid #333;
-      border-radius: 8px;
-      font-size: 1em;
-      background-color: #0c0c0c;
-      color: #e5e5e5;
-    }
-
-    input::placeholder,
-    textarea::placeholder {
-      color: #999;
-    }
-
-    button {
-      background-color: #8a0000;
-      color: #ffffff;
-      padding: 12px 30px;
-      border: none;
-      cursor: pointer;
-      border-radius: 8px;
-      font-size: 1.1em;
-      font-family: 'Creepster', cursive, Arial, sans-serif;
-      transition: background-color 0.3s, transform 0.3s;
-    }
-
-    button:hover {
-      background-color: #b30000;
-      transform: scale(1.05);
-    }
-
-    /* ---------- FOOTER ---------- */
-    footer {
-      background-color: #111;
-      color: #e5e5e5;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      border-top: 2px solid #8a0000;
-    }
-
-    footer a {
-      color: #b30000;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* ---------- RESPONSIVE ---------- */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
-      nav ul {
-        display: none;
-        flex-direction: column;
-        gap: 15px;
-        background-color: #111;
-        border-top: 2px solid #8a0000;
-        padding: 15px;
-        position: absolute;
-        top: 60px;
-        left: 20px;
-        width: 200px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      nav ul li a {
-        text-align: center;
-        display: block;
-      }
+    :root{--red-dark:#8a0000;--red-glow:#cc0000;--red-bright:#ff3333;--amber:#ffaa00;--purple:#6600cc;--purple-light:#9933ff;--black-main:#1c2340;--black-card:#1e2a50;--text-light:#ffffff;--text-muted:#b8d0f0;--shadow-3d:4px 4px 0px #000,6px 6px 0px rgba(0,0,0,0.4);}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Nunito',sans-serif;background-color:#1a1a3e;color:var(--text-light);overflow-x:hidden;min-height:100vh;}
+    .stars{position:fixed;inset:0;pointer-events:none;z-index:0;}
+    .star{position:absolute;background:white;border-radius:50%;animation:twinkle var(--d,3s) var(--delay,0s) infinite;}
+    @keyframes twinkle{0%,100%{opacity:0.2;}50%{opacity:0.8;}}
+    header{background:linear-gradient(180deg,#1e2a4a,#1a2040);border-bottom:3px solid #3a6fd8;padding:0 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(58,111,216,0.4);}
+    .site-logo{font-family:'Cinzel Decorative',serif;font-size:1.5rem;color:var(--amber);text-decoration:none;text-shadow:2px 2px 0 var(--red-dark);padding:14px 0;}
+    nav ul{list-style:none;display:flex;gap:4px;}
+    nav ul li a{text-decoration:none;color:var(--text-light);font-weight:700;font-family:'Cinzel',serif;font-size:0.95rem;padding:8px 14px;border-radius:8px;transition:all 0.2s;display:block;}
+    nav ul li a:hover{color:var(--amber);background:rgba(255,170,0,0.1);}
+    nav ul li a.cafe-link{background:linear-gradient(135deg,var(--red-dark),#3a6fd8);border:2px solid rgba(255,80,80,0.5);box-shadow:var(--shadow-3d);}
+    nav ul li a.cafe-link:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #000;color:var(--amber);}
+    .menu-toggle{display:none;font-size:1.5rem;background:none;border:none;cursor:pointer;color:var(--amber);}
+    
+    /* GHOST */
+    .ghost{position:fixed;top:80px;left:-120px;width:90px;pointer-events:none;animation:floatGhost 16s linear infinite;z-index:1;}
+    @keyframes floatGhost{0%{left:-120px;top:80px;opacity:0;}10%{opacity:0.8;}50%{top:60px;}90%{opacity:0.8;}100%{left:100%;top:80px;opacity:0;}}
+    
+    main{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;padding:60px 20px;}
+    .contact-wrap{max-width:560px;width:100%;}
+    .page-title{font-family:'Cinzel Decorative',serif;font-size:2.8rem;color:var(--amber);text-align:center;margin-bottom:12px;text-shadow:3px 3px 0 var(--red-dark),0 0 30px rgba(255,170,0,0.4);letter-spacing:1px;}
+    .subtitle{text-align:center;color:var(--text-muted);font-size:1rem;margin-bottom:36px;font-weight:600;}
+    .form-card{background:linear-gradient(145deg,var(--black-card),#162040);border:2px solid rgba(80,140,255,0.4);border-radius:24px;padding:40px 36px;box-shadow:var(--shadow-3d),0 0 40px rgba(58,111,216,0.15);position:relative;overflow:hidden;}
+    .form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#5090ff,var(--amber),transparent);}
+    .form-group{margin-bottom:22px;}
+    .form-group label{display:block;font-weight:700;font-family:'Cinzel',serif;color:var(--text-muted);margin-bottom:8px;font-size:0.95rem;letter-spacing:0.5px;}
+    .form-group input,.form-group textarea{width:100%;padding:14px 16px;border:2px solid rgba(80,140,255,0.25);border-radius:12px;font-size:1rem;background:rgba(255,255,255,0.04);color:var(--text-light);font-family:'Nunito',sans-serif;font-weight:600;transition:all 0.2s;outline:none;}
+    .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(200,184,232,0.4);}
+    .form-group input:focus,.form-group textarea:focus{border-color:rgba(80,140,255,0.65);background:rgba(153,51,255,0.05);box-shadow:0 0 0 3px rgba(80,140,255,0.15);}
+    .form-group textarea{resize:vertical;min-height:130px;}
+    .btn-submit{width:100%;background:linear-gradient(135deg,var(--red-bright),var(--red-dark));color:white;padding:16px;border:2px solid rgba(255,80,80,0.4);border-radius:14px;font-size:1.2rem;font-family:'Cinzel',serif;letter-spacing:1px;cursor:pointer;box-shadow:var(--shadow-3d),inset 0 1px 0 rgba(255,255,255,0.1);transition:all 0.15s cubic-bezier(0.34,1.56,0.64,1);}
+    .btn-submit:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 #000;}
+    .btn-submit:active{transform:translate(1px,1px);box-shadow:1px 1px 0 #000;}
+    footer{background:linear-gradient(180deg,#1a2040,#1e2a4a);color:var(--text-muted);text-align:center;padding:30px 20px;border-top:3px solid #3a6fd8;position:relative;z-index:1;}
+    footer a{color:var(--amber);font-weight:700;text-decoration:none;}
+    .footer-fb{display:inline-flex;align-items:center;gap:8px;background:rgba(255,170,0,0.08);padding:8px 16px;border-radius:8px;border:1px solid rgba(255,170,0,0.25);margin-bottom:12px;transition:all 0.2s;}
+    .footer-fb:hover{background:rgba(255,170,0,0.15);transform:translateY(-2px);}
+    @media(max-width:768px){
+      .menu-toggle{display:block;}
+      nav ul{display:none;flex-direction:column;gap:4px;background:#1e2a4a;border:2px solid #3a6fd8;border-radius:12px;padding:12px;position:absolute;top:65px;right:20px;width:220px;box-shadow:var(--shadow-3d);z-index:999;}
+      nav ul.show{display:flex;}
+      .form-card{padding:28px 20px;}
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    <nav>
-      <ul id="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="product.html">Products</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="cafe-door.html">Enter Café</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <img src="images/ghost.png" alt="Friendly Ghost" class="ghost" />
-
-  <main>
-    <section class="contact-form">
-      <h2>Get in Touch</h2>
+<div class="stars" id="stars"></div>
+<img src="images/ghost.png" alt="Ghost" class="ghost"/>
+<header>
+  <a href="index.html" class="site-logo">🐾 Mouse's Enchanted Adventures</a>
+  <nav>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Books</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="cafe-door.html" class="cafe-link">✨ Enter Café</a></li>
+    </ul>
+  </nav>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+</header>
+<main>
+  <div class="contact-wrap">
+    <h1 class="page-title">📬 Get in Touch</h1>
+    <p class="subtitle">Send us a magical message and we'll reply as swiftly as a bat in the night! 🦇</p>
+    <div class="form-card">
       <form action="https://formspree.io/f/xqapkayz" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
+        <div class="form-group">
+          <label>Your Name ✨</label>
+          <input type="text" name="name" placeholder="What do they call you?" required/>
+        </div>
+        <div class="form-group">
+          <label>Your Email 📧</label>
+          <input type="email" name="email" placeholder="Where shall we send the reply?" required/>
+        </div>
+        <div class="form-group">
+          <label>Your Message 🌙</label>
+          <textarea name="message" rows="5" placeholder="Whisper your message to us..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">🚀 Send Your Message!</button>
       </form>
-    </section>
-  </main>
-
-  <footer>
-    <p>
-      <a href="https://www.facebook.com/profile.php?id=61575952349929" target="_blank">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-          alt="Facebook"
-          style="width:20px;height:20px;vertical-align:middle;margin-right:8px;"
-        />
-        Follow us on Facebook
-      </a>
-    </p>
-    <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      document.getElementById("nav-menu").classList.toggle("show");
-    }
-  </script>
+    </div>
+  </div>
+</main>
+<footer>
+  <a href="https://www.facebook.com/profile.php?id=61575952349929" target="_blank" class="footer-fb">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width:20px;height:20px;">
+    Follow us on Facebook
+  </a>
+  <p>&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+</footer>
+<script>
+function toggleMenu(){document.getElementById('nav-menu').classList.toggle('show');}
+const sc=document.getElementById('stars');
+for(let i=0;i<60;i++){const s=document.createElement('div');s.className='star';const sz=Math.random()*2+0.5;s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${Math.random()*4+2}s;--delay:${Math.random()*5}s;`;sc.appendChild(s);}
+</script>
 </body>
 </html>
