@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mystic Tarot Reading – Mouse's Enchanted Adventures</title>
+  <title>Mystic Tarot Reading - Mouse's Enchanted Adventures</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{--red-dark:#8a0000;--amber:#ffaa00;--purple:#6600cc;--purple-light:#9933ff;--black-card:#1e2a50;--text-light:#ffffff;--text-muted:#b8d0f0;--shadow-3d:4px 4px 0px #000,6px 6px 0px rgba(0,0,0,0.4);--gold:#d4a843;--gold-light:#f0d080;}
@@ -20,8 +20,7 @@
     .ambient::before{content:'';position:absolute;top:20%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(102,0,204,0.08),transparent 70%);animation:ambientPulse 8s ease-in-out infinite alternate;}
     .ambient::after{content:'';position:absolute;bottom:10%;left:50%;transform:translateX(-50%);width:400px;height:400px;background:radial-gradient(circle,rgba(212,168,67,0.06),transparent 70%);animation:ambientPulse 6s ease-in-out 2s infinite alternate;}
     @keyframes ambientPulse{0%{opacity:0.5;transform:translateX(-50%) scale(0.9);}100%{opacity:1;transform:translateX(-50%) scale(1.1);}}
-main{flex:1;position:relative;z-index:1;max-width:1000px;margin:0 auto;width:100%;padding:30px 20px;text-align:center;display:flex;flex-direction:column;align-items:center;}
-    
+    main{flex:1;position:relative;z-index:1;max-width:1000px;margin:0 auto;width:100%;padding:30px 20px;text-align:center;display:flex;flex-direction:column;align-items:center;}
 
     /* Title */
     .page-title{font-family:'Cinzel Decorative',serif;font-size:2.2rem;color:var(--amber);text-align:center;margin-bottom:4px;text-shadow:3px 3px 0 var(--red-dark),0 0 30px rgba(255,170,0,0.3);letter-spacing:2px;}
@@ -152,8 +151,8 @@ main{flex:1;position:relative;z-index:1;max-width:1000px;margin:0 auto;width:100
   <!-- Reading type -->
   <div class="reading-select">
     <button class="reading-btn active" onclick="setReading('single')" id="btnSingle">✦ Single Card</button>
-    <button class="reading-btn" onclick="setReading('past')" id="btnPast">✦✦✦ Past · Present · Future</button>
-    <button class="reading-btn" onclick="setReading('mind')" id="btnMind">✦✦✦ Mind · Body · Spirit</button>
+    <button class="reading-btn" onclick="setReading('past')" id="btnPast">✦✦✦ Past, Present, Future</button>
+    <button class="reading-btn" onclick="setReading('mind')" id="btnMind">✦✦✦ Mind, Body, Spirit</button>
   </div>
 
   <div class="instruction" id="instruction">Tap the deck to draw your card...</div>
@@ -179,165 +178,165 @@ main{flex:1;position:relative;z-index:1;max-width:1000px;margin:0 auto;width:100
 
   <!-- Buttons -->
   <div class="btn-row" id="btnRow">
-    <a href="inside.html" class="btn-back">🔙 Back to Café</a>
+    <a href="inside.html" class="btn-back">🔙 Back to Cafe</a>
   </div>
 </main>
 
-<footer>&copy; 2025 Mouse's Enchanted Adventures – Mystic Tarot</footer>
+<footer>&copy; 2025 Mouse's Enchanted Adventures - Mystic Tarot</footer>
 
 <script>
 // ===== ALL 22 MAJOR ARCANA =====
 const ARCANA = [
   {
     num:"0", numeral:"0", name:"The Fool", emoji:"🤡",
-    keywords:"New beginnings · Adventure · Innocence",
-    meaning:"A brand new adventure is about to begin! The Fool reminds you to take a leap of faith and trust the journey ahead. Don't be afraid of the unknown — that's where the magic lives.",
+    keywords:"New beginnings, Adventure, Innocence",
+    meaning:"A brand new adventure is about to begin! The Fool reminds you to take a leap of faith and trust the journey ahead. Don't be afraid of the unknown. That's where the magic lives.",
     advice:"Be brave enough to start something new today, even if you don't know where it leads.",
     summary:"embrace new beginnings"
   },
   {
     num:"I", numeral:"I", name:"The Magician", emoji:"🧙",
-    keywords:"Power · Skill · Willpower",
+    keywords:"Power, Skill, Willpower",
     meaning:"You already have everything you need inside you. The Magician says your talents, creativity, and determination are your greatest tools. It's time to use them.",
     advice:"Pick one goal and put all your focus into making it happen. You have the power.",
     summary:"trust your own abilities"
   },
   {
     num:"II", numeral:"II", name:"The High Priestess", emoji:"🌙",
-    keywords:"Intuition · Mystery · Inner knowledge",
+    keywords:"Intuition, Mystery, Inner knowledge",
     meaning:"The High Priestess whispers: listen to that quiet voice inside you. Your gut feelings are trying to tell you something important. Not everything needs to be figured out with logic.",
     advice:"Take a quiet moment today and listen to what your heart is really saying.",
     summary:"listen to your intuition"
   },
   {
     num:"III", numeral:"III", name:"The Empress", emoji:"👑",
-    keywords:"Abundance · Nature · Nurturing",
+    keywords:"Abundance, Nature, Nurturing",
     meaning:"Beauty and abundance surround you! The Empress brings creativity, comfort, and growth. She reminds you to take care of yourself and the people you love.",
-    advice:"Do something creative today — draw, write, cook, garden. Let beauty flow through you.",
+    advice:"Do something creative today. Draw, write, cook, garden. Let beauty flow through you.",
     summary:"create something beautiful"
   },
   {
     num:"IV", numeral:"IV", name:"The Emperor", emoji:"🦁",
-    keywords:"Structure · Authority · Stability",
+    keywords:"Structure, Authority, Stability",
     meaning:"It's time to take charge! The Emperor brings strength, order, and confidence. You have the ability to lead and build something lasting.",
     advice:"Make a plan for something you've been putting off. Structure will set you free.",
     summary:"take charge of your path"
   },
   {
     num:"V", numeral:"V", name:"The Hierophant", emoji:"📜",
-    keywords:"Tradition · Wisdom · Teaching",
+    keywords:"Tradition, Wisdom, Teaching",
     meaning:"There's ancient wisdom waiting for you. The Hierophant says a teacher, mentor, or old book may hold the answers you seek. Sometimes the old ways carry deep truth.",
     advice:"Ask someone you respect for their advice today. Wisdom comes from those who walked before us.",
     summary:"seek wisdom from others"
   },
   {
     num:"VI", numeral:"VI", name:"The Lovers", emoji:"💕",
-    keywords:"Love · Harmony · Choices",
-    meaning:"Love and connection are in the air! The Lovers card isn't just about romance — it's about all the bonds that matter: friends, family, and the relationship you have with yourself.",
+    keywords:"Love, Harmony, Choices",
+    meaning:"Love and connection are in the air! The Lovers card isn't just about romance. It's about all the bonds that matter: friends, family, and the relationship you have with yourself.",
     advice:"Tell someone you care about how much they mean to you. Connection is everything.",
     summary:"cherish your connections"
   },
   {
     num:"VII", numeral:"VII", name:"The Chariot", emoji:"⚔️",
-    keywords:"Determination · Victory · Willpower",
+    keywords:"Determination, Victory, Willpower",
     meaning:"Nothing can stop you right now! The Chariot charges forward with unstoppable determination. You've got the willpower to overcome any obstacle in your path.",
-    advice:"Whatever challenge you're facing — charge straight at it. Victory is yours.",
+    advice:"Whatever challenge you're facing, charge straight at it. Victory is yours.",
     summary:"push through with courage"
   },
   {
     num:"VIII", numeral:"VIII", name:"Strength", emoji:"🦋",
-    keywords:"Courage · Patience · Inner strength",
-    meaning:"True strength isn't about force — it's about patience, kindness, and quiet courage. You're stronger than you know, and that gentle power will carry you through.",
+    keywords:"Courage, Patience, Inner strength",
+    meaning:"True strength isn't about force. It's about patience, kindness, and quiet courage. You're stronger than you know, and that gentle power will carry you through.",
     advice:"Be patient with yourself today. Gentle persistence wins over brute force every time.",
     summary:"find your gentle strength"
   },
   {
     num:"IX", numeral:"IX", name:"The Hermit", emoji:"🏔️",
-    keywords:"Reflection · Solitude · Inner light",
-    meaning:"Sometimes you need to step away from the noise to find clarity. The Hermit carries a lantern in the darkness — your own inner wisdom is that light.",
+    keywords:"Reflection, Solitude, Inner light",
+    meaning:"Sometimes you need to step away from the noise to find clarity. The Hermit carries a lantern in the darkness. Your own inner wisdom is that light.",
     advice:"Spend some quiet time alone today. Journal, think, breathe. The answers are inside you.",
     summary:"look inward for answers"
   },
   {
     num:"X", numeral:"X", name:"Wheel of Fortune", emoji:"🎡",
-    keywords:"Destiny · Change · Cycles",
-    meaning:"The wheel is turning! Change is coming — and it's going to be good. Life moves in cycles, and right now the wheel is spinning in your favour.",
+    keywords:"Destiny, Change, Cycles",
+    meaning:"The wheel is turning! Change is coming and it's going to be good. Life moves in cycles, and right now the wheel is spinning in your favour.",
     advice:"Embrace the changes happening around you. This is your moment of luck.",
     summary:"embrace change and luck"
   },
   {
     num:"XI", numeral:"XI", name:"Justice", emoji:"⚖️",
-    keywords:"Fairness · Truth · Balance",
+    keywords:"Fairness, Truth, Balance",
     meaning:"Justice brings balance and truth. What you put out into the world comes back to you. Be honest, be fair, and trust that the universe is keeping score.",
     advice:"Make a decision you've been avoiding. Choose what feels truly fair and right.",
     summary:"choose truth and fairness"
   },
   {
     num:"XII", numeral:"XII", name:"The Hanged Man", emoji:"🙃",
-    keywords:"Surrender · New perspective · Pause",
+    keywords:"Surrender, New perspective, Pause",
     meaning:"Sometimes you need to see the world upside down to understand it. The Hanged Man asks you to pause, let go of control, and look at your situation from a completely new angle.",
     advice:"Flip your thinking today. What if the opposite of what you believe is also true?",
     summary:"see things differently"
   },
   {
     num:"XIII", numeral:"XIII", name:"Death", emoji:"🦅",
-    keywords:"Transformation · Endings · Rebirth",
-    meaning:"Don't be scared — this card isn't about endings, it's about transformation! Like a caterpillar becoming a butterfly, something old must fall away so something beautiful can emerge.",
+    keywords:"Transformation, Endings, Rebirth",
+    meaning:"Don't be scared. This card isn't about endings, it's about transformation! Like a caterpillar becoming a butterfly, something old must fall away so something beautiful can emerge.",
     advice:"Let go of something that no longer serves you. Make room for what's coming next.",
     summary:"let go and transform"
   },
   {
     num:"XIV", numeral:"XIV", name:"Temperance", emoji:"🌈",
-    keywords:"Balance · Patience · Moderation",
+    keywords:"Balance, Patience, Moderation",
     meaning:"Temperance is the art of perfect balance. Mix your head with your heart, your work with your play, your dreams with your actions. Harmony is the secret ingredient.",
     advice:"Find the middle path today. Balance is where the magic happens.",
     summary:"find your balance"
   },
   {
     num:"XV", numeral:"XV", name:"The Devil", emoji:"⛓️",
-    keywords:"Temptation · Shadow · Breaking free",
-    meaning:"Something may be holding you back — a bad habit, a fear, or a belief that isn't true. The Devil says you have the power to break those chains. They're not as strong as you think.",
+    keywords:"Temptation, Shadow, Breaking free",
+    meaning:"Something may be holding you back. A bad habit, a fear, or a belief that isn't true. The Devil says you have the power to break those chains. They're not as strong as you think.",
     advice:"Name one thing that's been holding you back. Now take one small step to free yourself.",
     summary:"break free from what holds you"
   },
   {
     num:"XVI", numeral:"XVI", name:"The Tower", emoji:"🌩️",
-    keywords:"Sudden change · Revelation · Breakthrough",
-    meaning:"A big shake-up is coming — but don't panic! The Tower crashes down only to clear the way for something better. Sometimes things need to fall apart before they can come together in a new way.",
+    keywords:"Sudden change, Revelation, Breakthrough",
+    meaning:"A big shake-up is coming but don't panic! The Tower crashes down only to clear the way for something better. Sometimes things need to fall apart before they can come together in a new way.",
     advice:"If things feel chaotic, trust the process. The storm will pass and leave clear skies.",
     summary:"trust the storm to clear the way"
   },
   {
     num:"XVII", numeral:"XVII", name:"The Star", emoji:"⭐",
-    keywords:"Hope · Inspiration · Renewal",
+    keywords:"Hope, Inspiration, Renewal",
     meaning:"After every storm comes a star. This card is pure hope, healing, and inspiration. The universe is telling you: don't give up. Something wonderful is on its way.",
     advice:"Make a wish tonight. The Star says your hopes are being heard.",
     summary:"hold onto hope"
   },
   {
     num:"XVIII", numeral:"XVIII", name:"The Moon", emoji:"🌕",
-    keywords:"Imagination · Dreams · Illusion",
-    meaning:"The Moon lights up your dreams and imagination, but be careful — not everything is as it seems. Trust your intuition to tell the difference between what's real and what's illusion.",
+    keywords:"Imagination, Dreams, Illusion",
+    meaning:"The Moon lights up your dreams and imagination, but be careful. Not everything is as it seems. Trust your intuition to tell the difference between what's real and what's illusion.",
     advice:"Pay attention to your dreams tonight. They may hold a message for you.",
     summary:"trust your dreams"
   },
   {
     num:"XIX", numeral:"XIX", name:"The Sun", emoji:"☀️",
-    keywords:"Joy · Success · Vitality",
+    keywords:"Joy, Success, Vitality",
     meaning:"Pure sunshine! The Sun card radiates happiness, success, and warm energy. Whatever you're working on is going to shine. This is the most positive card in the whole deck!",
     advice:"Go outside, soak up some joy, and celebrate how far you've come. You deserve it!",
     summary:"celebrate your joy"
   },
   {
     num:"XX", numeral:"XX", name:"Judgement", emoji:"🔔",
-    keywords:"Reflection · Reckoning · Purpose",
-    meaning:"Judgement calls you to look back at your journey and see how much you've grown. It's time to answer a higher calling — what are you truly meant to do?",
+    keywords:"Reflection, Reckoning, Purpose",
+    meaning:"Judgement calls you to look back at your journey and see how much you've grown. It's time to answer a higher calling. What are you truly meant to do?",
     advice:"Reflect on the past year. What have you learned? Let that wisdom guide your next chapter.",
     summary:"reflect on your journey"
   },
   {
     num:"XXI", numeral:"XXI", name:"The World", emoji:"🌍",
-    keywords:"Completion · Achievement · Wholeness",
+    keywords:"Completion, Achievement, Wholeness",
     meaning:"You've come full circle! The World card means completion, achievement, and the feeling that everything is exactly as it should be. A chapter is ending beautifully.",
     advice:"Take a moment to feel proud. You've accomplished more than you realize. Then dream bigger.",
     summary:"celebrate your completeness"
@@ -345,7 +344,7 @@ const ARCANA = [
 ];
 
 // ===== STATE =====
-let readingType = 'single'; // single, past, mind
+let readingType = 'single';
 let drawnCards = [];
 let revealedCount = 0;
 let totalToDraw = 1;
@@ -494,7 +493,7 @@ function revealCard(index) {
         summaryEl.className = 'reading-summary';
         summaryEl.innerHTML = `
           <h3>✨ Your Reading ✨</h3>
-          <p>The cards tell you to <strong>${summaries[0]}</strong>, <strong>${summaries[1]}</strong>, and <strong>${summaries[2]}</strong>. Trust the journey — the universe has a plan for you.</p>
+          <p>The cards tell you to <strong>${summaries[0]}</strong>, <strong>${summaries[1]}</strong>, and <strong>${summaries[2]}</strong>. Trust the journey. The universe has a plan for you.</p>
         `;
         result.appendChild(summaryEl);
       }, 500);
