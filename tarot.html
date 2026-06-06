@@ -9,41 +9,25 @@
     :root{--red-dark:#8a0000;--amber:#ffaa00;--purple:#6600cc;--purple-light:#9933ff;--black-card:#1e2a50;--text-light:#ffffff;--text-muted:#b8d0f0;--shadow-3d:4px 4px 0px #000,6px 6px 0px rgba(0,0,0,0.4);--gold:#d4a843;--gold-light:#f0d080;}
     *{box-sizing:border-box;margin:0;padding:0;}
     body{font-family:'Nunito',sans-serif;background-color:#0d0d24;color:var(--text-light);overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column;}
-
-    /* Stars */
     .stars{position:fixed;inset:0;pointer-events:none;z-index:0;}
     .star{position:absolute;background:white;border-radius:50%;animation:twinkle var(--d,3s) var(--delay,0s) infinite;}
     @keyframes twinkle{0%,100%{opacity:0.15;}50%{opacity:0.7;}}
-
-    /* Mystic ambient glow */
     .ambient{position:fixed;inset:0;pointer-events:none;z-index:0;}
     .ambient::before{content:'';position:absolute;top:20%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(102,0,204,0.08),transparent 70%);animation:ambientPulse 8s ease-in-out infinite alternate;}
     .ambient::after{content:'';position:absolute;bottom:10%;left:50%;transform:translateX(-50%);width:400px;height:400px;background:radial-gradient(circle,rgba(212,168,67,0.06),transparent 70%);animation:ambientPulse 6s ease-in-out 2s infinite alternate;}
     @keyframes ambientPulse{0%{opacity:0.5;transform:translateX(-50%) scale(0.9);}100%{opacity:1;transform:translateX(-50%) scale(1.1);}}
     main{flex:1;position:relative;z-index:1;max-width:1000px;margin:0 auto;width:100%;padding:30px 20px;text-align:center;display:flex;flex-direction:column;align-items:center;}
-
-    /* Title */
     .page-title{font-family:'Cinzel Decorative',serif;font-size:2.2rem;color:var(--amber);text-align:center;margin-bottom:4px;text-shadow:3px 3px 0 var(--red-dark),0 0 30px rgba(255,170,0,0.3);letter-spacing:2px;}
     .page-subtitle{text-align:center;color:var(--text-muted);font-size:0.95rem;margin-bottom:8px;font-style:italic;}
-
-    /* Reading type selector */
     .reading-select{display:flex;justify-content:center;gap:12px;margin-bottom:28px;flex-wrap:wrap;}
     .reading-btn{background:linear-gradient(145deg,var(--black-card),#162040);border:2px solid rgba(80,140,255,0.3);border-radius:14px;padding:10px 20px;color:var(--text-muted);font-family:'Cinzel',serif;font-size:0.8rem;cursor:pointer;transition:all 0.2s;box-shadow:var(--shadow-3d);}
     .reading-btn:hover{border-color:var(--amber);color:var(--amber);}
     .reading-btn.active{border-color:var(--amber);color:var(--amber);background:linear-gradient(145deg,#2a1a40,#1a1040);box-shadow:0 0 20px rgba(255,170,0,0.15),var(--shadow-3d);}
-
-    /* Instruction */
     .instruction{text-align:center;color:var(--gold);font-family:'Cinzel',serif;font-size:1rem;margin-bottom:20px;min-height:28px;text-shadow:0 0 15px rgba(212,168,67,0.3);}
-
-    /* Spread labels */
     .spread-labels{display:flex;justify-content:center;gap:40px;margin-bottom:10px;flex-wrap:wrap;}
     .spread-label{font-family:'Cinzel',serif;font-size:0.75rem;color:var(--purple-light);text-transform:uppercase;letter-spacing:2px;width:130px;text-align:center;opacity:0;transition:opacity 0.5s;}
     .spread-label.show{opacity:1;}
-
-    /* Card fan / spread area */
     .spread-area{display:flex;justify-content:center;gap:24px;margin-bottom:28px;flex-wrap:wrap;min-height:220px;align-items:center;perspective:800px;}
-
-    /* The deck */
     .deck-area{display:flex;justify-content:center;margin-bottom:28px;perspective:800px;}
     .deck-stack{position:relative;width:130px;height:190px;cursor:pointer;transition:transform 0.2s;}
     .deck-stack:hover{transform:translateY(-4px);}
@@ -56,20 +40,14 @@
     .deck-card-face::after{content:'✦';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:2.5rem;color:rgba(212,168,67,0.15);}
     .deck-pattern{position:absolute;inset:0;background:repeating-conic-gradient(rgba(102,0,204,0.05) 0% 25%,transparent 0% 50%) 50% / 20px 20px;border-radius:12px;}
     .deck-label{position:absolute;bottom:-28px;font-family:'Cinzel',serif;font-size:0.7rem;color:var(--text-muted);white-space:nowrap;}
-
-    /* Tarot card (in spread) */
     .tarot-card{width:130px;height:190px;border-radius:14px;cursor:pointer;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);position:relative;transform-style:preserve-3d;}
     .tarot-card:hover:not(.flipped){transform:translateY(-8px);box-shadow:0 12px 30px rgba(102,0,204,0.3);}
     .tarot-card.flipped{cursor:default;animation:none;}
     .tarot-card.dealing{animation:dealIn 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards;opacity:0;}
     @keyframes dealIn{0%{opacity:0;transform:translateY(-40px) scale(0.8) rotateZ(-5deg);}100%{opacity:1;transform:translateY(0) scale(1) rotateZ(0);}}
-
     .card-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform 0.6s cubic-bezier(0.34,1.56,0.64,1);}
     .tarot-card.flipped .card-inner{transform:rotateY(180deg);}
-
     .card-front,.card-back{position:absolute;inset:0;border-radius:14px;backface-visibility:hidden;overflow:hidden;}
-
-    /* Card back */
     .card-back{background:linear-gradient(145deg,#1a2050,#141840);border:2px solid rgba(80,140,255,0.4);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-3d);}
     .card-back::before{content:'';position:absolute;inset:8px;border:1px solid rgba(212,168,67,0.25);border-radius:8px;}
     .card-back-inner{display:flex;flex-direction:column;align-items:center;gap:4px;}
@@ -77,8 +55,6 @@
     .card-back-dots{font-size:0.6rem;color:rgba(212,168,67,0.3);letter-spacing:4px;}
     @keyframes cardGlow{0%{opacity:0.3;filter:drop-shadow(0 0 0 transparent);}100%{opacity:0.5;filter:drop-shadow(0 0 8px rgba(212,168,67,0.3));}}
     .card-back .deck-pattern{position:absolute;inset:0;background:repeating-conic-gradient(rgba(102,0,204,0.04) 0% 25%,transparent 0% 50%) 50% / 16px 16px;border-radius:12px;}
-
-    /* Card face (revealed) */
     .card-face{background:linear-gradient(180deg,#1a1040,#0d0820);border:2px solid var(--gold);transform:rotateY(180deg);display:flex;flex-direction:column;align-items:center;padding:10px 8px;box-shadow:0 0 25px rgba(212,168,67,0.2),var(--shadow-3d);}
     .card-face::before{content:'';position:absolute;inset:6px;border:1px solid rgba(212,168,67,0.3);border-radius:8px;pointer-events:none;}
     .card-numeral{font-family:'Cinzel',serif;font-size:0.6rem;color:var(--gold);letter-spacing:2px;margin-bottom:2px;}
@@ -86,8 +62,6 @@
     .card-title{font-family:'Cinzel Decorative',serif;font-size:0.7rem;color:var(--gold);text-align:center;line-height:1.2;text-shadow:0 0 10px rgba(212,168,67,0.3);}
     .card-keywords{font-size:0.55rem;color:var(--purple-light);font-style:italic;text-align:center;margin-top:auto;line-height:1.3;padding:0 4px;}
     .card-face-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:80px;height:80px;background:radial-gradient(circle,rgba(212,168,67,0.15),transparent);pointer-events:none;}
-
-    /* Reading result */
     .reading-result{max-width:700px;margin:0 auto;width:100%;}
     .reading-card-detail{background:linear-gradient(145deg,var(--black-card),#162040);border:2px solid rgba(80,140,255,0.25);border-radius:18px;padding:22px;margin-bottom:14px;box-shadow:var(--shadow-3d);animation:slideUp 0.5s cubic-bezier(0.34,1.56,0.64,1);position:relative;overflow:hidden;}
     .reading-card-detail::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
@@ -98,31 +72,21 @@
     .rcd-name{font-family:'Cinzel Decorative',serif;font-size:1.1rem;color:var(--amber);text-shadow:1px 1px 0 var(--red-dark);}
     .rcd-meaning{color:var(--text-muted);font-size:0.9rem;line-height:1.7;font-weight:600;}
     .rcd-advice{color:var(--gold-light);font-style:italic;font-size:0.85rem;margin-top:8px;padding-left:12px;border-left:2px solid rgba(212,168,67,0.3);}
-
-    /* Summary */
     .reading-summary{background:linear-gradient(145deg,#2a1a40,#1a1040);border:2px solid rgba(212,168,67,0.3);border-radius:18px;padding:24px;margin-bottom:20px;box-shadow:0 0 30px rgba(212,168,67,0.1),var(--shadow-3d);animation:slideUp 0.5s 0.3s both;text-align:center;}
     .reading-summary h3{font-family:'Cinzel Decorative',serif;font-size:1.2rem;color:var(--amber);margin-bottom:10px;text-shadow:2px 2px 0 var(--red-dark);}
     .reading-summary p{color:var(--text-light);font-size:0.95rem;line-height:1.7;font-weight:600;}
-
-    /* Buttons */
     .btn-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:16px;}
     .btn-back{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#3a6fd8,#1a3a9a);color:white;padding:12px 28px;border-radius:12px;text-decoration:none;font-weight:800;font-family:'Cinzel',serif;font-size:1rem;border:2px solid rgba(80,140,255,0.4);box-shadow:var(--shadow-3d);transition:all 0.15s cubic-bezier(0.34,1.56,0.64,1);}
     .btn-back:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 #000;}
     .btn-again{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--purple),#440088);color:var(--amber);padding:12px 28px;border-radius:12px;text-decoration:none;font-weight:800;font-family:'Cinzel',serif;font-size:1rem;border:2px solid var(--purple-light);box-shadow:var(--shadow-3d);transition:all 0.15s cubic-bezier(0.34,1.56,0.64,1);cursor:pointer;}
     .btn-again:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 #000;}
-
-    /* Character */
     .mystic-character{text-align:center;margin-bottom:20px;animation:floatChar 4s ease-in-out infinite alternate;}
     @keyframes floatChar{0%{transform:translateY(0);}100%{transform:translateY(-8px);}}
     .mystic-emoji{font-size:3rem;filter:drop-shadow(0 0 15px rgba(153,51,255,0.4));}
     .mystic-name{font-family:'Cinzel',serif;font-size:0.8rem;color:var(--purple-light);margin-top:4px;letter-spacing:2px;}
-
     footer{background:linear-gradient(180deg,#0d0d24,#141430);color:var(--text-muted);text-align:center;padding:20px;border-top:2px solid rgba(80,140,255,0.2);position:relative;z-index:1;}
-
-    /* Reveal flash */
     .reveal-flash{position:fixed;inset:0;background:radial-gradient(circle,rgba(212,168,67,0.3),transparent 60%);pointer-events:none;z-index:100;animation:flashPulse 0.6s ease-out forwards;}
     @keyframes flashPulse{0%{opacity:1;}100%{opacity:0;}}
-
     @media(max-width:600px){
       .page-title{font-size:1.6rem;}
       .tarot-card{width:100px;height:150px;}
@@ -148,7 +112,6 @@
   <h1>🔮 Mystic Tarot Reading</h1>
   <p class="page-subtitle">The cards know what the heart cannot speak...</p>
 
-  <!-- Reading type -->
   <div class="reading-select">
     <button class="reading-btn active" onclick="setReading('single')" id="btnSingle">✦ Single Card</button>
     <button class="reading-btn" onclick="setReading('past')" id="btnPast">✦✦✦ Past, Present, Future</button>
@@ -157,7 +120,6 @@
 
   <div class="instruction" id="instruction">Tap the deck to draw your card...</div>
 
-  <!-- Deck -->
   <div class="deck-area" id="deckArea">
     <div class="deck-stack" onclick="drawCards()" id="deckStack">
       <div class="deck-card"><div class="deck-card-face"><div class="deck-pattern"></div></div></div>
@@ -167,16 +129,10 @@
     </div>
   </div>
 
-  <!-- Spread labels -->
   <div class="spread-labels" id="spreadLabels"></div>
-
-  <!-- Spread area -->
   <div class="spread-area" id="spreadArea"></div>
-
-  <!-- Reading result -->
   <div class="reading-result" id="readingResult"></div>
 
-  <!-- Buttons -->
   <div class="btn-row" id="btnRow">
     <a href="inside.html" class="btn-back">🔙 Back to Cafe</a>
   </div>
@@ -185,165 +141,96 @@
 <footer>&copy; 2025 Mouse's Enchanted Adventures - Mystic Tarot</footer>
 
 <script>
-// ===== ALL 22 MAJOR ARCANA =====
 const ARCANA = [
-  {
-    num:"0", numeral:"0", name:"The Fool", emoji:"🤡",
-    keywords:"New beginnings, Adventure, Innocence",
-    meaning:"A brand new adventure is about to begin! The Fool reminds you to take a leap of faith and trust the journey ahead. Don't be afraid of the unknown. That's where the magic lives.",
-    advice:"Be brave enough to start something new today, even if you don't know where it leads.",
-    summary:"embrace new beginnings"
-  },
-  {
-    num:"I", numeral:"I", name:"The Magician", emoji:"🧙",
-    keywords:"Power, Skill, Willpower",
-    meaning:"You already have everything you need inside you. The Magician says your talents, creativity, and determination are your greatest tools. It's time to use them.",
-    advice:"Pick one goal and put all your focus into making it happen. You have the power.",
-    summary:"trust your own abilities"
-  },
-  {
-    num:"II", numeral:"II", name:"The High Priestess", emoji:"🌙",
-    keywords:"Intuition, Mystery, Inner knowledge",
-    meaning:"The High Priestess whispers: listen to that quiet voice inside you. Your gut feelings are trying to tell you something important. Not everything needs to be figured out with logic.",
-    advice:"Take a quiet moment today and listen to what your heart is really saying.",
-    summary:"listen to your intuition"
-  },
-  {
-    num:"III", numeral:"III", name:"The Empress", emoji:"👑",
-    keywords:"Abundance, Nature, Nurturing",
-    meaning:"Beauty and abundance surround you! The Empress brings creativity, comfort, and growth. She reminds you to take care of yourself and the people you love.",
-    advice:"Do something creative today. Draw, write, cook, garden. Let beauty flow through you.",
-    summary:"create something beautiful"
-  },
-  {
-    num:"IV", numeral:"IV", name:"The Emperor", emoji:"🦁",
-    keywords:"Structure, Authority, Stability",
-    meaning:"It's time to take charge! The Emperor brings strength, order, and confidence. You have the ability to lead and build something lasting.",
-    advice:"Make a plan for something you've been putting off. Structure will set you free.",
-    summary:"take charge of your path"
-  },
-  {
-    num:"V", numeral:"V", name:"The Hierophant", emoji:"📜",
-    keywords:"Tradition, Wisdom, Teaching",
-    meaning:"There's ancient wisdom waiting for you. The Hierophant says a teacher, mentor, or old book may hold the answers you seek. Sometimes the old ways carry deep truth.",
-    advice:"Ask someone you respect for their advice today. Wisdom comes from those who walked before us.",
-    summary:"seek wisdom from others"
-  },
-  {
-    num:"VI", numeral:"VI", name:"The Lovers", emoji:"💕",
-    keywords:"Love, Harmony, Choices",
-    meaning:"Love and connection are in the air! The Lovers card isn't just about romance. It's about all the bonds that matter: friends, family, and the relationship you have with yourself.",
-    advice:"Tell someone you care about how much they mean to you. Connection is everything.",
-    summary:"cherish your connections"
-  },
-  {
-    num:"VII", numeral:"VII", name:"The Chariot", emoji:"⚔️",
-    keywords:"Determination, Victory, Willpower",
-    meaning:"Nothing can stop you right now! The Chariot charges forward with unstoppable determination. You've got the willpower to overcome any obstacle in your path.",
-    advice:"Whatever challenge you're facing, charge straight at it. Victory is yours.",
-    summary:"push through with courage"
-  },
-  {
-    num:"VIII", numeral:"VIII", name:"Strength", emoji:"🦋",
-    keywords:"Courage, Patience, Inner strength",
-    meaning:"True strength isn't about force. It's about patience, kindness, and quiet courage. You're stronger than you know, and that gentle power will carry you through.",
-    advice:"Be patient with yourself today. Gentle persistence wins over brute force every time.",
-    summary:"find your gentle strength"
-  },
-  {
-    num:"IX", numeral:"IX", name:"The Hermit", emoji:"🏔️",
-    keywords:"Reflection, Solitude, Inner light",
-    meaning:"Sometimes you need to step away from the noise to find clarity. The Hermit carries a lantern in the darkness. Your own inner wisdom is that light.",
-    advice:"Spend some quiet time alone today. Journal, think, breathe. The answers are inside you.",
-    summary:"look inward for answers"
-  },
-  {
-    num:"X", numeral:"X", name:"Wheel of Fortune", emoji:"🎡",
-    keywords:"Destiny, Change, Cycles",
-    meaning:"The wheel is turning! Change is coming and it's going to be good. Life moves in cycles, and right now the wheel is spinning in your favour.",
-    advice:"Embrace the changes happening around you. This is your moment of luck.",
-    summary:"embrace change and luck"
-  },
-  {
-    num:"XI", numeral:"XI", name:"Justice", emoji:"⚖️",
-    keywords:"Fairness, Truth, Balance",
-    meaning:"Justice brings balance and truth. What you put out into the world comes back to you. Be honest, be fair, and trust that the universe is keeping score.",
-    advice:"Make a decision you've been avoiding. Choose what feels truly fair and right.",
-    summary:"choose truth and fairness"
-  },
-  {
-    num:"XII", numeral:"XII", name:"The Hanged Man", emoji:"🙃",
-    keywords:"Surrender, New perspective, Pause",
-    meaning:"Sometimes you need to see the world upside down to understand it. The Hanged Man asks you to pause, let go of control, and look at your situation from a completely new angle.",
-    advice:"Flip your thinking today. What if the opposite of what you believe is also true?",
-    summary:"see things differently"
-  },
-  {
-    num:"XIII", numeral:"XIII", name:"Death", emoji:"🦅",
-    keywords:"Transformation, Endings, Rebirth",
-    meaning:"Don't be scared. This card isn't about endings, it's about transformation! Like a caterpillar becoming a butterfly, something old must fall away so something beautiful can emerge.",
-    advice:"Let go of something that no longer serves you. Make room for what's coming next.",
-    summary:"let go and transform"
-  },
-  {
-    num:"XIV", numeral:"XIV", name:"Temperance", emoji:"🌈",
-    keywords:"Balance, Patience, Moderation",
-    meaning:"Temperance is the art of perfect balance. Mix your head with your heart, your work with your play, your dreams with your actions. Harmony is the secret ingredient.",
-    advice:"Find the middle path today. Balance is where the magic happens.",
-    summary:"find your balance"
-  },
-  {
-    num:"XV", numeral:"XV", name:"The Devil", emoji:"⛓️",
-    keywords:"Temptation, Shadow, Breaking free",
-    meaning:"Something may be holding you back. A bad habit, a fear, or a belief that isn't true. The Devil says you have the power to break those chains. They're not as strong as you think.",
-    advice:"Name one thing that's been holding you back. Now take one small step to free yourself.",
-    summary:"break free from what holds you"
-  },
-  {
-    num:"XVI", numeral:"XVI", name:"The Tower", emoji:"🌩️",
-    keywords:"Sudden change, Revelation, Breakthrough",
-    meaning:"A big shake-up is coming but don't panic! The Tower crashes down only to clear the way for something better. Sometimes things need to fall apart before they can come together in a new way.",
-    advice:"If things feel chaotic, trust the process. The storm will pass and leave clear skies.",
-    summary:"trust the storm to clear the way"
-  },
-  {
-    num:"XVII", numeral:"XVII", name:"The Star", emoji:"⭐",
-    keywords:"Hope, Inspiration, Renewal",
-    meaning:"After every storm comes a star. This card is pure hope, healing, and inspiration. The universe is telling you: don't give up. Something wonderful is on its way.",
-    advice:"Make a wish tonight. The Star says your hopes are being heard.",
-    summary:"hold onto hope"
-  },
-  {
-    num:"XVIII", numeral:"XVIII", name:"The Moon", emoji:"🌕",
-    keywords:"Imagination, Dreams, Illusion",
-    meaning:"The Moon lights up your dreams and imagination, but be careful. Not everything is as it seems. Trust your intuition to tell the difference between what's real and what's illusion.",
-    advice:"Pay attention to your dreams tonight. They may hold a message for you.",
-    summary:"trust your dreams"
-  },
-  {
-    num:"XIX", numeral:"XIX", name:"The Sun", emoji:"☀️",
-    keywords:"Joy, Success, Vitality",
-    meaning:"Pure sunshine! The Sun card radiates happiness, success, and warm energy. Whatever you're working on is going to shine. This is the most positive card in the whole deck!",
-    advice:"Go outside, soak up some joy, and celebrate how far you've come. You deserve it!",
-    summary:"celebrate your joy"
-  },
-  {
-    num:"XX", numeral:"XX", name:"Judgement", emoji:"🔔",
-    keywords:"Reflection, Reckoning, Purpose",
-    meaning:"Judgement calls you to look back at your journey and see how much you've grown. It's time to answer a higher calling. What are you truly meant to do?",
-    advice:"Reflect on the past year. What have you learned? Let that wisdom guide your next chapter.",
-    summary:"reflect on your journey"
-  },
-  {
-    num:"XXI", numeral:"XXI", name:"The World", emoji:"🌍",
-    keywords:"Completion, Achievement, Wholeness",
-    meaning:"You've come full circle! The World card means completion, achievement, and the feeling that everything is exactly as it should be. A chapter is ending beautifully.",
-    advice:"Take a moment to feel proud. You've accomplished more than you realize. Then dream bigger.",
-    summary:"celebrate your completeness"
-  },
+  // ===== MAJOR ARCANA =====
+  {num:"0",numeral:"0",name:"The Fool",emoji:"🤡",keywords:"New beginnings, Adventure, Innocence",meaning:"A brand new adventure is about to begin! The Fool reminds you to take a leap of faith and trust the journey ahead. Don't be afraid of the unknown. That's where the magic lives.",advice:"Be brave enough to start something new today, even if you don't know where it leads.",summary:"embrace new beginnings"},
+  {num:"I",numeral:"I",name:"The Magician",emoji:"🧙",keywords:"Power, Skill, Willpower",meaning:"You already have everything you need inside you. The Magician says your talents, creativity, and determination are your greatest tools. It's time to use them.",advice:"Pick one goal and put all your focus into making it happen. You have the power.",summary:"trust your own abilities"},
+  {num:"II",numeral:"II",name:"The High Priestess",emoji:"🌙",keywords:"Intuition, Mystery, Inner knowledge",meaning:"The High Priestess whispers: listen to that quiet voice inside you. Your gut feelings are trying to tell you something important. Not everything needs to be figured out with logic.",advice:"Take a quiet moment today and listen to what your heart is really saying.",summary:"listen to your intuition"},
+  {num:"III",numeral:"III",name:"The Empress",emoji:"👑",keywords:"Abundance, Nature, Nurturing",meaning:"Beauty and abundance surround you! The Empress brings creativity, comfort, and growth. She reminds you to take care of yourself and the people you love.",advice:"Do something creative today. Draw, write, cook, garden. Let beauty flow through you.",summary:"create something beautiful"},
+  {num:"IV",numeral:"IV",name:"The Emperor",emoji:"🦁",keywords:"Structure, Authority, Stability",meaning:"It's time to take charge! The Emperor brings strength, order, and confidence. You have the ability to lead and build something lasting.",advice:"Make a plan for something you've been putting off. Structure will set you free.",summary:"take charge of your path"},
+  {num:"V",numeral:"V",name:"The Hierophant",emoji:"📜",keywords:"Tradition, Wisdom, Teaching",meaning:"There's ancient wisdom waiting for you. The Hierophant says a teacher, mentor, or old book may hold the answers you seek. Sometimes the old ways carry deep truth.",advice:"Ask someone you respect for their advice today. Wisdom comes from those who walked before us.",summary:"seek wisdom from others"},
+  {num:"VI",numeral:"VI",name:"The Lovers",emoji:"💕",keywords:"Love, Harmony, Choices",meaning:"Love and connection are in the air! The Lovers card isn't just about romance. It's about all the bonds that matter: friends, family, and the relationship you have with yourself.",advice:"Tell someone you care about how much they mean to you. Connection is everything.",summary:"cherish your connections"},
+  {num:"VII",numeral:"VII",name:"The Chariot",emoji:"⚔️",keywords:"Determination, Victory, Willpower",meaning:"Nothing can stop you right now! The Chariot charges forward with unstoppable determination. You've got the willpower to overcome any obstacle in your path.",advice:"Whatever challenge you're facing, charge straight at it. Victory is yours.",summary:"push through with courage"},
+  {num:"VIII",numeral:"VIII",name:"Strength",emoji:"🦋",keywords:"Courage, Patience, Inner strength",meaning:"True strength isn't about force. It's about patience, kindness, and quiet courage. You're stronger than you know, and that gentle power will carry you through.",advice:"Be patient with yourself today. Gentle persistence wins over brute force every time.",summary:"find your gentle strength"},
+  {num:"IX",numeral:"IX",name:"The Hermit",emoji:"🏔️",keywords:"Reflection, Solitude, Inner light",meaning:"Sometimes you need to step away from the noise to find clarity. The Hermit carries a lantern in the darkness. Your own inner wisdom is that light.",advice:"Spend some quiet time alone today. Journal, think, breathe. The answers are inside you.",summary:"look inward for answers"},
+  {num:"X",numeral:"X",name:"Wheel of Fortune",emoji:"🎡",keywords:"Destiny, Change, Cycles",meaning:"The wheel is turning! Change is coming and it's going to be good. Life moves in cycles, and right now the wheel is spinning in your favour.",advice:"Embrace the changes happening around you. This is your moment of luck.",summary:"embrace change and luck"},
+  {num:"XI",numeral:"XI",name:"Justice",emoji:"⚖️",keywords:"Fairness, Truth, Balance",meaning:"Justice brings balance and truth. What you put out into the world comes back to you. Be honest, be fair, and trust that the universe is keeping score.",advice:"Make a decision you've been avoiding. Choose what feels truly fair and right.",summary:"choose truth and fairness"},
+  {num:"XII",numeral:"XII",name:"The Hanged Man",emoji:"🙃",keywords:"Surrender, New perspective, Pause",meaning:"Sometimes you need to see the world upside down to understand it. The Hanged Man asks you to pause, let go of control, and look at your situation from a completely new angle.",advice:"Flip your thinking today. What if the opposite of what you believe is also true?",summary:"see things differently"},
+  {num:"XIII",numeral:"XIII",name:"Death",emoji:"🦅",keywords:"Transformation, Endings, Rebirth",meaning:"Don't be scared. This card isn't about endings, it's about transformation! Like a caterpillar becoming a butterfly, something old must fall away so something beautiful can emerge.",advice:"Let go of something that no longer serves you. Make room for what's coming next.",summary:"let go and transform"},
+  {num:"XIV",numeral:"XIV",name:"Temperance",emoji:"🌈",keywords:"Balance, Patience, Moderation",meaning:"Temperance is the art of perfect balance. Mix your head with your heart, your work with your play, your dreams with your actions. Harmony is the secret ingredient.",advice:"Find the middle path today. Balance is where the magic happens.",summary:"find your balance"},
+  {num:"XV",numeral:"XV",name:"The Devil",emoji:"⛓️",keywords:"Temptation, Shadow, Breaking free",meaning:"Something may be holding you back. A bad habit, a fear, or a belief that isn't true. The Devil says you have the power to break those chains. They're not as strong as you think.",advice:"Name one thing that's been holding you back. Now take one small step to free yourself.",summary:"break free from what holds you"},
+  {num:"XVI",numeral:"XVI",name:"The Tower",emoji:"🌩️",keywords:"Sudden change, Revelation, Breakthrough",meaning:"A big shake-up is coming but don't panic! The Tower crashes down only to clear the way for something better. Sometimes things need to fall apart before they can come together in a new way.",advice:"If things feel chaotic, trust the process. The storm will pass and leave clear skies.",summary:"trust the storm to clear the way"},
+  {num:"XVII",numeral:"XVII",name:"The Star",emoji:"⭐",keywords:"Hope, Inspiration, Renewal",meaning:"After every storm comes a star. This card is pure hope, healing, and inspiration. The universe is telling you: don't give up. Something wonderful is on its way.",advice:"Make a wish tonight. The Star says your hopes are being heard.",summary:"hold onto hope"},
+  {num:"XVIII",numeral:"XVIII",name:"The Moon",emoji:"🌕",keywords:"Imagination, Dreams, Illusion",meaning:"The Moon lights up your dreams and imagination, but be careful. Not everything is as it seems. Trust your intuition to tell the difference between what's real and what's illusion.",advice:"Pay attention to your dreams tonight. They may hold a message for you.",summary:"trust your dreams"},
+  {num:"XIX",numeral:"XIX",name:"The Sun",emoji:"☀️",keywords:"Joy, Success, Vitality",meaning:"Pure sunshine! The Sun card radiates happiness, success, and warm energy. Whatever you're working on is going to shine. This is the most positive card in the whole deck!",advice:"Go outside, soak up some joy, and celebrate how far you've come. You deserve it!",summary:"celebrate your joy"},
+  {num:"XX",numeral:"XX",name:"Judgement",emoji:"🔔",keywords:"Reflection, Reckoning, Purpose",meaning:"Judgement calls you to look back at your journey and see how much you've grown. It's time to answer a higher calling. What are you truly meant to do?",advice:"Reflect on the past year. What have you learned? Let that wisdom guide your next chapter.",summary:"reflect on your journey"},
+  {num:"XXI",numeral:"XXI",name:"The World",emoji:"🌍",keywords:"Completion, Achievement, Wholeness",meaning:"You've come full circle! The World card means completion, achievement, and the feeling that everything is exactly as it should be. A chapter is ending beautifully.",advice:"Take a moment to feel proud. You've accomplished more than you realize. Then dream bigger.",summary:"celebrate your completeness"},
+
+  // ===== WANDS =====
+  {num:"W1",numeral:"Ace",name:"Ace of Wands",emoji:"🪄",keywords:"Inspiration, New spark, Creative energy",meaning:"A brilliant new idea is igniting inside you! The Ace of Wands is the spark of pure creative fire. Something exciting is beginning and it starts with one brave step forward.",advice:"Act on that idea today before the spark fades. Energy is everything right now.",summary:"ignite your creative spark"},
+  {num:"W2",numeral:"Two",name:"Two of Wands",emoji:"🌐",keywords:"Planning, Vision, Bold choices",meaning:"You're standing at a crossroads with the whole world in front of you. The Two of Wands says you have the power to go anywhere and do anything. The question is: what do you truly want?",advice:"Map out your next big goal today. Dream big and then take the first step.",summary:"plan your next bold move"},
+  {num:"W3",numeral:"Three",name:"Three of Wands",emoji:"⛵",keywords:"Expansion, Foresight, Progress",meaning:"Your efforts are beginning to pay off and good things are coming from far away. The Three of Wands says your plans are in motion. Keep your eyes on the horizon with confidence.",advice:"Trust the process. What you've been working on is already moving toward you.",summary:"trust what is on its way"},
+  {num:"W4",numeral:"Four",name:"Four of Wands",emoji:"🎉",keywords:"Celebration, Home, Milestone",meaning:"It's time to celebrate! The Four of Wands brings joy, community, and the warm feeling of a milestone reached. You've earned this moment of happiness and belonging.",advice:"Gather the people you love and celebrate how far you've come together.",summary:"celebrate your milestone"},
+  {num:"W5",numeral:"Five",name:"Five of Wands",emoji:"🤼",keywords:"Conflict, Competition, Challenge",meaning:"Things feel a bit chaotic and competitive right now. The Five of Wands shows a clash of energy but this is actually healthy. Friction creates growth when you stay focused.",advice:"Don't back down from the challenge but make sure you're fighting for the right reasons.",summary:"rise above the competition"},
+  {num:"W6",numeral:"Six",name:"Six of Wands",emoji:"🏆",keywords:"Victory, Recognition, Success",meaning:"You've done it! The Six of Wands is the victory card. Your hard work is being noticed and celebrated by others. Hold your head high because you've earned this success.",advice:"Accept the recognition you deserve today. Own your achievements with pride.",summary:"own your well-earned victory"},
+  {num:"W7",numeral:"Seven",name:"Seven of Wands",emoji:"🛡️",keywords:"Perseverance, Defense, Standing firm",meaning:"You're at the top and people are challenging you. The Seven of Wands says hold your ground! You've worked hard for what you have. Stand firm in your values and don't give up.",advice:"Defend what matters to you today. You have every right to protect what you've built.",summary:"stand your ground with courage"},
+  {num:"W8",numeral:"Eight",name:"Eight of Wands",emoji:"💨",keywords:"Speed, Movement, Quick action",meaning:"Everything is happening fast! The Eight of Wands brings rapid movement, exciting news, and swift progress. What felt stuck is now flying. Get ready for things to speed up.",advice:"Move quickly on any opportunities coming your way. Timing matters right now.",summary:"move fast and seize the moment"},
+  {num:"W9",numeral:"Nine",name:"Nine of Wands",emoji:"🧱",keywords:"Resilience, Endurance, Last push",meaning:"You're tired but you're almost there. The Nine of Wands says you've been through a lot and you're still standing. That takes serious strength. Don't give up when you're this close.",advice:"Take a breath, rest if you need to, then give it one more push. The finish line is near.",summary:"keep going, you are almost there"},
+  {num:"W10",numeral:"Ten",name:"Ten of Wands",emoji:"🎒",keywords:"Burden, Overwhelm, Responsibility",meaning:"You're carrying too much right now. The Ten of Wands says it's okay to put some things down. Not everything has to be done by you alone. Ask for help and let go of what isn't yours to carry.",advice:"Delegate, simplify, or release one responsibility today. You don't have to do it all.",summary:"put down what is not yours to carry"},
+  {num:"W11",numeral:"Page",name:"Page of Wands",emoji:"🌟",keywords:"Enthusiasm, Curiosity, New ideas",meaning:"The Page of Wands is bursting with excitement and fresh ideas! This card says embrace your curiosity and try something completely new. Every expert started exactly where you are.",advice:"Start that project you've been thinking about. Your enthusiasm is your greatest asset.",summary:"follow your excitement fearlessly"},
+  {num:"W12",numeral:"Knight",name:"Knight of Wands",emoji:"🐎",keywords:"Action, Adventure, Passion",meaning:"The Knight of Wands charges in full of fire and passion! This card brings bold energy, daring adventures, and the courage to go after what you want without hesitation.",advice:"Go after what you want with everything you've got. Bold action brings bold results.",summary:"charge ahead with passion"},
+  {num:"W13",numeral:"Queen",name:"Queen of Wands",emoji:"🌻",keywords:"Confidence, Creativity, Charisma",meaning:"The Queen of Wands is magnetic, creative, and completely herself. This card says shine bright, lead with warmth, and trust your creative vision. Others are drawn to your light.",advice:"Step into your full power today. Be confident, be creative, and be unapologetically you.",summary:"shine with confidence and warmth"},
+  {num:"W14",numeral:"King",name:"King of Wands",emoji:"🦊",keywords:"Leadership, Vision, Boldness",meaning:"The King of Wands is a natural leader with a bold vision and the charisma to inspire others. This card says lead with passion, think big, and trust your instincts to guide the way.",advice:"Take the lead on something important today. Your vision and energy can inspire everyone around you.",summary:"lead with bold vision"},
+
+  // ===== CUPS =====
+  {num:"C1",numeral:"Ace",name:"Ace of Cups",emoji:"💧",keywords:"Love, New feelings, Emotional beginning",meaning:"Your heart is opening to something beautiful. The Ace of Cups brings a flood of love, compassion, and emotional renewal. This is the start of a deeply meaningful connection or feeling.",advice:"Open your heart today. Be willing to give and receive love fully.",summary:"open your heart to love"},
+  {num:"C2",numeral:"Two",name:"Two of Cups",emoji:"💑",keywords:"Partnership, Connection, Mutual love",meaning:"The Two of Cups is one of the most beautiful cards in the deck. It speaks of deep connection, mutual respect, and a bond built on true love and understanding.",advice:"Nurture the most important relationships in your life. Tell someone what they mean to you.",summary:"cherish your deepest bond"},
+  {num:"C3",numeral:"Three",name:"Three of Cups",emoji:"🥂",keywords:"Friendship, Celebration, Community",meaning:"It's time to celebrate with the people you love! The Three of Cups is all about joy, laughter, and the magic that happens when good friends come together.",advice:"Reach out to your closest friends today. Shared joy is doubled joy.",summary:"celebrate with your people"},
+  {num:"C4",numeral:"Four",name:"Four of Cups",emoji:"😑",keywords:"Contemplation, Apathy, Reassessment",meaning:"You might be feeling a little bored or disconnected right now. The Four of Cups says look up! There may be something wonderful being offered to you that you haven't noticed yet.",advice:"Look around with fresh eyes today. What blessings have you been taking for granted?",summary:"look up and notice what is offered"},
+  {num:"C5",numeral:"Five",name:"Five of Cups",emoji:"😢",keywords:"Loss, Grief, Regret",meaning:"It's okay to grieve what didn't work out. The Five of Cups honours your sadness. But notice: not everything is lost. There are still cups standing behind you full of possibility.",advice:"Allow yourself to feel sad, then gently turn around. What remains is still worth cherishing.",summary:"grieve and then turn toward hope"},
+  {num:"C6",numeral:"Six",name:"Six of Cups",emoji:"🧸",keywords:"Nostalgia, Innocence, Happy memories",meaning:"The Six of Cups takes you back to simpler, sweeter times. Fond memories and childhood joy are calling to you. This card brings warmth, innocence, and a touch of nostalgia.",advice:"Revisit something from your past that made you happy. Let it fill you with warmth today.",summary:"revisit the joy of simpler times"},
+  {num:"C7",numeral:"Seven",name:"Seven of Cups",emoji:"🌈",keywords:"Dreams, Fantasy, Choices",meaning:"Your imagination is running wild right now! The Seven of Cups brings daydreams and big visions but warns you to choose wisely. Not every shiny option is as good as it looks.",advice:"Write down your top three goals and focus on the one that's truly yours to pursue.",summary:"choose your dream wisely"},
+  {num:"C8",numeral:"Eight",name:"Eight of Cups",emoji:"🌊",keywords:"Moving on, Letting go, Searching deeper",meaning:"Something that once made you happy no longer fills your soul. The Eight of Cups says it's time to walk away and search for something more meaningful. This is brave, not sad.",advice:"Have the courage to leave behind what no longer feeds your spirit. Something better awaits.",summary:"walk away toward something deeper"},
+  {num:"C9",numeral:"Nine",name:"Nine of Cups",emoji:"😍",keywords:"Wishes fulfilled, Contentment, Satisfaction",meaning:"Your wish is about to come true! The Nine of Cups is known as the wish card. It brings deep satisfaction and the joy of having exactly what you hoped for.",advice:"Feel grateful for what you already have. The more you appreciate, the more arrives.",summary:"your wish is coming true"},
+  {num:"C10",numeral:"Ten",name:"Ten of Cups",emoji:"🌅",keywords:"Harmony, Family, Happiness",meaning:"This is the card of true happiness and emotional fulfillment. The Ten of Cups shows a life filled with love, belonging, and harmony. Everything your heart truly wants is possible.",advice:"Look at the love in your life right now and let yourself feel completely grateful.",summary:"embrace your true happiness"},
+  {num:"C11",numeral:"Page",name:"Page of Cups",emoji:"🐟",keywords:"Creativity, Intuition, Gentle heart",meaning:"The Page of Cups is sweet, imaginative, and deeply intuitive. This card invites you to follow your heart, trust your creative instincts, and stay open to unexpected messages.",advice:"Pay attention to your feelings and hunches today. Your intuition is sending you something special.",summary:"follow your gentle intuition"},
+  {num:"C12",numeral:"Knight",name:"Knight of Cups",emoji:"🌹",keywords:"Romance, Following the heart, Charm",meaning:"The Knight of Cups rides in on a wave of romance and idealism. This card says follow your heart even if it seems impractical. Love and beauty are worth pursuing with all you have.",advice:"Do something romantic or creative today. Let your heart lead the way.",summary:"follow your heart with devotion"},
+  {num:"C13",numeral:"Queen",name:"Queen of Cups",emoji:"🐚",keywords:"Compassion, Empathy, Nurturing",meaning:"The Queen of Cups overflows with empathy, warmth, and emotional wisdom. This card says trust your feelings, offer kindness to others, and be gentle with your own heart too.",advice:"Take care of someone today, including yourself. Your compassion is a gift to the world.",summary:"lead with love and compassion"},
+  {num:"C14",numeral:"King",name:"King of Cups",emoji:"🌊",keywords:"Emotional wisdom, Calm, Diplomacy",meaning:"The King of Cups is the master of his emotions. This card brings calm, wise, and compassionate leadership. You have the ability to navigate even the most emotional situations with grace.",advice:"Stay calm and wise today even when feelings run high. Your steady heart is your greatest strength.",summary:"lead with calm emotional wisdom"},
+
+  // ===== SWORDS =====
+  {num:"S1",numeral:"Ace",name:"Ace of Swords",emoji:"⚡",keywords:"Clarity, Truth, Breakthrough",meaning:"A breakthrough is cutting through the fog! The Ace of Swords brings razor-sharp clarity, truth, and the power of a brand new idea. See things as they truly are and speak your truth.",advice:"Name the truth you've been avoiding. Clarity is the most powerful tool you have.",summary:"cut through to the truth"},
+  {num:"S2",numeral:"Two",name:"Two of Swords",emoji:"🙈",keywords:"Indecision, Avoidance, Stalemate",meaning:"You're stuck between two choices and it feels impossible to decide. The Two of Swords says you can't stay here forever. It's time to remove the blindfold and face the truth.",advice:"Make that decision you've been avoiding. Any move forward is better than staying stuck.",summary:"face the choice you have been avoiding"},
+  {num:"S3",numeral:"Three",name:"Three of Swords",emoji:"💔",keywords:"Heartbreak, Grief, Pain",meaning:"This card honours real heartbreak and pain. The Three of Swords says it's okay to cry and grieve. Healing begins the moment you allow yourself to fully feel what hurts.",advice:"Be gentle with yourself today. Grief is just love with nowhere to go and it will heal.",summary:"allow yourself to heal from pain"},
+  {num:"S4",numeral:"Four",name:"Four of Swords",emoji:"😴",keywords:"Rest, Recovery, Stillness",meaning:"You need rest and you deserve it. The Four of Swords says step back from the chaos and give your mind and body time to recover. Stillness is not laziness. It's necessary healing.",advice:"Rest today without guilt. Sleep, be still, and let yourself fully recharge.",summary:"rest and restore your energy"},
+  {num:"S5",numeral:"Five",name:"Five of Swords",emoji:"😤",keywords:"Conflict, Defeat, Letting go",meaning:"Not every battle is worth winning. The Five of Swords says even if you won, at what cost? Sometimes the wisest thing is to walk away from a conflict and choose peace instead.",advice:"Ask yourself if this fight is truly worth it. Sometimes walking away is the real victory.",summary:"choose peace over winning"},
+  {num:"S6",numeral:"Six",name:"Six of Swords",emoji:"🚣",keywords:"Transition, Moving forward, Calmer waters",meaning:"You're moving away from turbulent times toward calmer, smoother waters. The Six of Swords says the hardest part is behind you. Keep moving forward even if it feels slow.",advice:"Trust that you are heading somewhere better. The journey is worth it.",summary:"move toward calmer waters"},
+  {num:"S7",numeral:"Seven",name:"Seven of Swords",emoji:"🦊",keywords:"Strategy, Deception, Cunning",meaning:"Something sneaky is going on, either from someone else or maybe your own avoidance of a situation. The Seven of Swords says be clever but be honest. Shortcuts rarely work long-term.",advice:"Be honest with yourself and others today. Integrity will serve you far better than cleverness.",summary:"choose honesty over shortcuts"},
+  {num:"S8",numeral:"Eight",name:"Eight of Swords",emoji:"🪢",keywords:"Restriction, Self-limiting beliefs, Trapped",meaning:"You feel trapped but the blindfold is something you can remove yourself. The Eight of Swords says the limitations holding you back are mostly in your own mind. You have more freedom than you think.",advice:"Challenge one belief that's been holding you back. You are far less trapped than you feel.",summary:"free yourself from your own limits"},
+  {num:"S9",numeral:"Nine",name:"Nine of Swords",emoji:"😰",keywords:"Anxiety, Worry, Nightmares",meaning:"The Nine of Swords is the card of anxious thoughts and late-night worries. Know this: most of what you fear will never happen. Your mind is creating monsters in the dark.",advice:"Write down your worries tonight, then ask how many of them are truly real. Rest, breathe, release.",summary:"release the worry from your mind"},
+  {num:"S10",numeral:"Ten",name:"Ten of Swords",emoji:"🌄",keywords:"Painful ending, Rock bottom, New dawn",meaning:"Something has come to its painful end but look at the sky in this card. It's a new dawn! The Ten of Swords says the worst is over. From rock bottom, the only way is up.",advice:"Accept the ending. It is making room for something completely new to rise.",summary:"the worst is over, rise again"},
+  {num:"S11",numeral:"Page",name:"Page of Swords",emoji:"🔍",keywords:"Curiosity, Sharp mind, New ideas",meaning:"The Page of Swords is quick, clever, and full of ideas. This card brings mental energy, curiosity, and a desire to learn everything. Ask questions, investigate, and speak up.",advice:"Speak your truth today even if your voice shakes. Your ideas are worth sharing.",summary:"speak up with sharp confidence"},
+  {num:"S12",numeral:"Knight",name:"Knight of Swords",emoji:"🌪️",keywords:"Ambition, Speed, Directness",meaning:"The Knight of Swords charges in fast and direct with no time to waste. This card brings fierce ambition, rapid action, and the courage to go after what you want immediately.",advice:"Move fast and be direct today. Don't overthink it. Act.",summary:"act with speed and boldness"},
+  {num:"S13",numeral:"Queen",name:"Queen of Swords",emoji:"🦢",keywords:"Clarity, Independence, Sharp truth",meaning:"The Queen of Swords is brilliant, clear-eyed, and refuses to be deceived. This card says cut through the nonsense, speak the truth, and trust your sharp, independent mind.",advice:"Be clear and honest in all your communications today. The truth said kindly is always the best path.",summary:"speak your truth with clarity"},
+  {num:"S14",numeral:"King",name:"King of Swords",emoji:"🦅",keywords:"Authority, Logic, Fairness",meaning:"The King of Swords leads with logic, fairness, and unwavering authority. This card says think clearly, speak truthfully, and make decisions based on facts rather than fear.",advice:"Make that important decision today using logic and fairness as your guide.",summary:"decide with logic and fairness"},
+
+  // ===== PENTACLES =====
+  {num:"P1",numeral:"Ace",name:"Ace of Pentacles",emoji:"🌱",keywords:"New opportunity, Abundance, Manifestation",meaning:"A wonderful new opportunity for abundance is arriving! The Ace of Pentacles plants a seed of financial or practical growth. This is your invitation to build something real and lasting.",advice:"Take one practical step toward a goal today. Small actions create lasting abundance.",summary:"plant the seed of abundance"},
+  {num:"P2",numeral:"Two",name:"Two of Pentacles",emoji:"⚖️",keywords:"Balance, Juggling, Adaptability",meaning:"You're juggling a lot right now but you're doing it! The Two of Pentacles says stay flexible, keep your sense of humor, and trust that you can manage more than you think.",advice:"Prioritize the most important things today. You don't have to do everything at once.",summary:"balance what matters most"},
+  {num:"P3",numeral:"Three",name:"Three of Pentacles",emoji:"🏗️",keywords:"Teamwork, Skill, Collaboration",meaning:"Great things get built when talented people work together. The Three of Pentacles celebrates your skills and says collaboration will bring your best work to life right now.",advice:"Ask for input or work alongside someone talented today. Two minds are better than one.",summary:"build something great together"},
+  {num:"P4",numeral:"Four",name:"Four of Pentacles",emoji:"🤲",keywords:"Security, Control, Holding on",meaning:"You're holding on tightly to what you have and that's understandable. But the Four of Pentacles asks if fear is stopping you from enjoying your abundance and sharing it generously.",advice:"Practice generosity today. What you give freely always finds its way back to you.",summary:"loosen your grip and give freely"},
+  {num:"P5",numeral:"Five",name:"Five of Pentacles",emoji:"❄️",keywords:"Hardship, Lack, Seeking help",meaning:"Times are tough right now but you are not alone. The Five of Pentacles says help and warmth are closer than you think. Ask for support. There is no shame in needing others.",advice:"Reach out to someone who can help today. Asking for support is a sign of wisdom, not weakness.",summary:"ask for help and receive it"},
+  {num:"P6",numeral:"Six",name:"Six of Pentacles",emoji:"🎁",keywords:"Generosity, Giving, Receiving",meaning:"The Six of Pentacles is the beautiful exchange of giving and receiving. Right now you may be in a position to give or to receive and both are equally sacred and important.",advice:"Give where you can and receive graciously where you need to. Balance in generosity is a gift.",summary:"give and receive with an open heart"},
+  {num:"P7",numeral:"Seven",name:"Seven of Pentacles",emoji:"🌿",keywords:"Patience, Investment, Long-term results",meaning:"You've planted seeds and now comes the patient waiting. The Seven of Pentacles says your hard work is growing even if you can't see it yet. Trust the process and be patient.",advice:"Keep tending to your long-term goals today. The harvest is coming, just not yet.",summary:"trust the slow growth of your efforts"},
+  {num:"P8",numeral:"Eight",name:"Eight of Pentacles",emoji:"🔨",keywords:"Dedication, Craft, Hard work",meaning:"The Eight of Pentacles is the master craftsperson card. It says put your head down, focus deeply, and do the work with love and care. Excellence comes from devoted practice.",advice:"Focus completely on your craft today. Do one thing with full attention and real skill.",summary:"dedicate yourself to mastery"},
+  {num:"P9",numeral:"Nine",name:"Nine of Pentacles",emoji:"🌺",keywords:"Independence, Luxury, Self-sufficiency",meaning:"You have built something beautiful through your own hard work and you deserve to enjoy it. The Nine of Pentacles says treat yourself, appreciate your independence, and feel proud.",advice:"Celebrate your self-sufficiency today. You earned this comfort through your own effort.",summary:"enjoy the abundance you have built"},
+  {num:"P10",numeral:"Ten",name:"Ten of Pentacles",emoji:"🏡",keywords:"Legacy, Family wealth, Long-term security",meaning:"This is the card of lasting abundance, family joy, and building a legacy. The Ten of Pentacles says the foundations you lay today will bless not just you but everyone who comes after.",advice:"Think about what kind of legacy you are building. Every choice today shapes your future.",summary:"build your lasting legacy"},
+  {num:"P11",numeral:"Page",name:"Page of Pentacles",emoji:"📚",keywords:"Learning, Ambition, New skills",meaning:"The Page of Pentacles is eager to learn and ready to put in the work. This card says a new practical skill, course, or opportunity is waiting for you. Study, plan, and build.",advice:"Start learning something new today. Every skill you develop is an investment in your future.",summary:"invest in learning something new"},
+  {num:"P12",numeral:"Knight",name:"Knight of Pentacles",emoji:"🐂",keywords:"Reliability, Hard work, Steady progress",meaning:"The Knight of Pentacles moves slowly but surely and always gets the job done. This card says be consistent, be reliable, and trust that steady effort leads to real results.",advice:"Show up consistently for your goals today. Slow and steady wins every time.",summary:"be steady and consistent"},
+  {num:"P13",numeral:"Queen",name:"Queen of Pentacles",emoji:"🍀",keywords:"Nurturing, Practical magic, Abundance",meaning:"The Queen of Pentacles creates warmth, comfort, and abundance wherever she goes. She is both nurturing and practical, a true provider who takes care of everyone including herself.",advice:"Nourish yourself and your home today. Create comfort and beauty in your everyday life.",summary:"create warmth and abundance"},
+  {num:"P14",numeral:"King",name:"King of Pentacles",emoji:"🏰",keywords:"Wealth, Security, Mastery",meaning:"The King of Pentacles has mastered the material world through patience, wisdom, and hard work. This card says you have what it takes to build lasting security and real-world success.",advice:"Make a wise financial or practical decision today. Think long-term and act with confidence.",summary:"build with wisdom and mastery"},
 ];
 
-// ===== STATE =====
 let readingType = 'single';
 let drawnCards = [];
 let revealedCount = 0;
@@ -356,7 +243,6 @@ const POSITIONS = {
   mind: ['Mind','Body','Spirit'],
 };
 
-// ===== INIT =====
 function init() {
   const sc = document.getElementById('stars');
   for (let i = 0; i < 80; i++) {
@@ -393,19 +279,12 @@ function drawCards() {
   drawn = true;
   drawnCards = shuffle(ARCANA).slice(0, totalToDraw);
   revealedCount = 0;
-
-  // Hide deck
   document.getElementById('deckArea').style.display = 'none';
-
-  // Show spread labels
   const labels = POSITIONS[readingType];
   const labelsEl = document.getElementById('spreadLabels');
   labelsEl.innerHTML = labels.map(l => `<div class="spread-label" id="label_${l}">${l}</div>`).join('');
-
-  // Show cards face-down in spread
   const spread = document.getElementById('spreadArea');
   spread.innerHTML = '';
-
   drawnCards.forEach((card, i) => {
     const el = document.createElement('div');
     el.className = 'tarot-card dealing';
@@ -432,15 +311,11 @@ function drawCards() {
     `;
     spread.appendChild(el);
   });
-
-  // Show labels after dealing
   setTimeout(() => {
     document.querySelectorAll('.spread-label').forEach((l, i) => {
       setTimeout(() => l.classList.add('show'), i * 200);
     });
   }, drawnCards.length * 200 + 300);
-
-  // Update instruction
   document.getElementById('instruction').textContent = totalToDraw === 1
     ? 'Tap your card to reveal its message...'
     : 'Tap each card to reveal its message...';
@@ -449,21 +324,15 @@ function drawCards() {
 function revealCard(index) {
   const el = document.getElementById('tcard_' + index);
   if (el.classList.contains('flipped')) return;
-
   el.classList.add('flipped');
   revealedCount++;
-
-  // Flash effect
   const flash = document.createElement('div');
   flash.className = 'reveal-flash';
   document.body.appendChild(flash);
   setTimeout(() => flash.remove(), 600);
-
-  // Show reading detail
   const card = drawnCards[index];
   const positions = POSITIONS[readingType];
   const result = document.getElementById('readingResult');
-
   const detail = document.createElement('div');
   detail.className = 'reading-card-detail';
   detail.style.animationDelay = '0.3s';
@@ -477,15 +346,11 @@ function revealCard(index) {
     <div class="rcd-advice">💫 ${card.advice}</div>
   `;
   result.appendChild(detail);
-
-  // Update instruction
   if (revealedCount < totalToDraw) {
     const remaining = totalToDraw - revealedCount;
     document.getElementById('instruction').textContent = `${remaining} more card${remaining > 1 ? 's' : ''} to reveal...`;
   } else {
     document.getElementById('instruction').textContent = '';
-
-    // Show summary for 3-card readings
     if (totalToDraw === 3) {
       setTimeout(() => {
         const summaries = drawnCards.map((c, i) => `${positions[i]}: ${c.summary}`);
@@ -498,8 +363,6 @@ function revealCard(index) {
         result.appendChild(summaryEl);
       }, 500);
     }
-
-    // Show new reading button
     setTimeout(() => {
       const btnRow = document.getElementById('btnRow');
       const againBtn = document.createElement('button');
@@ -509,8 +372,6 @@ function revealCard(index) {
       btnRow.insertBefore(againBtn, btnRow.firstChild);
     }, 800);
   }
-
-  // Scroll to result
   setTimeout(() => detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 400);
 }
 
@@ -525,7 +386,6 @@ function resetReading() {
   document.getElementById('instruction').textContent = totalToDraw === 1
     ? 'Tap the deck to draw your card...'
     : 'Tap the deck to draw your three cards...';
-  // Remove new reading button
   const old = document.querySelector('.btn-again');
   if (old) old.remove();
 }
