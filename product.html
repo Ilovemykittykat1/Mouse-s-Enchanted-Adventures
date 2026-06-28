@@ -286,6 +286,13 @@
       grid-template-columns:repeat(2,1fr);
     }
 
+    .backpack-card{
+      grid-column:1 / span 2;
+      max-width:380px;
+      width:100%;
+      justify-self:center;
+    }
+
     .product-card{
       background:#ffffff;
       border-radius:26px;
@@ -590,6 +597,12 @@
         grid-template-columns:1fr;
       }
 
+      .backpack-card{
+        grid-column:auto;
+        max-width:none;
+        width:100%;
+      }
+
       .product-image,
       .gift-grid .product-image{
         height:250px;
@@ -730,12 +743,27 @@
           </div>
         </div>
       </article>
+
+      <article class="product-card backpack-card">
+        <div class="product-image">
+          <img src="images/backpack.png" alt="Mouse's Enchanted Adventures Backpack"/>
+        </div>
+        <div class="product-info">
+          <span class="badge">New</span>
+          <h3>Adventure Backpack</h3>
+          <div class="card-bottom">
+            <div class="price">C$62.50</div>
+            <a href="https://square.link/u/yI44q4OD" target="_blank" class="buy-btn">Buy Now</a>
+          </div>
+        </div>
+      </article>
+
     </div>
   </section>
 
   <div class="quick-note">
-    <h3>Only buy products through my website</h3>
-    <p>All official Mouse's Enchanted Adventures products are linked here so shoppers can find the real books, shirts, mugs, and gifts in one place.</p>
+    <h3>Bring a Little Magic Home</h3>
+    <p>From storybooks to cozy gifts, every product is part of the Mouse's Enchanted Adventures world. Explore the collection and choose the piece that brings your next adventure to life.</p>
   </div>
 </main>
 
