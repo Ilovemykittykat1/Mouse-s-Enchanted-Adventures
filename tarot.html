@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mystic Tarot Reading - Mouse's Enchanted Adventures</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Playfair+Display:wght@700;900&family=Nunito:wght@500;700;900&display=swap" rel="stylesheet">
   <style>
     :root{
       --red-dark:#8a0000;--amber:#ffaa00;--purple:#6600cc;--purple-light:#9933ff;
@@ -149,9 +149,119 @@
       .rcd-advice{font-size:1rem;}
       .rcd-name{font-size:1.3rem;}
     }
+  
+
+/* Bright Mouse's Enchanted Adventures theme override */
+:root{
+  --ink:#26152f;
+  --deep:#24143a;
+  --purple:#7651d9;
+  --pink:#ff76a8;
+  --orange:#ffb35c;
+  --yellow:#ffe08a;
+  --blue:#83e8ff;
+  --paper:#fff7e7;
+  --white:#ffffff;
+  --soft:#543c62;
+  --shadow:0 18px 45px rgba(55,30,90,0.16);
+  --border:rgba(255,255,255,0.78);
+}
+body{
+  font-family:Nunito,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 12% 20%,rgba(131,232,255,.55),transparent 24%),
+    radial-gradient(circle at 86% 18%,rgba(255,179,92,.55),transparent 24%),
+    radial-gradient(circle at 50% 100%,rgba(255,118,168,.38),transparent 30%),
+    linear-gradient(135deg,#fff3d9,#ffe2f0 48%,#dff8ff);
+  overflow-x:hidden;
+  min-height:100vh;
+  display:block;
+}
+.stars,.ambient{display:none}
+.magic{position:fixed;inset:0;z-index:0;pointer-events:none}
+.orb{position:absolute;border-radius:50%;background:rgba(255,255,255,.7);box-shadow:0 0 24px rgba(255,224,138,.8);animation:rise var(--time) linear infinite}
+@keyframes rise{from{transform:translateY(110vh) scale(.4);opacity:0}20%,80%{opacity:1}to{transform:translateY(-20vh) scale(1.2);opacity:0}}
+.topbar{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:14px 24px;background:rgba(255,247,231,.9);backdrop-filter:blur(14px);box-shadow:0 12px 34px rgba(38,21,47,.12)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--deep);font-family:"Baloo 2",sans-serif;font-weight:800;font-size:1.35rem;line-height:1}
+.logoMark{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--yellow),var(--pink));box-shadow:0 10px 22px rgba(255,118,168,.28)}
+nav ul{display:flex;gap:10px;list-style:none}
+nav a{text-decoration:none;color:var(--deep);font-family:"Baloo 2",sans-serif;font-weight:800;padding:9px 15px;border-radius:18px;font-size:1rem}
+nav a:hover{background:var(--white);color:var(--pink)}
+nav .cafe{background:linear-gradient(135deg,var(--purple),var(--pink));color:var(--white)}
+.menuBtn{display:none;border:0;border-radius:14px;background:var(--deep);color:var(--white);padding:10px 14px;font-weight:900}
+main{position:relative;z-index:1;max-width:1040px;margin:0 auto;width:min(1040px,calc(100% - 36px));padding:42px 0 70px;text-align:center;display:block}
+.mystic-character{background:linear-gradient(135deg,var(--blue),var(--yellow),var(--pink));padding:18px;border-radius:42px;box-shadow:0 30px 85px rgba(38,21,47,.2);margin:0 auto 26px;max-width:330px}
+.mystic-emoji{font-size:4rem;filter:drop-shadow(0 0 15px rgba(255,118,168,.45))}
+.mystic-name{font-family:"Baloo 2",sans-serif;font-size:1.2rem;color:var(--purple);font-weight:800;letter-spacing:0;margin-top:6px}
+h1{font-family:"Playfair Display",serif;font-size:clamp(3.1rem,8vw,6.5rem);line-height:.86;color:var(--purple);margin-bottom:18px;text-shadow:none;letter-spacing:-2px}
+.page-subtitle{color:var(--soft);font-size:1.2rem;margin-bottom:24px;font-style:normal;font-weight:800}
+.reading-select{display:flex;justify-content:center;gap:14px;margin-bottom:28px;flex-wrap:wrap}
+.reading-btn{background:#fff;border:0;border-radius:999px;padding:14px 24px;color:var(--purple);font-family:"Baloo 2",sans-serif;font-size:1rem;cursor:pointer;transition:.2s;box-shadow:0 14px 28px rgba(32,21,61,.1);font-weight:800}
+.reading-btn:hover,.reading-btn.active{background:linear-gradient(135deg,var(--purple),var(--pink));color:#fff;box-shadow:0 14px 28px rgba(118,81,217,.24)}
+.instruction{color:var(--purple);font-family:"Baloo 2",sans-serif;font-size:1.35rem;margin-bottom:24px;min-height:36px;text-shadow:none;font-weight:800}
+.deck-card{border:3px solid rgba(255,255,255,.85);background:linear-gradient(135deg,var(--purple),var(--pink));box-shadow:0 18px 35px rgba(38,21,47,.18)}
+.deck-card-face::before{border:2px solid rgba(255,255,255,.45)}
+.deck-card-face::after{color:rgba(255,255,255,.35)}
+.deck-pattern{background:repeating-conic-gradient(rgba(255,255,255,.12) 0% 25%,transparent 0% 50%) 50% / 20px 20px}
+.deck-label{font-family:"Baloo 2",sans-serif;color:var(--soft);font-weight:800}
+.spread-label{font-family:"Baloo 2",sans-serif;color:var(--purple);font-weight:800;letter-spacing:1px}
+.tarot-card{background:#fffaf0;border:10px solid rgba(255,255,255,.82);box-shadow:0 18px 45px rgba(55,30,90,.16);border-radius:26px;color:var(--ink)}
+.tarot-card::before{border:2px solid rgba(123,85,231,.14);border-radius:18px}
+.card-numeral{font-family:"Baloo 2",sans-serif;color:var(--pink);font-weight:800;letter-spacing:1px}
+.card-emoji{filter:drop-shadow(0 0 12px rgba(255,118,168,.35))}
+.card-title{font-family:"Playfair Display",serif;color:var(--purple);text-shadow:none;font-size:1.05rem}
+.card-keywords{color:var(--soft);font-style:italic;font-weight:800}
+.card-face-glow{background:radial-gradient(circle,rgba(255,118,168,.18),transparent)}
+.reading-card-detail{background:rgba(255,255,255,.72);border:3px solid rgba(255,255,255,.8);border-radius:34px;padding:28px;margin-bottom:18px;box-shadow:0 24px 60px rgba(38,21,47,.13);text-align:left;color:var(--ink)}
+.reading-card-detail::before{background:linear-gradient(90deg,transparent,var(--pink),var(--purple),transparent)}
+.rcd-position{font-family:"Baloo 2",sans-serif;color:var(--pink);font-weight:800;letter-spacing:1px}
+.rcd-name{font-family:"Playfair Display",serif;color:var(--purple);text-shadow:none;font-size:1.5rem}
+.rcd-meaning{color:var(--soft);font-size:1.12rem;line-height:1.7;font-weight:800}
+.rcd-advice{color:var(--deep);font-style:italic;border-left:4px solid var(--pink);font-weight:800;background:#fffaf0;border-radius:0 18px 18px 0;padding:12px 16px;line-height:1.6}
+.reading-summary{background:linear-gradient(135deg,var(--purple),var(--pink));border:0;border-radius:34px;padding:28px;margin-bottom:24px;box-shadow:0 24px 60px rgba(38,21,47,.18);text-align:center;color:#fff}
+.reading-summary h3{font-family:"Playfair Display",serif;color:var(--yellow);text-shadow:none;font-size:2rem}
+.reading-summary p{color:#fff;font-weight:800}
+.btn-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:20px}
+.btn-back,.btn-again{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--purple);padding:15px 28px;border-radius:999px;text-decoration:none;font-weight:800;font-family:"Baloo 2",sans-serif;font-size:1.05rem;border:0;box-shadow:0 14px 28px rgba(32,21,61,.1);transition:.2s;cursor:pointer}
+.btn-again{background:linear-gradient(135deg,var(--purple),var(--pink));color:#fff}
+.btn-back:hover,.btn-again:hover{transform:translateY(-3px);box-shadow:0 18px 34px rgba(32,21,61,.15)}
+footer{position:relative;z-index:1;background:rgba(255,247,232,.86);border-top:2px solid rgba(255,255,255,.76);padding:38px 20px 30px;text-align:center;color:var(--soft);box-shadow:0 -10px 28px rgba(32,21,61,.05);font-size:1rem}
+footer a{color:var(--purple);font-weight:800;text-decoration:none}
+.footer-social-title{font-family:"Baloo 2",sans-serif;font-size:1rem;letter-spacing:1px;color:var(--ink);margin-bottom:15px;font-weight:800}
+.footer-social-row{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.footer-social-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:#fff;color:var(--ink);font-family:"Baloo 2",sans-serif;font-size:.95rem;font-weight:800;box-shadow:0 10px 22px rgba(32,21,61,.08);transition:.2s}
+.footer-social-btn:hover{transform:translateY(-2px);color:var(--purple)}
+.footer-social-btn img,.footer-social-btn svg{width:20px;height:20px;flex-shrink:0}
+.footer-divider{width:220px;height:2px;border-radius:20px;background:linear-gradient(90deg,transparent,var(--pink),var(--purple),transparent);margin:16px auto}
+.footer-copy{font-size:.88rem;opacity:.75;font-weight:700}
+.reveal-flash{background:radial-gradient(circle,rgba(255,118,168,.32),transparent 60%)}
+@media(max-width:900px){.menuBtn{display:block}nav ul{display:none;position:absolute;top:76px;right:18px;width:230px;flex-direction:column;background:var(--white);padding:14px;border-radius:24px;box-shadow:0 22px 44px rgba(38,21,47,.18)}nav ul.show{display:flex}nav a{display:block;text-align:center}main{width:min(100% - 24px,1040px);padding-top:26px}}
+@media(max-width:560px){.topbar{padding:12px}.logo{font-size:1rem}.logoMark{width:40px;height:40px}h1{font-size:3rem}.reading-card-detail{padding:22px}.tarot-card{width:140px;min-height:220px}.spread-area{gap:16px}}
+
   </style>
 </head>
 <body>
+
+<div class="magic" id="magic"></div>
+
+<header class="topbar">
+  <a class="logo" href="index.html">
+    <span class="logoMark">🐾</span>
+    <span>Mouse's Enchanted Adventures</span>
+  </a>
+  <nav>
+    <button class="menuBtn" onclick="toggleMenu()">Menu</button>
+    <ul id="navMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a class="cafe" href="cafe-door.html">Enter Café</a></li>
+    </ul>
+  </nav>
+</header>
+
 
 <div class="stars" id="stars"></div>
 <div class="ambient"></div>
@@ -187,13 +297,52 @@
   <div class="reading-result" id="readingResult"></div>
 
   <div class="btn-row" id="btnRow">
-    <a href="inside.html" class="btn-back">🔙 Back to Cafe</a>
+    <a href="inside.html" class="btn-back">Back to Café</a>
   </div>
 </main>
 
-<footer>&copy; 2025 Mouse's Enchanted Adventures - Mystic Tarot</footer>
+
+<footer>
+  <div class="footer-social-title">Follow the Adventure</div>
+
+  <div class="footer-social-row">
+    <a href="https://www.facebook.com/profile.php?id=61575952349929" target="_blank" class="footer-social-btn">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+      Facebook
+    </a>
+
+    <a href="https://www.youtube.com/@Mouse-Enchanted-Adventures" target="_blank" class="footer-social-btn">
+      <svg viewBox="0 0 24 24" fill="#FF0000" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
+      YouTube
+    </a>
+
+    <a href="https://www.instagram.com/mousesenchantedadventures2025/" target="_blank" class="footer-social-btn">Instagram</a>
+    <a href="https://www.tiktok.com/@mouseenchantedadventures" target="_blank" class="footer-social-btn">TikTok</a>
+  </div>
+
+  <div class="footer-divider"></div>
+  <p class="footer-copy">&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+</footer>
 
 <script>
+
+function toggleMenu(){
+  document.getElementById("navMenu").classList.toggle("show");
+}
+const magic=document.getElementById("magic");
+for(let i=0;i<36;i++){
+  const o=document.createElement("div");
+  o.className="orb";
+  const size=Math.random()*16+8;
+  o.style.width=size+"px";
+  o.style.height=size+"px";
+  o.style.left=Math.random()*100+"%";
+  o.style.animationDelay=Math.random()*9+"s";
+  o.style.setProperty("--time",Math.random()*8+7+"s");
+  magic.appendChild(o);
+}
 const ARCANA = [
   // ===== MAJOR ARCANA =====
   {num:"0",numeral:"0",name:"The Fool",emoji:"🤡",keywords:"New beginnings, Adventure, Innocence",meaning:"A brand new adventure is about to begin! The Fool reminds you to take a leap of faith and trust the journey ahead. Don't be afraid of the unknown. That's where the magic lives.",advice:"Be brave enough to start something new today, even if you don't know where it leads.",summary:"embrace new beginnings"},
