@@ -335,6 +335,14 @@
       gap:18px;
     }
 
+    .char-grid .char-card:nth-child(5){
+      grid-column:2;
+    }
+
+    .char-grid .char-card:nth-child(6){
+      grid-column:3;
+    }
+
     .char-card{
       background:#ffffff;
       border-radius:26px;
@@ -504,6 +512,11 @@
     @media(max-width:1050px){
       .char-grid{
         grid-template-columns:repeat(2,1fr);
+      }
+
+      .char-grid .char-card:nth-child(5),
+      .char-grid .char-card:nth-child(6){
+        grid-column:auto;
       }
     }
 
@@ -721,6 +734,26 @@
         <div class="char-info">
           <h3>Katherina the Enchanted Witch</h3>
           <p>Katherina is elegant, wise, and powerful. Her calm nature hides a past filled with trials and secrets.</p>
+        </div>
+      </article>
+
+      <article class="char-card">
+        <div class="char-image">
+          <img src="images/Ivera.png" alt="Ivera"/>
+        </div>
+        <div class="char-info">
+          <h3>Ivera</h3>
+          <p>Ivera is Devlin's older sister. Sarcastic, playful, and confident, she brings plenty of personality and wit to every adventure.</p>
+        </div>
+      </article>
+
+      <article class="char-card">
+        <div class="char-image">
+          <img src="images/chris.png" alt="Christan"/>
+        </div>
+        <div class="char-info">
+          <h3>Christan</h3>
+          <p>Christan is Devlin's older brother, an exceptionally intelligent wizard with a quick wit and a talent for understanding complicated magic.</p>
         </div>
       </article>
     </div>
