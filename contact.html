@@ -19,7 +19,7 @@ body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(
 .logoMark{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--yellow),var(--pink));box-shadow:0 10px 22px rgba(255,118,168,.28)}
 nav ul{display:flex;gap:10px;list-style:none}
 nav a{text-decoration:none;color:#24143a;font-family:"Baloo 2",sans-serif;font-weight:800;padding:9px 15px;border-radius:18px}
-nav a:hover,nav a.active{background:var(--white);color:var(--pink)}
+nav a:hover{background:var(--white);color:var(--pink)}
 nav .cafe{background:linear-gradient(135deg,var(--purple),var(--pink));color:var(--white)}
 .menuBtn{display:none;border:0;border-radius:14px;background:#24143a;color:var(--white);padding:10px 14px;font-weight:900}
 main{position:relative;z-index:1;width:min(1180px,calc(100% - 36px));margin:0 auto;padding:42px 0 70px}
@@ -70,6 +70,239 @@ footer a{color:var(--purple);font-weight:800;text-decoration:none}
   .caterpillar{font-size:2.7rem;left:12px;bottom:12px}
 }
 </style>
+
+<style>
+:root{
+  --cream:#050505 !important;
+  --pink:#ff4fa3 !important;
+  --purple:#ff2f92 !important;
+  --blue:#ff8fc7 !important;
+  --yellow:#ffd3e7 !important;
+  --ink:#ffffff !important;
+  --soft:#f6d2e2 !important;
+  --white:#151515 !important;
+  --shadow:0 18px 45px rgba(255,47,146,.18) !important;
+  --border:rgba(255,79,163,.5) !important;
+}
+html,body{background:#050505 !important;color:#ffffff !important}
+body{
+  background:
+    radial-gradient(circle at 10% 10%,rgba(255,47,146,.20),transparent 28%),
+    radial-gradient(circle at 90% 15%,rgba(255,79,163,.14),transparent 26%),
+    #050505 !important;
+}
+body::before{
+  background-image:
+    radial-gradient(circle,rgba(255,79,163,.55) 0 3px,transparent 4px),
+    radial-gradient(circle,rgba(255,255,255,.32) 0 2px,transparent 3px) !important;
+}
+.topbar{
+  background:rgba(5,5,5,.96) !important;
+  border-bottom:2px solid #ff2f92 !important;
+}
+.logo,nav a{color:#ffffff !important}
+.logoMark{
+  background:linear-gradient(135deg,#ff2f92,#ff8fc7) !important;
+  color:#050505 !important;
+}
+nav a:hover{
+  background:#ff2f92 !important;
+  color:#ffffff !important;
+}
+nav .cafe{
+  background:linear-gradient(135deg,#ff2f92,#111111) !important;
+  color:#ffffff !important;
+}
+.menuBtn{background:#ff2f92 !important;color:#ffffff !important}
+
+.contact-info,.form-card{
+  background:rgba(15,15,15,.95) !important;
+  border:2px solid rgba(255,79,163,.5) !important;
+}
+.eyebrow{background:#ff2f92 !important;color:#ffffff !important}
+h1{color:#ffffff !important}
+h1 span{color:#ff4fa3 !important}
+.contact-info p{color:#ffffff !important}
+.contact-note{
+  background:#171717 !important;
+  border:1px solid rgba(255,79,163,.42) !important;
+}
+.contact-note h2{color:#ff4fa3 !important}
+.contact-note p{color:#ffffff !important}
+
+.form-card{
+  background:linear-gradient(135deg,#ff2f92,#111111,#ff79b7) !important;
+}
+.form-inner{
+  background:#0d0d0d !important;
+  border-color:rgba(255,79,163,.55) !important;
+}
+.form-title{color:#ff4fa3 !important}
+.form-subtitle,.form-group label{color:#ffffff !important}
+.form-group input,.form-group textarea{
+  background:#ffffff !important;
+  color:#111111 !important;
+  border-color:#ff79b7 !important;
+}
+.form-group input:focus,.form-group textarea:focus{
+  border-color:#ff2f92 !important;
+  box-shadow:0 0 0 4px rgba(255,47,146,.18) !important;
+}
+.btn-submit{
+  background:linear-gradient(135deg,#ff2f92,#ff65ae) !important;
+  color:#ffffff !important;
+}
+
+.extra-card{
+  background:#111111 !important;
+  border:1px solid rgba(255,79,163,.38) !important;
+}
+.extra-card h3{color:#ff4fa3 !important}
+.extra-card p{color:#ffffff !important}
+
+footer{
+  background:#050505 !important;
+  border-top:2px solid #ff2f92 !important;
+  color:#ffffff !important;
+}
+footer a,.footer-social-title{color:#ff5faa !important}
+.footer-social-btn{
+  background:#151515 !important;
+  color:#ffffff !important;
+  border:1px solid rgba(255,79,163,.5) !important;
+}
+.footer-divider{
+  background:linear-gradient(90deg,transparent,#ff2f92,#ffffff,#ff2f92,transparent) !important;
+}
+@media(max-width:900px){
+  nav ul{
+    background:#0c0c0c !important;
+    border:2px solid #ff2f92 !important;
+  }
+}
+</style>
+
+
+
+<style>
+/* MASTER NAV: EXACT REFERENCE */
+.topbar{
+  position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;
+  align-items:center;gap:18px;padding:14px 24px;background:rgba(5,5,5,.96) !important;
+  backdrop-filter:blur(14px);box-shadow:0 12px 34px rgba(38,21,47,.12);
+  border-bottom:2px solid #ff2f92 !important;
+}
+.logo{
+  display:flex;align-items:center;gap:10px;text-decoration:none;color:#ffffff !important;
+  font-family:"Baloo 2",sans-serif;font-weight:800;font-size:1.35rem;line-height:1;
+}
+.logoMark{
+  width:46px;height:46px;border-radius:16px;display:grid;place-items:center;
+  background:linear-gradient(135deg,#ff2f92,#ff8fc7) !important;
+  box-shadow:0 10px 22px rgba(255,118,168,.28);color:#050505 !important;
+}
+nav ul{display:flex;gap:10px;list-style:none}
+nav a{
+  text-decoration:none;color:#ffffff !important;font-family:"Baloo 2",sans-serif;
+  font-weight:800;padding:9px 15px;border-radius:18px;
+}
+nav a:hover{background:#ff2f92 !important;color:#ffffff !important}
+nav .cafe{background:#ff2f92 !important;color:#ffffff !important}
+.menuBtn{
+  display:none;border:0;border-radius:14px;background:#24143a;color:#ffffff;
+  padding:10px 14px;font-weight:900;
+}
+@media(max-width:900px){
+  .menuBtn{display:block}
+  nav ul{
+    display:none;position:absolute;top:76px;right:18px;width:230px;
+    flex-direction:column;background:#151515 !important;padding:14px;
+    border-radius:24px;box-shadow:0 22px 44px rgba(38,21,47,.18);
+    border:0 !important;
+  }
+  nav ul.show{display:flex}
+  nav a{display:block;text-align:center}
+}
+@media(max-width:560px){
+  .topbar{padding:12px}
+  .logo{font-size:1rem}
+  .logoMark{width:40px;height:40px}
+}
+</style>
+
+
+<style>
+/* MASTER FOOTER */
+footer{
+  position:relative !important;
+  z-index:1 !important;
+  background:#050505 !important;
+  border-top:2px solid rgba(255,79,163,.50) !important;
+  padding:38px 20px 30px !important;
+  text-align:center !important;
+  color:#f6d2e2 !important;
+  box-shadow:0 -10px 28px rgba(32,21,61,.05) !important;
+}
+footer a{
+  color:#ff2f92 !important;
+  font-weight:800 !important;
+  text-decoration:none !important;
+}
+.footer-social-title{
+  font-family:"Baloo 2",sans-serif !important;
+  font-size:1rem !important;
+  letter-spacing:1px !important;
+  color:#ffffff !important;
+  margin-bottom:15px !important;
+  font-weight:800 !important;
+}
+.footer-social-row{
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  gap:12px !important;
+  flex-wrap:wrap !important;
+  margin-bottom:18px !important;
+}
+.footer-social-btn{
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:8px !important;
+  padding:10px 16px !important;
+  border-radius:999px !important;
+  background:#151515 !important;
+  color:#ffffff !important;
+  font-family:"Baloo 2",sans-serif !important;
+  font-size:.95rem !important;
+  font-weight:800 !important;
+  box-shadow:0 10px 22px rgba(32,21,61,.08) !important;
+  transition:.2s !important;
+  border:0 !important;
+}
+.footer-social-btn:hover{
+  transform:translateY(-2px) !important;
+  color:#ff2f92 !important;
+}
+.footer-social-btn img,
+.footer-social-btn svg{
+  width:20px !important;
+  height:20px !important;
+  flex-shrink:0 !important;
+}
+.footer-divider{
+  width:220px !important;
+  height:2px !important;
+  border-radius:20px !important;
+  background:linear-gradient(90deg,transparent,#ff4fa3,#ff2f92,transparent) !important;
+  margin:16px auto !important;
+}
+.footer-copy{
+  font-size:.88rem !important;
+  opacity:.75 !important;
+  font-weight:700 !important;
+}
+</style>
+
 </head>
 <body>
 
@@ -86,7 +319,7 @@ footer a{color:var(--purple);font-weight:800;text-decoration:none}
       <li><a href="index.html">Home</a></li>
       <li><a href="product.html">Products</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="contact.html">Contact</a></li>
       <li><a class="cafe" href="cafe-door.html">Enter Café</a></li>
     </ul>
   </nav>
@@ -134,7 +367,7 @@ footer a{color:var(--purple);font-weight:800;text-decoration:none}
     </div>
     <div class="extra-card">
       <h3>Characters</h3>
-      <p>Meet Mouse, Bat, Devlin, and Katherina in the enchanted world.</p>
+      <p>Meet Mouse, Bat, Devlin, Katherina, Ivera, and Christan in the enchanted world.</p>
     </div>
     <div class="extra-card">
       <h3>Café</h3>
@@ -148,7 +381,7 @@ footer a{color:var(--purple);font-weight:800;text-decoration:none}
 
   <div class="footer-social-row">
     <a href="https://www.facebook.com/profile.php?id=61575952349929" target="_blank" class="footer-social-btn">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"/>
       Facebook
     </a>
 
@@ -159,8 +392,13 @@ footer a{color:var(--purple);font-weight:800;text-decoration:none}
       YouTube
     </a>
 
-    <a href="https://www.instagram.com/mousesenchantedadventures2025/" target="_blank" class="footer-social-btn">Instagram</a>
-    <a href="https://www.tiktok.com/@mouseenchantedadventures" target="_blank" class="footer-social-btn">TikTok</a>
+    <a href="https://www.instagram.com/mousesenchantedadventures2025/" target="_blank" class="footer-social-btn">
+      Instagram
+    </a>
+
+    <a href="https://www.tiktok.com/@mouseenchantedadventures" target="_blank" class="footer-social-btn">
+      TikTok
+    </a>
   </div>
 
   <div class="footer-divider"></div>

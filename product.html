@@ -45,85 +45,21 @@
       z-index:0;
     }
 
-    header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-      padding:18px 34px;
-      background:rgba(255,247,232,0.92);
-      backdrop-filter:blur(16px);
-      box-shadow:0 10px 30px rgba(32,21,61,0.08);
-    }
+    
 
-    .site-logo{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
-      color:var(--ink);
-      font-family:"Baloo 2",sans-serif;
-      font-size:1.55rem;
-      font-weight:800;
-      line-height:1;
-    }
+    
 
-    .logo-mark{
-      width:52px;
-      height:52px;
-      display:grid;
-      place-items:center;
-      border-radius:18px;
-      background:linear-gradient(135deg,#ffe88a,#ff6fa8);
-      box-shadow:0 10px 24px rgba(255,111,168,0.28);
-      font-size:1.45rem;
-    }
+    
 
-    nav ul{
-      list-style:none;
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
+    
 
-    nav a{
-      text-decoration:none;
-      color:var(--ink);
-      font-family:"Baloo 2",sans-serif;
-      font-size:1.05rem;
-      font-weight:800;
-      padding:10px 16px;
-      border-radius:999px;
-      transition:0.2s ease;
-    }
+    
 
-    nav a:hover{
-      background:#ffffff;
-      color:var(--purple);
-      box-shadow:0 10px 24px rgba(32,21,61,0.08);
-    }
+    
 
-    .cafe-link{
-      color:#ffffff;
-      background:linear-gradient(135deg,var(--purple),var(--pink));
-      box-shadow:0 12px 28px rgba(123,85,231,0.25);
-    }
+    
 
-    .menu-toggle{
-      display:none;
-      border:0;
-      background:#ffffff;
-      color:var(--ink);
-      width:46px;
-      height:46px;
-      border-radius:15px;
-      font-size:1.5rem;
-      cursor:pointer;
-      box-shadow:0 10px 24px rgba(32,21,61,0.12);
-    }
+    
 
     main{
       position:relative;
@@ -530,48 +466,19 @@
     }
 
     @media(max-width:760px){
-      header{
-        padding:14px 18px;
-      }
+      
 
-      .site-logo{
-        font-size:1.16rem;
-      }
+      
 
-      .logo-mark{
-        width:44px;
-        height:44px;
-        border-radius:15px;
-      }
+      
 
-      .menu-toggle{
-        display:block;
-      }
+      
 
-      nav ul{
-        display:none;
-        position:absolute;
-        top:78px;
-        right:18px;
-        width:230px;
-        flex-direction:column;
-        align-items:stretch;
-        gap:8px;
-        background:#fff7e8;
-        border:2px solid rgba(255,255,255,0.9);
-        border-radius:22px;
-        padding:14px;
-        box-shadow:var(--shadow);
-      }
+      
 
-      nav ul.show{
-        display:flex;
-      }
+      
 
-      nav a{
-        display:block;
-        text-align:center;
-      }
+      
 
       main{
         width:min(100% - 24px,1180px);
@@ -618,25 +525,300 @@
       }
     }
   </style>
+
+<style>
+:root{
+  --cream:#050505 !important;
+  --pink:#ff4fa3 !important;
+  --purple:#ff2f92 !important;
+  --blue:#ff8fc7 !important;
+  --yellow:#ffd3e7 !important;
+  --ink:#ffffff !important;
+  --soft:#f6d2e2 !important;
+  --white:#151515 !important;
+  --shadow:0 18px 45px rgba(255,47,146,.18) !important;
+  --border:rgba(255,79,163,.50) !important;
+}
+html,body{background:#050505 !important;color:#ffffff !important}
+body{
+  background:
+    radial-gradient(circle at 10% 10%,rgba(255,47,146,.20),transparent 28%),
+    radial-gradient(circle at 90% 15%,rgba(255,79,163,.14),transparent 26%),
+    #050505 !important;
+}
+body::before{
+  background-image:
+    radial-gradient(circle,rgba(255,79,163,.55) 0 3px,transparent 4px),
+    radial-gradient(circle,rgba(255,255,255,.32) 0 2px,transparent 3px) !important;
+}
+
+.site-logo,
+
+
+
+
+.hero-copy,.shop-section{
+  background:rgba(15,15,15,.94) !important;
+  border-color:rgba(255,79,163,.50) !important;
+}
+.eyebrow{background:#ff2f92 !important;color:#ffffff !important}
+h1{color:#ffffff !important}
+h1 span{color:#ff4fa3 !important}
+.hero-copy p,.section-top p{color:#ffffff !important}
+.btn-primary,.buy-btn{
+  background:linear-gradient(135deg,#ff2f92,#ff4fa3) !important;
+  color:#ffffff !important;
+}
+.btn-secondary{
+  background:#151515 !important;
+  color:#ff4fa3 !important;
+}
+.hero-card{
+  background:linear-gradient(135deg,#ff2f92,#111111,#ff79b7) !important;
+}
+.hero-card-inner{
+  background:#111111 !important;
+  border-color:rgba(255,79,163,.50) !important;
+}
+.section-top h2{color:#ffffff !important}
+.product-card{
+  background:#111111 !important;
+  border-color:rgba(255,79,163,.45) !important;
+}
+.product-image{
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,79,163,.22),transparent 35%),
+    linear-gradient(135deg,#0b0b0b,#211018) !important;
+  border-bottom-color:#ff2f92 !important;
+}
+.badge{
+  background:linear-gradient(135deg,#ff8fc7,#ffffff) !important;
+  color:#111111 !important;
+}
+.product-info h3{color:#ffffff !important}
+.card-bottom{border-top-color:rgba(255,79,163,.25) !important}
+.price{color:#ff4fa3 !important}
+.quick-note{
+  background:linear-gradient(135deg,#ff2f92,#111111) !important;
+  color:#ffffff !important;
+}
+.quick-note p{color:#ffffff !important}
+footer{
+  background:#050505 !important;
+  border-top:2px solid #ff2f92 !important;
+  color:#ffffff !important;
+}
+footer a,.footer-social-title{color:#ff5faa !important}
+.footer-social-btn{
+  background:#151515 !important;
+  color:#ffffff !important;
+}
+.footer-divider{
+  background:linear-gradient(90deg,transparent,#ff2f92,#ffffff,#ff2f92,transparent) !important;
+}
+@media(max-width:760px){
+  
+}
+</style>
+
+
+<style>
+/* EXACT NAV COPY FROM THE CHOSEN REFERENCE PAGE */
+
+
+
+
+
+
+
+
+@media(max-width:900px){
+  
+  
+  
+  
+}
+@media(max-width:560px){
+  
+  
+  
+}
+</style>
+
+<style>
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:20;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  padding:14px 24px;
+  background:rgba(5,5,5,.96) !important;
+  backdrop-filter:blur(14px);
+  box-shadow:0 12px 34px rgba(38,21,47,.12);
+  border-bottom:2px solid #ff2f92 !important;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:#ffffff !important;
+  font-family:"Baloo 2",sans-serif;
+  font-weight:800;
+  font-size:1.35rem;
+  line-height:1;
+}
+.logoMark{
+  width:46px;
+  height:46px;
+  border-radius:16px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,#ff2f92,#ff8fc7) !important;
+  box-shadow:0 10px 22px rgba(255,118,168,.28);
+  color:#050505 !important;
+}
+nav ul{display:flex;gap:10px;list-style:none}
+nav a{
+  text-decoration:none;
+  color:#ffffff !important;
+  font-family:"Baloo 2",sans-serif;
+  font-weight:800;
+  padding:9px 15px;
+  border-radius:18px;
+}
+nav a:hover{background:#ff2f92 !important;color:#ffffff !important}
+nav .cafe{
+  background:#ff2f92 !important;
+  color:#ffffff !important;
+}
+.menuBtn{
+  display:none;
+  border:0;
+  border-radius:14px;
+  background:#24143a;
+  color:#ffffff;
+  padding:10px 14px;
+  font-weight:900;
+}
+@media(max-width:900px){
+  .menuBtn{display:block}
+  nav ul{
+    display:none;
+    position:absolute;
+    top:76px;
+    right:18px;
+    width:230px;
+    flex-direction:column;
+    background:#151515 !important;
+    padding:14px;
+    border-radius:24px;
+    box-shadow:0 22px 44px rgba(38,21,47,.18);
+  }
+  nav ul.show{display:flex}
+  nav a{display:block;text-align:center}
+}
+@media(max-width:560px){
+  .topbar{padding:12px}
+  .logo{font-size:1rem}
+  .logoMark{width:40px;height:40px}
+}
+
+</style>
+
+<style>
+/* MASTER FOOTER */
+footer{
+  position:relative !important;
+  z-index:1 !important;
+  background:#050505 !important;
+  border-top:2px solid rgba(255,79,163,.50) !important;
+  padding:38px 20px 30px !important;
+  text-align:center !important;
+  color:#f6d2e2 !important;
+  box-shadow:0 -10px 28px rgba(32,21,61,.05) !important;
+}
+footer a{
+  color:#ff2f92 !important;
+  font-weight:800 !important;
+  text-decoration:none !important;
+}
+.footer-social-title{
+  font-family:"Baloo 2",sans-serif !important;
+  font-size:1rem !important;
+  letter-spacing:1px !important;
+  color:#ffffff !important;
+  margin-bottom:15px !important;
+  font-weight:800 !important;
+}
+.footer-social-row{
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  gap:12px !important;
+  flex-wrap:wrap !important;
+  margin-bottom:18px !important;
+}
+.footer-social-btn{
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:8px !important;
+  padding:10px 16px !important;
+  border-radius:999px !important;
+  background:#151515 !important;
+  color:#ffffff !important;
+  font-family:"Baloo 2",sans-serif !important;
+  font-size:.95rem !important;
+  font-weight:800 !important;
+  box-shadow:0 10px 22px rgba(32,21,61,.08) !important;
+  transition:.2s ease !important;
+  border:0 !important;
+}
+.footer-social-btn:hover{
+  transform:translateY(-2px) !important;
+  color:#ff2f92 !important;
+}
+.footer-social-btn img,
+.footer-social-btn svg{
+  width:20px !important;
+  height:20px !important;
+  flex-shrink:0 !important;
+}
+.footer-divider{
+  width:220px !important;
+  height:2px !important;
+  border-radius:20px !important;
+  background:linear-gradient(90deg,transparent,#ff4fa3,#ff2f92,transparent) !important;
+  margin:16px auto !important;
+}
+.footer-copy{
+  font-size:.88rem !important;
+  opacity:.75 !important;
+  font-weight:700 !important;
+}
+</style>
+
 </head>
 <body>
-<header>
-  <a href="index.html" class="site-logo">
-    <span class="logo-mark">🐾</span>
+<header class="topbar">
+  <a class="logo" href="index.html">
+    <span class="logoMark">🐾</span>
     <span>Mouse's Enchanted Adventures</span>
   </a>
-
   <nav>
-    <ul id="nav-menu">
+    <button class="menuBtn" onclick="toggleMenu()">Menu</button>
+    <ul id="navMenu">
       <li><a href="index.html">Home</a></li>
       <li><a href="product.html">Products</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="cafe-door.html" class="cafe-link">Enter Café</a></li>
+      <li><a class="cafe" href="cafe-door.html">Enter Café</a></li>
     </ul>
   </nav>
-
-  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 </header>
 
 <main>
@@ -784,25 +966,10 @@
     </a>
 
     <a href="https://www.instagram.com/mousesenchantedadventures2025/" target="_blank" class="footer-social-btn">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#f09433"/>
-            <stop offset="25%" stop-color="#e6683c"/>
-            <stop offset="50%" stop-color="#dc2743"/>
-            <stop offset="75%" stop-color="#cc2366"/>
-            <stop offset="100%" stop-color="#bc1888"/>
-          </linearGradient>
-        </defs>
-        <path fill="url(#ig-grad)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-      </svg>
       Instagram
     </a>
 
     <a href="https://www.tiktok.com/@mouseenchantedadventures" target="_blank" class="footer-social-btn">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#ffffff" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.75a8.18 8.18 0 0 0 4.78 1.52V6.82a4.85 4.85 0 0 1-1.01-.13z"/>
-      </svg>
       TikTok
     </a>
   </div>
@@ -813,7 +980,7 @@
 
 <script>
   function toggleMenu(){
-    document.getElementById("nav-menu").classList.toggle("show");
+    document.getElementById("navMenu").classList.toggle("show");
   }
 </script>
 </body>

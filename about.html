@@ -100,12 +100,7 @@
       transition:0.2s ease;
     }
 
-    nav a:hover,
-    nav a.active{
-      background:#ffffff;
-      color:var(--purple);
-      box-shadow:0 10px 24px rgba(32,21,61,0.08);
-    }
+    
 
     .cafe-link{
       color:#ffffff;
@@ -113,10 +108,7 @@
       box-shadow:0 12px 28px rgba(123,85,231,0.25);
     }
 
-    .cafe-link:hover{
-      color:#ffffff;
-      transform:translateY(-2px);
-    }
+    
 
     .menu-toggle{
       display:none;
@@ -627,25 +619,184 @@
       }
     }
   </style>
+
+<style>
+/* COLOR CHANGES ONLY: black background, bright white text, hot pink accents */
+:root{
+  --cream:#050505;
+  --pink:#ff4fa3;
+  --purple:#ff2f92;
+  --blue:#ff8fc7;
+  --yellow:#ffd3e7;
+  --ink:#ffffff;
+  --soft:#f6d2e2;
+  --white:#151515;
+  --shadow:0 18px 45px rgba(255,47,146,0.18);
+  --border:rgba(255,79,163,0.50);
+}
+body{
+  background:
+    radial-gradient(circle at 10% 10%,rgba(255,47,146,0.20),transparent 28%),
+    radial-gradient(circle at 90% 15%,rgba(255,79,163,0.14),transparent 26%),
+    #050505;
+  color:#ffffff;
+}
+body::before{
+  background-image:
+    radial-gradient(circle,rgba(255,79,163,0.55) 0 3px,transparent 4px),
+    radial-gradient(circle,rgba(255,255,255,0.32) 0 2px,transparent 3px);
+}
+header{background:rgba(5,5,5,0.96)}
+.logo-mark{background:linear-gradient(135deg,#ff2f92,#ff8fc7)}
+
+.cafe-link{background:linear-gradient(135deg,#ff2f92,#ff4fa3);color:#ffffff}
+.menu-toggle{background:#151515;color:#ffffff}
+.hero-copy,.about-section{background:rgba(15,15,15,0.94)}
+.eyebrow{background:#ff2f92;color:#ffffff}
+h1{color:#ffffff}
+h1 span{color:#ff4fa3}
+.btn-primary{background:linear-gradient(135deg,#ff2f92,#ff4fa3);color:#ffffff}
+.btn-secondary{background:#151515;color:#ff4fa3}
+.hero-card,.team-image{background:linear-gradient(135deg,#ff2f92,#111111,#ff79b7)}
+.hero-card-inner{background:#111111;border-color:rgba(255,79,163,0.50)}
+.story-card,.char-card{background:#111111;border-color:rgba(255,79,163,0.35)}
+.story-card h3{color:#ff4fa3}
+.char-image{
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,79,163,0.25),transparent 35%),
+    linear-gradient(135deg,#0b0b0b,#211018);
+  border-bottom-color:#ff2f92;
+}
+.team-image img{background:#111111;border-color:rgba(255,79,163,0.50)}
+.join-card{background:linear-gradient(135deg,#ff2f92,#111111);color:#ffffff}
+.join-card h2{color:#ffd3e7}
+footer{background:#050505;border-top-color:rgba(255,79,163,0.50)}
+.footer-social-btn{background:#151515}
+.footer-divider{background:linear-gradient(90deg,transparent,#ff4fa3,#ff2f92,transparent)}
+@media(max-width:760px){
+  nav ul{background:#111111;border-color:rgba(255,79,163,0.50)}
+}
+</style>
+
+
+
+<style>
+/* MASTER NAV COPIED EXACTLY FROM REFERENCE */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:20;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  padding:14px 24px;
+  background:rgba(5,5,5,.96) !important;
+  backdrop-filter:blur(14px);
+  box-shadow:0 12px 34px rgba(38,21,47,.12);
+  border-bottom:2px solid #ff2f92;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:#ffffff !important;
+  font-family:"Baloo 2",sans-serif;
+  font-weight:800;
+  font-size:1.35rem;
+  line-height:1;
+}
+.logoMark{
+  width:46px;
+  height:46px;
+  border-radius:16px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,#ff2f92,#ff8fc7) !important;
+  box-shadow:0 10px 22px rgba(255,118,168,.28);
+  color:#050505 !important;
+}
+nav ul{display:flex;gap:10px;list-style:none}
+nav a{
+  text-decoration:none;
+  color:#ffffff !important;
+  font-family:"Baloo 2",sans-serif;
+  font-weight:800;
+  padding:9px 15px;
+  border-radius:18px;
+}
+nav a:hover{background:#ff2f92 !important;color:#ffffff !important}
+nav .cafe{background:#ff2f92 !important;color:#ffffff !important}
+.menuBtn{
+  display:none;
+  border:0;
+  border-radius:14px;
+  background:#24143a;
+  color:#ffffff;
+  padding:10px 14px;
+  font-weight:900;
+}
+@media(max-width:900px){
+  .menuBtn{display:block}
+  nav ul{
+    display:none;
+    position:absolute;
+    top:76px;
+    right:18px;
+    width:230px;
+    flex-direction:column;
+    background:#151515 !important;
+    padding:14px;
+    border-radius:24px;
+    box-shadow:0 22px 44px rgba(38,21,47,.18);
+  }
+  nav ul.show{display:flex}
+  nav a{display:block;text-align:center}
+}
+@media(max-width:560px){
+  .topbar{padding:12px}
+  .logo{font-size:1rem}
+  .logoMark{width:40px;height:40px}
+}
+</style>
+
+
+<style>
+.topbar{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:14px 24px;background:rgba(5,5,5,.96);backdrop-filter:blur(14px);box-shadow:0 12px 34px rgba(38,21,47,.12);border-bottom:2px solid #ff2f92}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-family:"Baloo 2",sans-serif;font-weight:800;font-size:1.35rem;line-height:1}
+.logoMark{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,#ff2f92,#ff8fc7);box-shadow:0 10px 22px rgba(255,118,168,.28);color:#050505}
+.topbar nav ul{display:flex;gap:10px;list-style:none;align-items:initial}
+.topbar nav a{text-decoration:none;color:#fff;font-family:"Baloo 2",sans-serif;font-size:initial;font-weight:800;padding:9px 15px;border-radius:18px;background:transparent;box-shadow:none;transform:none}
+.topbar nav a:hover{background:transparent;color:#fff;box-shadow:none;transform:none}
+.topbar nav .cafe,.topbar nav .cafe:hover{background:#ff2f92;color:#fff;box-shadow:none;transform:none}
+.menuBtn{display:none;border:0;border-radius:14px;background:#24143a;color:#fff;padding:10px 14px;font-weight:900}
+@media(max-width:900px){
+.menuBtn{display:block}
+.topbar nav ul{display:none;position:absolute;top:76px;right:18px;width:230px;flex-direction:column;background:#151515;padding:14px;border-radius:24px;box-shadow:0 22px 44px rgba(38,21,47,.18)}
+.topbar nav ul.show{display:flex}
+.topbar nav a{display:block;text-align:center}
+}
+@media(max-width:560px){.topbar{padding:12px}.logo{font-size:1rem}.logoMark{width:40px;height:40px}}
+</style>
+
 </head>
 <body>
-<header>
-  <a href="index.html" class="site-logo">
-    <span class="logo-mark">🐾</span>
+<header class="topbar">
+  <a class="logo" href="index.html">
+    <span class="logoMark">🐾</span>
     <span>Mouse's Enchanted Adventures</span>
   </a>
-
   <nav>
-    <ul id="nav-menu">
+    <button class="menuBtn" onclick="toggleMenu()">Menu</button>
+    <ul id="navMenu">
       <li><a href="index.html">Home</a></li>
       <li><a href="product.html">Products</a></li>
-      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="cafe-door.html" class="cafe-link">Enter Café</a></li>
+      <li><a class="cafe" href="cafe-door.html">Enter Café</a></li>
     </ul>
   </nav>
-
-  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 </header>
 
 <main>
@@ -681,7 +832,7 @@
 
       <article class="story-card">
         <h3>The Enchanted World</h3>
-        <p>This whimsical tale follows Mouse, a vampire tabby cat, as he moves through danger, friendship, mystery, and magic with Katherina, Devlin, and Bat by his side.</p>
+        <p>This whimsical tale follows Mouse, a vampire tabby cat, as he moves through danger, friendship, mystery, and magic with Katherina, Devlin, Bat, Ivera, and Christan by his side.</p>
       </article>
     </div>
 
@@ -816,7 +967,7 @@
 
 <script>
   function toggleMenu(){
-    document.getElementById("nav-menu").classList.toggle("show");
+    document.getElementById("navMenu").classList.toggle("show");
   }
 </script>
 </body>

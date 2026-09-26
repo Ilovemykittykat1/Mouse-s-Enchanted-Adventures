@@ -818,6 +818,378 @@ footer a{
 }
 
 </style>
+
+<style>
+/* Pink and black high contrast theme */
+:root{
+  --cream:#050505 !important;
+  --pink:#ff4fa3 !important;
+  --purple:#ff2f92 !important;
+  --blue:#ff8fc7 !important;
+  --yellow:#ffd3e7 !important;
+  --ink:#ffffff !important;
+  --soft:#f6d2e2 !important;
+  --white:#111111 !important;
+  --deep:#050505 !important;
+  --paper:#111111 !important;
+  --shadow:0 18px 45px rgba(255,47,146,.18) !important;
+  --border:rgba(255,79,163,.5) !important;
+}
+
+html,body{
+  background:#050505 !important;
+  color:#ffffff !important;
+}
+body{
+  background:
+    radial-gradient(circle at 10% 10%,rgba(255,47,146,.20),transparent 28%),
+    radial-gradient(circle at 90% 15%,rgba(255,79,163,.14),transparent 26%),
+    #050505 !important;
+}
+body::before{
+  background-image:
+    radial-gradient(circle,rgba(255,79,163,.55) 0 2px,transparent 3px),
+    radial-gradient(circle,rgba(255,255,255,.28) 0 1px,transparent 2px) !important;
+}
+
+/* navigation */
+.topbar{
+  background:rgba(5,5,5,.96) !important;
+  border-bottom:2px solid #ff2f92 !important;
+}
+.logo,.topbar nav a{color:#ffffff !important}
+.logoMark{
+  background:linear-gradient(135deg,#ff2f92,#ff8fc7) !important;
+  color:#050505 !important;
+}
+.topbar nav a:hover{
+  background:#ff2f92 !important;
+  color:#ffffff !important;
+}
+.topbar nav .cafe{
+  background:linear-gradient(135deg,#ff2f92,#111111) !important;
+  color:#ffffff !important;
+}
+.menuBtn{
+  background:#ff2f92 !important;
+  color:#ffffff !important;
+}
+
+/* title */
+.hero-card{
+  background:rgba(14,14,14,.95) !important;
+  border:2px solid rgba(255,79,163,.55) !important;
+}
+.eyebrow{
+  background:#ff2f92 !important;
+  color:#ffffff !important;
+}
+h1{color:#ffffff !important}
+h1 span{color:#ff4fa3 !important}
+.subtitle{color:#ffffff !important}
+
+/* counters and betting */
+.coin-display{
+  background:#111111 !important;
+  border:2px solid rgba(255,79,163,.5) !important;
+}
+.coin-label,.bet-label{color:#f6d2e2 !important}
+.coin-value,.bet-amount{color:#ff4fa3 !important}
+.bet-btn{
+  background:#ff2f92 !important;
+  color:#ffffff !important;
+}
+
+/* slot machine */
+.machine-shell{
+  background:linear-gradient(135deg,#ff2f92,#111111,#ff79b7) !important;
+}
+.machine{
+  background:#0c0c0c !important;
+  border-color:rgba(255,79,163,.6) !important;
+}
+.reels-frame{
+  background:#151515 !important;
+  border-color:#ff2f92 !important;
+}
+.reel-window{
+  background:linear-gradient(180deg,#ffffff,#ffd7e8) !important;
+  border-color:#ff4fa3 !important;
+}
+.spin-btn{
+  background:linear-gradient(135deg,#ff2f92,#ff65ae) !important;
+  color:#ffffff !important;
+  box-shadow:0 14px 30px rgba(255,47,146,.32) !important;
+}
+.marquee-dot{
+  background:#ff4fa3 !important;
+}
+.result-msg .msg-text{color:#ff4fa3 !important}
+.result-msg .msg-sub{color:#ffffff !important}
+
+/* pay table */
+.paytable{
+  background:#111111 !important;
+  border:2px solid rgba(255,79,163,.5) !important;
+}
+.paytable h3{color:#ff4fa3 !important}
+.pay-row{border-bottom-color:rgba(255,79,163,.25) !important}
+.pay-name{color:#ffffff !important}
+.pay-mult{color:#ff4fa3 !important}
+.paytable-toggle{color:#ff6db3 !important}
+
+/* milestones */
+.milestone-title{color:#ff4fa3 !important}
+.milestone{
+  background:#111111 !important;
+  border:2px solid rgba(255,79,163,.38) !important;
+}
+.milestone.unlocked{
+  background:#25101a !important;
+  border-color:#ff4fa3 !important;
+}
+.ms-label{color:#ff4fa3 !important}
+.ms-goal{color:#ffffff !important}
+
+/* buttons and overlays */
+.btn-back{
+  background:#ff2f92 !important;
+  color:#ffffff !important;
+}
+.jackpot-overlay,.unlock-overlay{
+  background:rgba(0,0,0,.82) !important;
+}
+.jackpot-card,.unlock-card{
+  background:#111111 !important;
+  border-color:#ff4fa3 !important;
+  color:#ffffff !important;
+}
+.jp-title,.ul-title{color:#ff4fa3 !important}
+.jp-amount,.ul-badge{color:#ff79b7 !important}
+.ul-msg{color:#ffffff !important}
+.ul-secret{
+  background:#1a1a1a !important;
+  color:#ffffff !important;
+}
+.jp-close,.ul-close{
+  background:#ff2f92 !important;
+  color:#ffffff !important;
+}
+
+/* footer */
+footer{
+  background:#050505 !important;
+  border-top:2px solid #ff2f92 !important;
+  color:#ffffff !important;
+}
+footer a,.footer-social-title{color:#ff5faa !important}
+.footer-social-btn{
+  background:#151515 !important;
+  color:#ffffff !important;
+  border:1px solid rgba(255,79,163,.5) !important;
+}
+.footer-divider{
+  background:linear-gradient(90deg,transparent,#ff2f92,#ffffff,#ff2f92,transparent) !important;
+}
+.orb{
+  background:rgba(255,79,163,.8) !important;
+  box-shadow:0 0 24px rgba(255,47,146,.95) !important;
+}
+@media(max-width:900px){
+  .topbar nav ul{
+    background:#0c0c0c !important;
+    border:2px solid #ff2f92 !important;
+  }
+}
+</style>
+
+
+<style>
+/* NAV ONLY. NOTHING ELSE ON THE PAGE IS CHANGED. */
+.topbar{
+  position:sticky !important;
+  top:0 !important;
+  z-index:20 !important;
+  display:flex !important;
+  justify-content:space-between !important;
+  align-items:center !important;
+  gap:18px !important;
+  padding:14px 24px !important;
+  background:rgba(5,5,5,.96) !important;
+  backdrop-filter:blur(14px) !important;
+  box-shadow:0 12px 34px rgba(38,21,47,.12) !important;
+  border-bottom:2px solid #ff2f92 !important;
+}
+.topbar .logo{
+  display:flex !important;
+  align-items:center !important;
+  gap:10px !important;
+  text-decoration:none !important;
+  color:#ffffff !important;
+  font-family:"Baloo 2",sans-serif !important;
+  font-weight:800 !important;
+  font-size:1.35rem !important;
+  line-height:1 !important;
+}
+.topbar .logoMark{
+  width:46px !important;
+  height:46px !important;
+  border-radius:16px !important;
+  display:grid !important;
+  place-items:center !important;
+  background:linear-gradient(135deg,#ff2f92,#ff8fc7) !important;
+  box-shadow:0 10px 22px rgba(255,118,168,.28) !important;
+  color:#050505 !important;
+}
+.topbar nav ul{
+  display:flex !important;
+  gap:10px !important;
+  list-style:none !important;
+  align-items:center !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+.topbar nav a{
+  text-decoration:none !important;
+  color:#ffffff !important;
+  font-family:"Baloo 2",sans-serif !important;
+  font-size:1rem !important;
+  font-weight:800 !important;
+  padding:9px 15px !important;
+  border-radius:18px !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  transform:none !important;
+}
+.topbar nav a:hover,
+.topbar nav a.active{
+  background:transparent !important;
+  color:#ffffff !important;
+  box-shadow:none !important;
+  transform:none !important;
+}
+.topbar nav .cafe,
+.topbar nav .cafe:hover,
+.topbar nav .cafe.active{
+  background:#ff2f92 !important;
+  color:#ffffff !important;
+}
+.topbar .menuBtn{
+  display:none !important;
+  border:0 !important;
+  border-radius:14px !important;
+  background:#24143a !important;
+  color:#ffffff !important;
+  padding:10px 14px !important;
+  font-weight:900 !important;
+}
+@media(max-width:900px){
+  .topbar .menuBtn{display:block !important}
+  .topbar nav ul{
+    display:none !important;
+    position:absolute !important;
+    top:76px !important;
+    right:18px !important;
+    width:230px !important;
+    flex-direction:column !important;
+    background:#151515 !important;
+    padding:14px !important;
+    border-radius:24px !important;
+    box-shadow:0 22px 44px rgba(38,21,47,.18) !important;
+  }
+  .topbar nav ul.show{display:flex !important}
+  .topbar nav a{
+    display:block !important;
+    text-align:center !important;
+  }
+}
+@media(max-width:560px){
+  .topbar{padding:12px !important}
+  .topbar .logo{font-size:1rem !important}
+  .topbar .logoMark{
+    width:40px !important;
+    height:40px !important;
+  }
+}
+</style>
+
+
+<style>
+/* MASTER FOOTER */
+footer{
+  position:relative !important;
+  z-index:1 !important;
+  background:#050505 !important;
+  border-top:2px solid rgba(255,79,163,.50) !important;
+  padding:38px 20px 30px !important;
+  text-align:center !important;
+  color:#f6d2e2 !important;
+  box-shadow:0 -10px 28px rgba(32,21,61,.05) !important;
+  margin:70px -34px -34px !important;
+}
+footer a{
+  color:#ff2f92 !important;
+  font-weight:800 !important;
+  text-decoration:none !important;
+}
+.footer-social-title{
+  font-family:"Baloo 2",sans-serif !important;
+  font-size:1rem !important;
+  letter-spacing:1px !important;
+  color:#ffffff !important;
+  margin-bottom:15px !important;
+  font-weight:800 !important;
+}
+.footer-social-row{
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  gap:12px !important;
+  flex-wrap:wrap !important;
+  margin-bottom:18px !important;
+}
+.footer-social-btn{
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:8px !important;
+  padding:10px 16px !important;
+  border-radius:999px !important;
+  background:#151515 !important;
+  color:#ffffff !important;
+  font-family:"Baloo 2",sans-serif !important;
+  font-size:.95rem !important;
+  font-weight:800 !important;
+  box-shadow:0 10px 22px rgba(32,21,61,.08) !important;
+  transition:.2s ease !important;
+  border:0 !important;
+}
+.footer-social-btn:hover{
+  transform:translateY(-2px) !important;
+  color:#ff2f92 !important;
+}
+.footer-social-btn img,
+.footer-social-btn svg{
+  width:20px !important;
+  height:20px !important;
+  flex-shrink:0 !important;
+}
+.footer-divider{
+  width:220px !important;
+  height:2px !important;
+  border-radius:20px !important;
+  background:linear-gradient(90deg,transparent,#ff4fa3,#ff2f92,transparent) !important;
+  margin:16px auto !important;
+}
+.footer-copy{
+  font-size:.88rem !important;
+  opacity:.75 !important;
+  font-weight:700 !important;
+}
+@media(max-width:900px){
+  footer{margin:70px -22px -22px !important}
+}
+</style>
+
 </head>
 <body>
 <div class="magic" id="magic"></div>
@@ -940,48 +1312,33 @@ footer a{
     <a href="inside.html" class="btn-back">Back to Café</a>
   </div>
   <footer>
-    <div class="footer-social-title">Follow the Adventure</div>
+  <div class="footer-social-title">Follow the Adventure</div>
 
-    <div class="footer-social-row">
-      <a href="https://www.facebook.com/profile.php?id=61575952349929" target="_blank" class="footer-social-btn">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-        Facebook
-      </a>
+  <div class="footer-social-row">
+    <a href="https://www.facebook.com/profile.php?id=61575952349929" target="_blank" class="footer-social-btn">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"/>
+      Facebook
+    </a>
 
-      <a href="https://www.youtube.com/@Mouse-Enchanted-Adventures" target="_blank" class="footer-social-btn">
-        <svg viewBox="0 0 24 24" fill="#FF0000" xmlns="http://www.w3.org/2000/svg">
-          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-        </svg>
-        YouTube
-      </a>
+    <a href="https://www.youtube.com/@Mouse-Enchanted-Adventures" target="_blank" class="footer-social-btn">
+      <svg viewBox="0 0 24 24" fill="#FF0000" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
+      YouTube
+    </a>
 
-      <a href="https://www.instagram.com/mousesenchantedadventures2025/" target="_blank" class="footer-social-btn">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="ig-grad-game" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#f09433"/>
-              <stop offset="25%" stop-color="#e6683c"/>
-              <stop offset="50%" stop-color="#dc2743"/>
-              <stop offset="75%" stop-color="#cc2366"/>
-              <stop offset="100%" stop-color="#bc1888"/>
-            </linearGradient>
-          </defs>
-          <path fill="url(#ig-grad-game)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-        </svg>
-        Instagram
-      </a>
+    <a href="https://www.instagram.com/mousesenchantedadventures2025/" target="_blank" class="footer-social-btn">
+      Instagram
+    </a>
 
-      <a href="https://www.tiktok.com/@mouseenchantedadventures" target="_blank" class="footer-social-btn">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#111111" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.75a8.18 8.18 0 0 0 4.78 1.52V6.82a4.85 4.85 0 0 1-1.01-.13z"/>
-        </svg>
-        TikTok
-      </a>
-    </div>
+    <a href="https://www.tiktok.com/@mouseenchantedadventures" target="_blank" class="footer-social-btn">
+      TikTok
+    </a>
+  </div>
 
-    <div class="footer-divider"></div>
-    <p class="footer-copy">&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
-  </footer>
+  <div class="footer-divider"></div>
+  <p class="footer-copy">&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+</footer>
 </main>
 
 <div class="win-particles" id="winParticles"></div>
@@ -1008,7 +1365,7 @@ const REEL_WEIGHTS=["🐱","🐱","🐱","🦇","🦇","🦇","🐾","🐾","�
 const MILESTONES={
   ms1:{goal:"coins500",emoji:"🗝️",badge:"Secret Unlocked!",title:"Mouse's Secret Message",msg:"Mouse whispers from the shadows...",secret:"Not all who wander through the Enchanted Café are lost. Some are just looking for the right spell. You have proven yourself worthy of the café's secrets. Remember, the bravest magic comes from the heart, not the wand. Mouse 🐱"},
   ms2:{goal:"coins1000",emoji:"🚪",badge:"Room Discovered!",title:"The Hidden Room",msg:"Behind the bookshelf, a door creaks open...",secret:"You found the Café's Hidden Room. Inside, dusty shelves hold ancient spell books, a crackling fireplace warms the air, and Bat hangs upside down from the chandelier grinning at you. Congratulations, young wizard. You have earned a seat at the Inner Circle. Katherina 🧙‍♀️"},
-  ms3:{goal:"jackpot",emoji:"👑",badge:"Grand Finale!",title:"Master of the Enchanted Slots",msg:"The entire café erupts in celebration!",secret:"Katherina rises from her chair, clapping. Mouse leaps onto the table purring. Bat does loop de loops above your head. You have beaten the Enchanted Slots with persistence, courage, and a little bit of magic. You are now an Honorary Member of the Enchanted Café forever."}
+  ms3:{goal:"jackpot",emoji:"👑",badge:"Grand Finale!",title:"Master of the Enchanted Slots",msg:"The entire café erupts in celebration!",secret:"Katherina rises from her chair, clapping. Mouse leaps onto the table purring. Bat does loop de loops above your head while Devlin, Ivera, and Christan cheer. You have beaten the Enchanted Slots with persistence, courage, and a little bit of magic. You are now an Honorary Member of the Enchanted Café forever."}
 };
 let coins=parseInt(localStorage.getItem("mea_slots_coins")||"100");
 let bestWin=parseInt(localStorage.getItem("mea_slots_best")||"0");

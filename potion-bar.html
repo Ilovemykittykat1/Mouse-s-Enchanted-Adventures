@@ -897,6 +897,274 @@ footer a{
 }
 
 </style>
+
+<style>
+/* COLOUR CHANGES ONLY */
+:root{
+  --deep:#050505 !important;
+  --cream:#050505 !important;
+  --pink:#ff4fa3 !important;
+  --purple:#ff2f92 !important;
+  --blue:#ff8fc7 !important;
+  --yellow:#ffd3e7 !important;
+  --ink:#ffffff !important;
+  --soft:#f6d2e2 !important;
+  --white:#151515 !important;
+  --border:rgba(255,79,163,.50) !important;
+}
+html,body{background:#050505 !important;color:#ffffff !important}
+body{
+  background:
+    radial-gradient(circle at 10% 10%,rgba(255,47,146,.20),transparent 28%),
+    radial-gradient(circle at 90% 15%,rgba(255,79,163,.14),transparent 26%),
+    #050505 !important;
+}
+body::before{
+  background-image:
+    radial-gradient(circle,rgba(255,79,163,.55) 0 3px,transparent 4px),
+    radial-gradient(circle,rgba(255,255,255,.32) 0 2px,transparent 3px) !important;
+}
+
+/* SAME NAV LOOK AS REFERENCE */
+.topbar{
+  background:rgba(5,5,5,.96) !important;
+  border-bottom:2px solid #ff2f92 !important;
+}
+.logo,nav a{color:#ffffff !important}
+.logoMark{
+  background:linear-gradient(135deg,#ff2f92,#ff8fc7) !important;
+  color:#050505 !important;
+}
+nav a:hover{background:#ff2f92 !important;color:#ffffff !important}
+nav .cafe{background:#ff2f92 !important;color:#ffffff !important}
+.menuBtn{background:#24143a !important;color:#ffffff !important}
+
+/* POTION BAR COLOURS */
+.hero-card,.result-banner,.ingredients-shelf{
+  background:rgba(15,15,15,.95) !important;
+  border-color:rgba(255,79,163,.50) !important;
+}
+.eyebrow{background:#ff2f92 !important;color:#ffffff !important}
+h1{color:#ffffff !important}
+h1 span{color:#ff4fa3 !important}
+.page-subtitle,.result-desc,.selected-chips .hint,.bottle-label{
+  color:#ffffff !important;
+}
+.level-badge,.book-btn,.chip{
+  background:#151515 !important;
+  color:#ff4fa3 !important;
+}
+.brew-panel{
+  background:linear-gradient(135deg,#ff2f92,#111111,#ff79b7) !important;
+}
+.brew-inner{
+  background:#0d0d0d !important;
+  border-color:rgba(255,79,163,.55) !important;
+}
+.cauldron-body{
+  background:linear-gradient(180deg,#ff4fa3,#b41464 42%,#111111) !important;
+  border-color:#ff8fc7 !important;
+}
+.cauldron-liquid{
+  background:linear-gradient(180deg,rgba(255,143,199,.70),rgba(255,47,146,.48)) !important;
+}
+.cauldron-liquid.has-items{
+  background:linear-gradient(180deg,rgba(255,79,163,.82),rgba(255,47,146,.60)) !important;
+}
+.cauldron-rim{
+  background:linear-gradient(180deg,#ffb7d7,#ff4fa3) !important;
+  border-color:#ffd3e7 !important;
+}
+.cauldron-handle{border-color:#ff2f92 !important}
+.cauldron-leg{background:#ff2f92 !important}
+.shelf-title,.fail-title{color:#ff4fa3 !important}
+.bottle-body{
+  background:linear-gradient(180deg,#ffffff,#ffe4f1) !important;
+  border-color:rgba(255,79,163,.55) !important;
+}
+.btn-brew,.btn-back,.sb-close{
+  background:linear-gradient(135deg,#ff2f92,#ff4fa3) !important;
+  color:#ffffff !important;
+}
+.char-reaction,.levelup-card,.spellbook,.spell-card{
+  background:#111111 !important;
+  border-color:rgba(255,79,163,.50) !important;
+}
+.char-reaction .char-name,.spellbook h2,.spell-card .sc-name{
+  color:#ff4fa3 !important;
+}
+.char-reaction .char-says,.sb-count,.spell-card .sc-desc{
+  color:#ffffff !important;
+}
+.sb-progress{background:#242424 !important}
+.sb-progress-fill{
+  background:linear-gradient(90deg,#ff8fc7,#ff2f92) !important;
+}
+footer{
+  background:#050505 !important;
+  border-top:2px solid #ff2f92 !important;
+  color:#ffffff !important;
+}
+footer a,.footer-social-title{color:#ff5faa !important}
+.footer-social-btn{
+  background:#151515 !important;
+  color:#ffffff !important;
+  border:1px solid rgba(255,79,163,.5) !important;
+}
+.footer-divider{
+  background:linear-gradient(90deg,transparent,#ff2f92,#ffffff,#ff2f92,transparent) !important;
+}
+@media(max-width:900px){
+  nav ul{
+    background:#151515 !important;
+    border:0 !important;
+  }
+}
+</style>
+
+
+<style>
+/* NAV GEOMETRY ONLY */
+.topbar{
+  position:sticky !important;
+  top:0 !important;
+  z-index:20 !important;
+  display:flex !important;
+  justify-content:space-between !important;
+  align-items:center !important;
+  gap:18px !important;
+  padding:14px 24px !important;
+}
+.topbar .logo{
+  display:flex !important;
+  align-items:center !important;
+  gap:10px !important;
+  font-size:1.35rem !important;
+  line-height:1 !important;
+}
+.topbar .logoMark{
+  width:46px !important;
+  height:46px !important;
+  border-radius:16px !important;
+  display:grid !important;
+  place-items:center !important;
+}
+.topbar nav ul{
+  display:flex !important;
+  align-items:center !important;
+  gap:10px !important;
+  list-style:none !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+.topbar nav a{
+  font-size:1rem !important;
+  font-weight:800 !important;
+  padding:9px 15px !important;
+  border-radius:18px !important;
+  transform:none !important;
+}
+.topbar .menuBtn{
+  display:none !important;
+  padding:10px 14px !important;
+  border-radius:14px !important;
+}
+@media(max-width:900px){
+  .topbar .menuBtn{display:block !important}
+  .topbar nav ul{
+    display:none !important;
+    position:absolute !important;
+    top:76px !important;
+    right:18px !important;
+    width:230px !important;
+    flex-direction:column !important;
+    padding:14px !important;
+    border-radius:24px !important;
+  }
+  .topbar nav ul.show{display:flex !important}
+  .topbar nav a{display:block !important;text-align:center !important}
+}
+@media(max-width:560px){
+  .topbar{padding:12px !important}
+  .topbar .logo{font-size:1rem !important}
+  .topbar .logoMark{width:40px !important;height:40px !important}
+}
+</style>
+
+
+<style>
+/* MASTER FOOTER */
+footer{
+  position:relative !important;
+  z-index:1 !important;
+  background:#050505 !important;
+  border-top:2px solid rgba(255,79,163,.50) !important;
+  padding:38px 20px 30px !important;
+  text-align:center !important;
+  color:#f6d2e2 !important;
+  box-shadow:0 -10px 28px rgba(32,21,61,.05) !important;
+  margin-top:70px !important;
+}
+footer a{
+  color:#ff2f92 !important;
+  font-weight:800 !important;
+  text-decoration:none !important;
+}
+.footer-social-title{
+  font-family:"Baloo 2",sans-serif !important;
+  font-size:1rem !important;
+  letter-spacing:1px !important;
+  color:#ffffff !important;
+  margin-bottom:15px !important;
+  font-weight:800 !important;
+}
+.footer-social-row{
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  gap:12px !important;
+  flex-wrap:wrap !important;
+  margin-bottom:18px !important;
+}
+.footer-social-btn{
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:8px !important;
+  padding:10px 16px !important;
+  border-radius:999px !important;
+  background:#151515 !important;
+  color:#ffffff !important;
+  font-family:"Baloo 2",sans-serif !important;
+  font-size:.95rem !important;
+  font-weight:800 !important;
+  box-shadow:0 10px 22px rgba(32,21,61,.08) !important;
+  transition:.2s ease !important;
+  border:0 !important;
+}
+.footer-social-btn:hover{
+  transform:translateY(-2px) !important;
+  color:#ff2f92 !important;
+}
+.footer-social-btn img,
+.footer-social-btn svg{
+  width:20px !important;
+  height:20px !important;
+  flex-shrink:0 !important;
+}
+.footer-divider{
+  width:220px !important;
+  height:2px !important;
+  border-radius:20px !important;
+  background:linear-gradient(90deg,transparent,#ff4fa3,#ff2f92,transparent) !important;
+  margin:16px auto !important;
+}
+.footer-copy{
+  font-size:.88rem !important;
+  opacity:.75 !important;
+  font-weight:700 !important;
+}
+</style>
+
 </head>
 <body>
 <header class="topbar">
@@ -979,7 +1247,7 @@ footer a{
 
   <div class="footer-social-row">
     <a href="https://www.facebook.com/profile.php?id=61575952349929" target="_blank" class="footer-social-btn">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"/>
       Facebook
     </a>
 
@@ -990,8 +1258,13 @@ footer a{
       YouTube
     </a>
 
-    <a href="https://www.instagram.com/mousesenchantedadventures2025/" target="_blank" class="footer-social-btn">Instagram</a>
-    <a href="https://www.tiktok.com/@mouseenchantedadventures" target="_blank" class="footer-social-btn">TikTok</a>
+    <a href="https://www.instagram.com/mousesenchantedadventures2025/" target="_blank" class="footer-social-btn">
+      Instagram
+    </a>
+
+    <a href="https://www.tiktok.com/@mouseenchantedadventures" target="_blank" class="footer-social-btn">
+      TikTok
+    </a>
   </div>
 
   <div class="footer-divider"></div>
@@ -1146,7 +1419,17 @@ function showSuccess(recipe){
   if(!already&&newLvl.title!==oldLvl.title){
     setTimeout(()=>{showLevelUp(newLvl);showReaction("🦇","Bat",`You're now a ${newLvl.title}! Squeak!`);},1200);
   }else{
-    setTimeout(()=>{showReaction("🧙‍♀️","Katherina",already?"You've brewed this before. Still impressive!":`${recipe.name}! Brilliant work!`);},600);
+    setTimeout(()=>{
+      const successReactions=[
+        ["🧙‍♀️","Katherina",already?"You've brewed this before. Still impressive!":`${recipe.name}! Brilliant work!`],
+        ["🦇","Bat",already?"Again? You really like that one, don't you?":`${recipe.name}! Squeak! That actually worked!`],
+        ["🧙‍♂️","Devlin",already?"I remember this one!":`${recipe.name}! How did you do that?`],
+        ["🔵","Ivera",already?"Showing off now, are we?":`${recipe.name}! Okay, I'm impressed.`],
+        ["🟣","Christan",already?"Consistent results. Very nice.":`${recipe.name}! Excellent combination.`]
+      ];
+      const r=successReactions[Math.floor(Math.random()*successReactions.length)];
+      showReaction(r[0],r[1],r[2]);
+    },600);
   }
 }
 function showFailure(){
@@ -1155,7 +1438,17 @@ function showFailure(){
   b.style.display="block";
   b.innerHTML=`<div class="fail-emoji">${f.emoji}</div><div class="fail-title">Oops!</div><div class="result-desc">${f.text}</div>`;
   spawnParticles(["💥","🎉","🦆","🫧","😂"]);
-  setTimeout(()=>{showReaction("🐱","Mouse",f.text);},600);
+  setTimeout(()=>{
+      const failReactions=[
+        ["🐱","Mouse",f.text],
+        ["🦇","Bat",`Well... that definitely did something.`],
+        ["🧙‍♂️","Devlin",`Wait, was that supposed to happen?`],
+        ["🔵","Ivera",`I'm going to pretend I didn't see that.`],
+        ["🟣","Christan",`Interesting result. Completely wrong, but interesting.`]
+      ];
+      const r=failReactions[Math.floor(Math.random()*failReactions.length)];
+      showReaction(r[0],r[1],r[2]);
+    },600);
 }
 function spawnParticles(emojis){
   const o=document.getElementById("particlesOverlay");

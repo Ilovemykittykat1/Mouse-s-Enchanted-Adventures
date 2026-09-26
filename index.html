@@ -384,6 +384,110 @@ footer a{
   .castItem span{display:block;text-align:left;margin-top:4px}
 }
 </style>
+
+<style>
+/* MASTER FOOTER */
+footer{
+  position:relative !important;
+  z-index:1 !important;
+  background:#050505 !important;
+  border-top:2px solid rgba(255,79,163,.50) !important;
+  padding:38px 20px 30px !important;
+  text-align:center !important;
+  color:#f6d2e2 !important;
+  box-shadow:0 -10px 28px rgba(32,21,61,.05) !important;
+  margin:0 -34px -34px !important;
+}
+footer a{
+  color:#ff2f92 !important;
+  font-weight:800 !important;
+  text-decoration:none !important;
+}
+.footer-social-title{
+  font-family:"Baloo 2",sans-serif !important;
+  font-size:1rem !important;
+  letter-spacing:1px !important;
+  color:#ffffff !important;
+  margin-bottom:15px !important;
+  font-weight:800 !important;
+}
+.footer-social-row{
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  gap:12px !important;
+  flex-wrap:wrap !important;
+  margin-bottom:18px !important;
+}
+.footer-social-btn{
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:8px !important;
+  padding:10px 16px !important;
+  border-radius:999px !important;
+  background:#151515 !important;
+  color:#ffffff !important;
+  font-family:"Baloo 2",sans-serif !important;
+  font-size:.95rem !important;
+  font-weight:800 !important;
+  box-shadow:0 10px 22px rgba(32,21,61,.08) !important;
+  transition:.2s ease !important;
+  border:0 !important;
+}
+.footer-social-btn:hover{
+  transform:translateY(-2px) !important;
+  color:#ff2f92 !important;
+}
+.footer-social-btn img,
+.footer-social-btn svg{
+  width:20px !important;
+  height:20px !important;
+  flex-shrink:0 !important;
+}
+.footer-divider{
+  width:220px !important;
+  height:2px !important;
+  border-radius:20px !important;
+  background:linear-gradient(90deg,transparent,#ff4fa3,#ff2f92,transparent) !important;
+  margin:16px auto !important;
+}
+.footer-copy{
+  font-size:.88rem !important;
+  opacity:.75 !important;
+  font-weight:700 !important;
+}
+@media(max-width:900px){
+  footer{margin:0 -22px -22px !important}
+}
+</style>
+
+
+<style>
+/* MOBILE NAV FIX ONLY */
+@media(max-width:900px){
+  .topbar nav ul{
+    background:#151515 !important;
+    border:1px solid #ff2f92 !important;
+    z-index:100 !important;
+  }
+
+  .topbar nav a{
+    color:#ffffff !important;
+    background:transparent !important;
+  }
+
+  .topbar nav a:hover{
+    background:#ff2f92 !important;
+    color:#ffffff !important;
+  }
+
+  .topbar nav .cafe{
+    background:#ff2f92 !important;
+    color:#ffffff !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="magic" id="magic"></div>
@@ -432,16 +536,21 @@ footer a{
 
   <section class="story">
     <div class="storyCard">
-      <h2>Inside the World</h2>
-      <p>Mouse's Enchanted Adventures brings together magic, friendship, mystery, and imagination in one whimsical place for readers, dreamers, and curious hearts.</p>
-    </div>
+        <h2>Inside the World</h2>
+        <p>Mouse's Enchanted Adventures is a magical world built around friendship, mystery, imagination, and unexpected adventures.</p>
+        <p style="margin-top:18px;">Mouse, the fearless vampire tabby cat, is joined by Bat, his loyal familiar, Devlin the curious young warlock, and Katherina the enchanted witch.</p>
+        <p style="margin-top:18px;">Ivera brings confidence, wit, and a playful spark, while Christan adds intelligence, quick thinking, and his own powerful magic to the group.</p>
+        <p style="margin-top:18px;">Together, Mouse, Bat, Devlin, Katherina, Ivera, and Christan explore hidden doors, strange spells, magical places, and mysteries throughout the enchanted world.</p>
+      </div>
 
-    <div class="listCard">
+      <div class="listCard">
       <div class="castList">
         <div class="castItem" onclick="location.href='about.html'"><b>Mouse</b><span>Vampire Tabby Cat</span></div>
         <div class="castItem" onclick="location.href='about.html'"><b>Bat</b><span>The Loyal Familiar</span></div>
         <div class="castItem" onclick="location.href='about.html'"><b>Devlin</b><span>Young Warlock</span></div>
         <div class="castItem" onclick="location.href='about.html'"><b>Katherina</b><span>Enchanted Witch</span></div>
+        <div class="castItem" onclick="location.href='about.html'"><b>Ivera</b><span>Young Witch</span></div>
+        <div class="castItem" onclick="location.href='about.html'"><b>Christan</b><span>Young Warlock</span></div>
       </div>
     </div>
   </section>
@@ -460,48 +569,33 @@ footer a{
   </section>
 
   <footer>
-    <div class="footer-social-title">Follow the Adventure</div>
+  <div class="footer-social-title">Follow the Adventure</div>
 
-    <div class="footer-social-row">
-      <a href="https://www.facebook.com/profile.php?id=61575952349929" target="_blank" class="footer-social-btn">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-        Facebook
-      </a>
+  <div class="footer-social-row">
+    <a href="https://www.facebook.com/profile.php?id=61575952349929" target="_blank" class="footer-social-btn">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"/>
+      Facebook
+    </a>
 
-      <a href="https://www.youtube.com/@Mouse-Enchanted-Adventures" target="_blank" class="footer-social-btn">
-        <svg viewBox="0 0 24 24" fill="#FF0000" xmlns="http://www.w3.org/2000/svg">
-          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-        </svg>
-        YouTube
-      </a>
+    <a href="https://www.youtube.com/@Mouse-Enchanted-Adventures" target="_blank" class="footer-social-btn">
+      <svg viewBox="0 0 24 24" fill="#FF0000" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
+      YouTube
+    </a>
 
-      <a href="https://www.instagram.com/mousesenchantedadventures2025/" target="_blank" class="footer-social-btn">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#f09433"/>
-              <stop offset="25%" stop-color="#e6683c"/>
-              <stop offset="50%" stop-color="#dc2743"/>
-              <stop offset="75%" stop-color="#cc2366"/>
-              <stop offset="100%" stop-color="#bc1888"/>
-            </linearGradient>
-          </defs>
-          <path fill="url(#ig-grad)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-        </svg>
-        Instagram
-      </a>
+    <a href="https://www.instagram.com/mousesenchantedadventures2025/" target="_blank" class="footer-social-btn">
+      Instagram
+    </a>
 
-      <a href="https://www.tiktok.com/@mouseenchantedadventures" target="_blank" class="footer-social-btn">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#ffffff" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.75a8.18 8.18 0 0 0 4.78 1.52V6.82a4.85 4.85 0 0 1-1.01-.13z"/>
-        </svg>
-        TikTok
-      </a>
-    </div>
+    <a href="https://www.tiktok.com/@mouseenchantedadventures" target="_blank" class="footer-social-btn">
+      TikTok
+    </a>
+  </div>
 
-    <div class="footer-divider"></div>
-    <p class="footer-copy">&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
-  </footer>
+  <div class="footer-divider"></div>
+  <p class="footer-copy">&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+</footer>
 </main>
 
 <script>
@@ -539,3 +633,136 @@ document.addEventListener("DOMContentLoaded",()=>{
 </script>
 </body>
 </html>
+<style>
+html, body {
+  background: #050505 !important;
+  color: #ffffff !important;
+}
+
+body {
+  background:
+    radial-gradient(circle at 15% 18%, rgba(255, 40, 145, .22), transparent 28%),
+    radial-gradient(circle at 85% 72%, rgba(255, 105, 180, .16), transparent 30%),
+    #050505 !important;
+}
+
+.topbar {
+  background: rgba(5,5,5,.96) !important;
+  border-bottom: 2px solid #ff2f92;
+}
+
+.logo, nav a {
+  color: #ffffff !important;
+}
+
+.logoMark {
+  background: linear-gradient(135deg,#ff2f92,#ff8fc7) !important;
+  color: #050505 !important;
+}
+
+nav a:hover {
+  background: #ff2f92 !important;
+  color: #ffffff !important;
+}
+
+nav .cafe {
+  background: #ff2f92 !important;
+  color: #ffffff !important;
+}
+
+.heroText,
+.storyCard,
+.listCard {
+  background: rgba(15,15,15,.94) !important;
+  border: 2px solid rgba(255,47,146,.65) !important;
+}
+
+.badge {
+  background: #ff2f92 !important;
+  color: #ffffff !important;
+}
+
+h1,
+.storyCard h2,
+.mirror h2,
+.final h2 {
+  color: #ffffff !important;
+}
+
+h1 span,
+.castItem b {
+  color: #ff4fa3 !important;
+}
+
+.heroText p,
+.storyCard p,
+.castItem span,
+.final p {
+  color: #ffffff !important;
+}
+
+.primary {
+  background: #ff2f92 !important;
+  color: #ffffff !important;
+}
+
+.secondary {
+  background: #ffffff !important;
+  color: #111111 !important;
+}
+
+.heroArt {
+  background: linear-gradient(135deg,#ff2f92,#111111,#ff78b7) !important;
+}
+
+.quickLinks a {
+  background: #ff2f92 !important;
+  color: #ffffff !important;
+  border: 2px solid #ff8fc7;
+}
+
+.castItem {
+  background: #111111 !important;
+  border: 1px solid #ff2f92;
+}
+
+.mirror {
+  background: #0b0b0b !important;
+  border: 2px solid #ff2f92;
+}
+
+.frame {
+  background: conic-gradient(#ff2f92,#ffffff,#ff78b7,#111111,#ff2f92) !important;
+}
+
+.final {
+  background: linear-gradient(135deg,#ff2f92,#111111 60%) !important;
+  border: 2px solid #ff5faa;
+}
+
+footer {
+  background: #050505 !important;
+  color: #ffffff !important;
+  border-top: 2px solid #ff2f92 !important;
+}
+
+footer a,
+.footer-social-title {
+  color: #ff5faa !important;
+}
+
+.footer-social-btn {
+  background: #151515 !important;
+  color: #ffffff !important;
+  border: 1px solid #ff2f92;
+}
+
+.footer-divider {
+  background: linear-gradient(90deg,transparent,#ff2f92,#ffffff,#ff2f92,transparent) !important;
+}
+
+.orb {
+  background: rgba(255,79,163,.85) !important;
+  box-shadow: 0 0 25px rgba(255,47,146,.95) !important;
+}
+</style>
