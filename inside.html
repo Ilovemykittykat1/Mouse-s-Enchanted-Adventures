@@ -1,607 +1,1000 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Inside the Enchanted Café | Mouse's Enchanted Adventures</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Playfair+Display:wght@700;900&family=Nunito:wght@500;700;900&display=swap" rel="stylesheet">
+
 <style>
-:root{
-  --ink:#26152f;
-  --deep:#24143a;
-  --purple:#7651d9;
-  --pink:#ff76a8;
-  --orange:#ffb35c;
-  --yellow:#ffe08a;
-  --blue:#83e8ff;
-  --paper:#fff7e7;
-  --white:#ffffff;
-  --soft:#543c62;
+
+/* MAIN COLORS */
+
+:root {
+  --black: #050505;
+  --card: #111111;
+  --pink: #ff2f92;
+  --lightpink: #ff4fa3;
+  --softpink: #f6d2e2;
+  --white: #ffffff;
+  --border: rgba(255,79,163,0.5);
+  --shadow: 0 12px 32px rgba(255,47,146,0.12);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:Nunito,sans-serif;
-  color:var(--ink);
+
+/* RESET */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
   background:
-    radial-gradient(circle at 12% 20%,rgba(131,232,255,.55),transparent 24%),
-    radial-gradient(circle at 86% 18%,rgba(255,179,92,.55),transparent 24%),
-    radial-gradient(circle at 50% 100%,rgba(255,118,168,.38),transparent 30%),
-    linear-gradient(135deg,#fff3d9,#ffe2f0 48%,#dff8ff);
-  overflow-x:hidden;
+    radial-gradient(
+      circle at 15% 18%,
+      rgba(255,40,145,0.16),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(255,105,180,0.10),
+      transparent 30%
+    ),
+    var(--black);
+
+  color: var(--white);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
-.magic{position:fixed;inset:0;z-index:0;pointer-events:none}
-.orb{
-  position:absolute;
-  border-radius:50%;
-  background:rgba(255,255,255,.7);
-  box-shadow:0 0 24px rgba(255,224,138,.8);
-  animation:rise var(--time) linear infinite;
+
+img {
+  max-width: 100%;
 }
-@keyframes rise{
-  from{transform:translateY(110vh) scale(.4);opacity:0}
-  20%,80%{opacity:1}
-  to{transform:translateY(-20vh) scale(1.2);opacity:0}
+
+/* FLOATING BACKGROUND MAGIC */
+
+.magic {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
-.topbar{
-  position:sticky;
-  top:0;
-  z-index:20;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:18px;
-  padding:14px 24px;
-  background:rgba(255,247,231,.9);
-  backdrop-filter:blur(14px);
-  box-shadow:0 12px 34px rgba(38,21,47,.12);
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,79,163,0.65);
+  box-shadow: 0 0 18px rgba(255,47,146,0.65);
+  animation: rise var(--time, 9s) linear infinite;
 }
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  text-decoration:none;
-  color:var(--deep);
-  font-family:"Baloo 2",sans-serif;
-  font-weight:800;
-  font-size:1.35rem;
-  line-height:1;
+
+@keyframes rise {
+  from {
+    transform: translateY(110vh) scale(0.4);
+    opacity: 0;
+  }
+
+  20%, 80% {
+    opacity: 0.8;
+  }
+
+  to {
+    transform: translateY(-20vh) scale(1.2);
+    opacity: 0;
+  }
 }
-.logoMark{
-  width:46px;
-  height:46px;
-  border-radius:16px;
-  display:grid;
-  place-items:center;
-  background:linear-gradient(135deg,var(--yellow),var(--pink));
-  box-shadow:0 10px 22px rgba(255,118,168,.28);
+
+/* NAVIGATION */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  padding: 14px 24px;
+
+  background: rgba(5,5,5,0.97);
+  border-bottom: 2px solid var(--pink);
+  backdrop-filter: blur(14px);
 }
-nav ul{display:flex;gap:10px;list-style:none}
-nav a{
-  text-decoration:none;
-  color:var(--deep);
-  font-family:"Baloo 2",sans-serif;
-  font-weight:800;
-  padding:9px 15px;
-  border-radius:18px;
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-family: "Baloo 2", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+
+  color: white;
+  text-decoration: none;
+  line-height: 1.2;
 }
-nav a:hover{background:var(--white);color:var(--pink)}
-nav .cafe{
-  background:linear-gradient(135deg,var(--purple),var(--pink));
-  color:var(--white);
+
+.logoMark {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ff2f92, #ff8fc7);
+
+  font-size: 23px;
 }
-.menuBtn{display:none;border:0;border-radius:14px;background:var(--deep);color:var(--white);padding:10px 14px;font-weight:900}
-.page{position:relative;z-index:1;padding:34px}
-.cafe-image-wrap{
-  background:linear-gradient(135deg,var(--blue),var(--yellow),var(--pink));
-  padding:18px;
-  border-radius:42px;
-  box-shadow:0 30px 85px rgba(38,21,47,.2);
-  margin-bottom:34px;
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
 }
-.cafe-image-inner{
-  background:var(--paper);
-  border:12px solid var(--paper);
-  border-radius:30px;
-  overflow:hidden;
+
+nav a {
+  display: block;
+  padding: 9px 14px;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 800;
+  font-size: 0.98rem;
+
+  border-radius: 16px;
+  transition: background 0.2s ease;
 }
-.cafe-image-inner img{
-  width:100%;
-  height:520px;
-  object-fit:fill;
-  display:block;
+
+nav a:hover {
+  background: var(--pink);
 }
-.intro-card{
-  background:rgba(255,255,255,.7);
-  border:3px solid rgba(255,255,255,.8);
-  border-radius:48px;
-  padding:44px;
-  box-shadow:0 28px 75px rgba(38,21,47,.15);
-  text-align:center;
-  margin-bottom:34px;
+
+nav .cafe {
+  background: var(--pink);
+  color: #ffffff;
 }
-.badge{
-  display:inline-block;
-  background:var(--deep);
-  color:var(--yellow);
-  font-family:"Baloo 2",sans-serif;
-  font-weight:800;
-  padding:10px 18px;
-  border-radius:999px;
-  margin-bottom:22px;
+
+.menuBtn {
+  display: none;
+
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 12px;
+
+  background: var(--pink);
+  color: white;
+
+  font-family: "Nunito", sans-serif;
+  font-weight: 900;
+  cursor: pointer;
 }
-h1{
-  font-family:"Playfair Display",serif;
-  font-size:clamp(3.1rem,8vw,7.2rem);
-  line-height:.86;
-  color:var(--purple);
-  margin-bottom:24px;
+
+/* MAIN PAGE */
+
+.page {
+  position: relative;
+  z-index: 1;
+
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 34px 0 60px;
 }
-h1 span{display:block;color:var(--pink)}
-.intro-card p{
-  max-width:720px;
-  margin:0 auto;
-  font-size:1.2rem;
-  line-height:1.65;
-  font-weight:800;
-  color:var(--soft);
+
+/* CAFE IMAGE */
+
+.cafe-image-wrap {
+  width: 100%;
+  max-width: 960px;
+
+  margin: 0 auto 32px;
+  padding: 10px;
+
+  border-radius: 26px;
+
+  background: linear-gradient(
+    135deg,
+    var(--pink),
+    #27101f,
+    var(--lightpink)
+  );
+
+  box-shadow: var(--shadow);
 }
-.activities-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
+
+.cafe-image-inner {
+  width: 100%;
+  overflow: hidden;
+
+  background: #111111;
+  border-radius: 19px;
 }
-.activity-card{
-  background:var(--white);
-  border-radius:30px;
-  padding:32px 24px;
-  text-align:center;
-  text-decoration:none;
-  box-shadow:0 16px 34px rgba(32,21,61,.1);
-  transition:.2s;
+
+.cafe-image-inner img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+
+  object-fit: contain;
+  object-position: center;
 }
-.activity-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 22px 44px rgba(32,21,61,.16);
+
+/* INTRO SECTION */
+
+.intro-card {
+  width: 100%;
+  max-width: 960px;
+
+  margin: 0 auto 32px;
+  padding: 36px 30px;
+
+  background: rgba(15,15,15,0.96);
+  border: 2px solid var(--border);
+  border-radius: 28px;
+
+  box-shadow: var(--shadow);
+  text-align: center;
 }
-.activity-icon{
-  width:74px;
-  height:74px;
-  margin:0 auto 16px;
-  display:grid;
-  place-items:center;
-  border-radius:24px;
-  background:linear-gradient(135deg,var(--yellow),var(--pink));
-  font-size:2.5rem;
-  box-shadow:0 12px 26px rgba(255,111,168,.22);
-  animation:bob var(--anim-d,3s) ease-in-out infinite;
+
+.badge {
+  display: inline-block;
+
+  padding: 8px 17px;
+  margin-bottom: 18px;
+
+  background: var(--pink);
+  color: #ffffff;
+
+  border-radius: 999px;
+
+  font-family: "Baloo 2", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
 }
-@keyframes bob{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-9px)}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.3rem, 4vw, 4.2rem);
+  line-height: 1.12;
+
+  color: white;
+  margin-bottom: 18px;
 }
-.activity-name{
-  font-family:"Baloo 2",sans-serif;
-  font-size:1.55rem;
-  color:var(--purple);
-  font-weight:800;
-  margin-bottom:8px;
+
+h1 span {
+  color: var(--lightpink);
 }
-.activity-desc{
-  color:var(--soft);
-  font-weight:800;
-  line-height:1.5;
-  font-size:1rem;
+
+.intro-card p {
+  max-width: 640px;
+  margin: 0 auto;
+
+  font-size: 1.05rem;
+  line-height: 1.65;
+  font-weight: 700;
+
+  color: var(--softpink);
 }
-footer{
-  position:relative;
-  z-index:1;
-  background:rgba(255,247,232,0.86);
-  border-top:2px solid rgba(255,255,255,0.76);
-  padding:38px 20px 30px;
-  text-align:center;
-  color:var(--soft);
-  box-shadow:0 -10px 28px rgba(32,21,61,0.05);
-  margin:70px -34px -34px;
+
+/* ACTIVITY CARDS */
+
+.activities-grid {
+  width: 100%;
+  max-width: 960px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
 }
-footer a{
-  color:var(--purple);
-  font-weight:800;
-  text-decoration:none;
+
+.activity-card {
+  min-width: 0;
+  min-height: 230px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px 18px;
+
+  background: var(--card);
+  border: 2px solid rgba(255,79,163,0.42);
+  border-radius: 24px;
+
+  box-shadow: var(--shadow);
+  text-align: center;
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
-.footer-social-title{
-  font-family:"Baloo 2",sans-serif;
-  font-size:1rem;
-  letter-spacing:1px;
-  color:var(--ink);
-  margin-bottom:15px;
-  font-weight:800;
+
+.activity-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px rgba(255,47,146,0.22);
 }
-.footer-social-row{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-bottom:18px;
+
+.activity-card:focus-visible,
+.menuBtn:focus-visible,
+nav a:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
 }
-.footer-social-btn{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:10px 16px;
-  border-radius:999px;
-  background:#ffffff;
-  color:var(--ink);
-  font-family:"Baloo 2",sans-serif;
-  font-size:0.95rem;
-  font-weight:800;
-  box-shadow:0 10px 22px rgba(32,21,61,0.08);
-  transition:0.2s ease;
+
+/* ICONS */
+
+.activity-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 58px;
+
+  margin: 0 auto 15px;
+
+  border-radius: 18px;
+
+  background: linear-gradient(
+    135deg,
+    #ff2f92,
+    #ff8fc7
+  );
+
+  font-family: sans-serif;
+  font-size: 29px;
+  line-height: 1;
+
+  box-shadow: 0 8px 18px rgba(255,47,146,0.2);
 }
-.footer-social-btn:hover{
-  transform:translateY(-2px);
-  color:var(--purple);
+
+/* ACTIVITY TEXT */
+
+.activity-name {
+  font-family: "Baloo 2", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.25;
+
+  color: var(--lightpink);
+  margin-bottom: 10px;
 }
+
+.activity-desc {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  font-weight: 700;
+
+  color: #ffffff;
+  overflow-wrap: break-word;
+}
+
+/* FOOTER */
+
+footer {
+  position: relative;
+  z-index: 1;
+
+  margin-top: 65px;
+  padding: 38px 20px 30px;
+
+  background: var(--black);
+  border-top: 2px solid var(--border);
+
+  color: var(--softpink);
+  text-align: center;
+}
+
+footer a {
+  color: var(--lightpink);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.footer-social-title {
+  font-family: "Baloo 2", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.footer-social-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+.footer-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+
+  border-radius: 999px;
+  background: #151515;
+  color: #ffffff;
+
+  font-family: "Baloo 2", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+
+  box-shadow: 0 8px 20px rgba(32,21,61,0.08);
+
+  transition: transform 0.2s ease;
+}
+
+.footer-social-btn:hover {
+  transform: translateY(-2px);
+  color: var(--lightpink);
+}
+
 .footer-social-btn img,
-.footer-social-btn svg{
-  width:20px;
-  height:20px;
-  flex-shrink:0;
+.footer-social-btn svg {
+  display: block;
+
+  width: 20px;
+  height: 20px;
+
+  flex: 0 0 20px;
+  object-fit: contain;
 }
-.footer-divider{
-  width:220px;
-  height:2px;
-  border-radius:20px;
-  background:linear-gradient(90deg,transparent,var(--pink),var(--purple),transparent);
-  margin:16px auto;
+
+.footer-divider {
+  width: min(220px, 80%);
+  height: 2px;
+
+  margin: 16px auto;
+
+  border-radius: 20px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--pink),
+    #ffffff,
+    var(--pink),
+    transparent
+  );
 }
-.footer-copy{
-  font-size:0.88rem;
-  opacity:0.75;
-  font-weight:700;
+
+.footer-copy {
+  font-size: 0.88rem;
+  font-weight: 700;
+  opacity: 0.75;
 }
-@media(max-width:950px){
-  .activities-grid{grid-template-columns:1fr}
-  .cafe-image-inner img{height:430px}
-}
-@media(max-width:900px){
-  .menuBtn{display:block}
-  nav ul{
-    display:none;
-    position:absolute;
-    top:76px;
-    right:18px;
-    width:230px;
-    flex-direction:column;
-    background:var(--white);
-    padding:14px;
-    border-radius:24px;
-    box-shadow:0 22px 44px rgba(38,21,47,.18);
+
+/* TABLET */
+
+@media (max-width: 950px) {
+
+  .activities-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  nav ul.show{display:flex}
-  nav a{display:block;text-align:center}
-  .page{padding:22px}
-  footer{margin:70px -22px -22px}
-}
-@media(max-width:560px){
-  .topbar{padding:12px}
-  .logo{font-size:1rem}
-  .logoMark{width:40px;height:40px}
-  .intro-card{padding:28px;border-radius:34px}
-  .cafe-image-inner img{height:320px}
-}
-</style>
 
-<style>
-:root{
-  --ink:#ffffff !important;
-  --deep:#050505 !important;
-  --purple:#ff2f92 !important;
-  --pink:#ff4fa3 !important;
-  --orange:#ff8fc7 !important;
-  --yellow:#ffd3e7 !important;
-  --blue:#ff91c3 !important;
-  --paper:#111111 !important;
-  --white:#151515 !important;
-  --soft:#f6d2e2 !important;
-}
-html,body{background:#050505 !important;color:#ffffff !important}
-body{
-  background:
-    radial-gradient(circle at 12% 20%,rgba(255,47,146,.20),transparent 25%),
-    radial-gradient(circle at 86% 18%,rgba(255,79,163,.14),transparent 25%),
-    #050505 !important;
-}
-.topbar{
-  background:rgba(5,5,5,.96) !important;
-  border-bottom:2px solid #ff2f92 !important;
-}
-.logo,nav a{color:#ffffff !important}
-.logoMark{background:linear-gradient(135deg,#ff2f92,#ff8fc7) !important}
-nav a:hover{background:#ff2f92 !important;color:#ffffff !important}
-nav .cafe{background:linear-gradient(135deg,#ff2f92,#111111) !important;color:#ffffff !important}
-.menuBtn{background:#ff2f92 !important;color:#ffffff !important}
-
-.cafe-image-wrap{
-  background:linear-gradient(135deg,#ff2f92,#111111,#ff79b7) !important;
-}
-.cafe-image-inner{
-  background:#111111 !important;
-  border-color:#111111 !important;
-}
-.intro-card{
-  background:rgba(15,15,15,.95) !important;
-  border:3px solid rgba(255,79,163,.5) !important;
-}
-.badge{background:#ff2f92 !important;color:#ffffff !important}
-h1{color:#ffffff !important}
-h1 span{color:#ff4fa3 !important}
-.intro-card p{color:#ffffff !important}
-
-.activity-card{
-  background:#111111 !important;
-  border:2px solid rgba(255,79,163,.42) !important;
-}
-.activity-card:hover{
-  box-shadow:0 22px 44px rgba(255,47,146,.22) !important;
-}
-.activity-icon{
-  background:linear-gradient(135deg,#ff2f92,#ff8fc7) !important;
-}
-.activity-name{color:#ff4fa3 !important}
-.activity-desc{color:#ffffff !important}
-
-footer{
-  background:#050505 !important;
-  border-top:2px solid #ff2f92 !important;
-  color:#ffffff !important;
-}
-footer a,.footer-social-title{color:#ff5faa !important}
-.footer-social-btn{
-  background:#151515 !important;
-  color:#ffffff !important;
-  border:1px solid rgba(255,79,163,.5) !important;
-}
-.footer-divider{
-  background:linear-gradient(90deg,transparent,#ff2f92,#ffffff,#ff2f92,transparent) !important;
-}
-.orb{
-  background:rgba(255,79,163,.8) !important;
-  box-shadow:0 0 24px rgba(255,47,146,.95) !important;
-}
-@media(max-width:900px){
-  nav ul{
-    background:#0c0c0c !important;
-    border:2px solid #ff2f92 !important;
+  .activity-card {
+    min-height: 210px;
   }
-}
-</style>
 
+}
 
+/* MOBILE NAVIGATION */
 
-<style>
-/* MASTER NAV: EXACT REFERENCE */
-.topbar{
-  position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;
-  align-items:center;gap:18px;padding:14px 24px;background:rgba(5,5,5,.96) !important;
-  backdrop-filter:blur(14px);box-shadow:0 12px 34px rgba(38,21,47,.12);
-  border-bottom:2px solid #ff2f92 !important;
-}
-.logo{
-  display:flex;align-items:center;gap:10px;text-decoration:none;color:#ffffff !important;
-  font-family:"Baloo 2",sans-serif;font-weight:800;font-size:1.35rem;line-height:1;
-}
-.logoMark{
-  width:46px;height:46px;border-radius:16px;display:grid;place-items:center;
-  background:linear-gradient(135deg,#ff2f92,#ff8fc7) !important;
-  box-shadow:0 10px 22px rgba(255,118,168,.28);color:#050505 !important;
-}
-nav ul{display:flex;gap:10px;list-style:none}
-nav a{
-  text-decoration:none;color:#ffffff !important;font-family:"Baloo 2",sans-serif;
-  font-weight:800;padding:9px 15px;border-radius:18px;
-}
-nav a:hover{background:#ff2f92 !important;color:#ffffff !important}
-nav .cafe{background:#ff2f92 !important;color:#ffffff !important}
-.menuBtn{
-  display:none;border:0;border-radius:14px;background:#24143a;color:#ffffff;
-  padding:10px 14px;font-weight:900;
-}
-@media(max-width:900px){
-  .menuBtn{display:block}
-  nav ul{
-    display:none;position:absolute;top:76px;right:18px;width:230px;
-    flex-direction:column;background:#151515 !important;padding:14px;
-    border-radius:24px;box-shadow:0 22px 44px rgba(38,21,47,.18);
-    border:0 !important;
+@media (max-width: 900px) {
+
+  .menuBtn {
+    display: block;
   }
-  nav ul.show{display:flex}
-  nav a{display:block;text-align:center}
+
+  nav ul {
+    display: none;
+
+    position: absolute;
+    top: calc(100% + 2px);
+    right: 14px;
+
+    width: min(230px, calc(100vw - 28px));
+
+    flex-direction: column;
+    align-items: stretch;
+
+    padding: 14px;
+
+    background: #151515;
+    border: 1px solid var(--pink);
+    border-radius: 18px;
+
+    box-shadow: 0 18px 38px rgba(0,0,0,0.3);
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav a {
+    text-align: center;
+  }
+
 }
-@media(max-width:560px){
-  .topbar{padding:12px}
-  .logo{font-size:1rem}
-  .logoMark{width:40px;height:40px}
+
+/* SMALL SCREENS */
+
+@media (max-width: 600px) {
+
+  .topbar {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 0.95rem;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .logoMark {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+  }
+
+  .menuBtn {
+    padding: 9px 12px;
+  }
+
+  .page {
+    width: calc(100% - 24px);
+    padding-top: 20px;
+  }
+
+  .cafe-image-wrap {
+    padding: 6px;
+    border-radius: 18px;
+    margin-bottom: 22px;
+  }
+
+  .cafe-image-inner {
+    border-radius: 13px;
+  }
+
+  .cafe-image-inner img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+  }
+
+  .intro-card {
+    padding: 26px 18px;
+    border-radius: 22px;
+    margin-bottom: 22px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+    line-height: 1.15;
+  }
+
+  .intro-card p {
+    font-size: 0.98rem;
+  }
+
+  .activities-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .activity-card {
+    min-height: 0;
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+
+  .activity-icon {
+    width: 54px;
+    height: 54px;
+    flex-basis: 54px;
+    font-size: 27px;
+  }
+
+  .activity-name {
+    font-size: 1.3rem;
+  }
+
+  .activity-desc {
+    font-size: 0.94rem;
+  }
+
+  footer {
+    margin-top: 45px;
+    padding: 30px 12px;
+  }
+
+  .footer-social-row {
+    gap: 8px;
+  }
+
+  .footer-social-btn {
+    padding: 9px 12px;
+    font-size: 0.88rem;
+  }
+
 }
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .orb {
+    animation: none;
+  }
+
+  .activity-card,
+  .footer-social-btn {
+    transition: none;
+  }
+
+}
+
 </style>
-
-
-<style>
-/* MASTER FOOTER */
-footer{
-  position:relative !important;
-  z-index:1 !important;
-  background:#050505 !important;
-  border-top:2px solid rgba(255,79,163,.50) !important;
-  padding:38px 20px 30px !important;
-  text-align:center !important;
-  color:#f6d2e2 !important;
-  box-shadow:0 -10px 28px rgba(32,21,61,.05) !important;
-  margin:70px -34px -34px !important;
-}
-footer a{
-  color:#ff2f92 !important;
-  font-weight:800 !important;
-  text-decoration:none !important;
-}
-.footer-social-title{
-  font-family:"Baloo 2",sans-serif !important;
-  font-size:1rem !important;
-  letter-spacing:1px !important;
-  color:#ffffff !important;
-  margin-bottom:15px !important;
-  font-weight:800 !important;
-}
-.footer-social-row{
-  display:flex !important;
-  justify-content:center !important;
-  align-items:center !important;
-  gap:12px !important;
-  flex-wrap:wrap !important;
-  margin-bottom:18px !important;
-}
-.footer-social-btn{
-  display:inline-flex !important;
-  align-items:center !important;
-  gap:8px !important;
-  padding:10px 16px !important;
-  border-radius:999px !important;
-  background:#151515 !important;
-  color:#ffffff !important;
-  font-family:"Baloo 2",sans-serif !important;
-  font-size:.95rem !important;
-  font-weight:800 !important;
-  box-shadow:0 10px 22px rgba(32,21,61,.08) !important;
-  transition:.2s ease !important;
-  border:0 !important;
-}
-.footer-social-btn:hover{
-  transform:translateY(-2px) !important;
-  color:#ff2f92 !important;
-}
-.footer-social-btn img,
-.footer-social-btn svg{
-  width:20px !important;
-  height:20px !important;
-  flex-shrink:0 !important;
-}
-.footer-divider{
-  width:220px !important;
-  height:2px !important;
-  border-radius:20px !important;
-  background:linear-gradient(90deg,transparent,#ff4fa3,#ff2f92,transparent) !important;
-  margin:16px auto !important;
-}
-.footer-copy{
-  font-size:.88rem !important;
-  opacity:.75 !important;
-  font-weight:700 !important;
-}
-@media(max-width:900px){
-  footer{margin:70px -22px -22px !important}
-}
-</style>
-
 </head>
+
 <body>
+
 <div class="magic" id="magic"></div>
 
+<!-- NAVIGATION -->
+
 <header class="topbar">
+
   <a class="logo" href="index.html">
     <span class="logoMark">🐾</span>
     <span>Mouse's Enchanted Adventures</span>
   </a>
-  <nav>
-    <button class="menuBtn" onclick="toggleMenu()">Menu</button>
+
+  <nav aria-label="Main navigation">
+
+    <button
+      class="menuBtn"
+      id="menuButton"
+      type="button"
+      aria-expanded="false"
+      aria-controls="navMenu"
+      onclick="toggleMenu()"
+    >
+      Menu
+    </button>
+
     <ul id="navMenu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="product.html">Products</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a class="cafe" href="cafe-door.html">Enter Café</a></li>
+
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+
+      <li>
+        <a href="product.html">Products</a>
+      </li>
+
+      <li>
+        <a href="about.html">About</a>
+      </li>
+
+      <li>
+        <a href="contact.html">Contact</a>
+      </li>
+
+      <li>
+        <a class="cafe" href="cafe-door.html">
+          Enter Café
+        </a>
+      </li>
+
     </ul>
+
   </nav>
+
 </header>
 
+<!-- MAIN CONTENT -->
+
 <main class="page">
+
+  <!-- CAFE PICTURE -->
+
   <section class="cafe-image-wrap">
+
     <div class="cafe-image-inner">
-      <img src="images/inside.png" alt="Inside Mouse's Enchanted Café">
+
+      <img
+        src="images/inside.png"
+        alt="Inside Mouse's Enchanted Café"
+        width="1600"
+        height="900"
+      >
+
     </div>
+
   </section>
+
+  <!-- INTRODUCTION -->
 
   <section class="intro-card">
-    <div class="badge">Inside the enchanted café</div>
-    <h1>Choose Your <span>Magic</span></h1>
-    <p>Welcome inside Mouse's Enchanted Café. Pick a magical activity, explore the café, and follow the sparkle into your next adventure.</p>
+
+    <div class="badge">
+      Inside the enchanted café
+    </div>
+
+    <h1>
+      Choose Your <span>Magic</span>
+    </h1>
+
+    <p>
+      Welcome inside Mouse's Enchanted Café.
+      Pick a magical activity, explore the café,
+      and follow the sparkle into your next adventure.
+    </p>
+
   </section>
 
-  <section class="activities-grid">
-    <a href="potion-bar.html" class="activity-card">
-      <span class="activity-icon" style="--anim-d:3.2s;">🧪</span>
-      <div class="activity-name">Potion Bar</div>
-      <div class="activity-desc">Mix a magical potion and reveal your fate.</div>
+  <!-- ACTIVITIES -->
+
+  <section
+    class="activities-grid"
+    aria-label="Magical café activities"
+  >
+
+    <!-- POTION BAR -->
+
+    <a
+      href="potion-bar.html"
+      class="activity-card"
+    >
+
+      <span
+        class="activity-icon"
+        aria-hidden="true"
+      >
+        🧪
+      </span>
+
+      <div class="activity-name">
+        Potion Bar
+      </div>
+
+      <div class="activity-desc">
+        Mix a magical potion and reveal your fate.
+      </div>
+
     </a>
 
-    <a href="game.html" class="activity-card">
-      <span class="activity-icon" style="--anim-d:2.8s;">🎲</span>
-      <div class="activity-name">Game Table</div>
-      <div class="activity-desc">Challenge Mouse, Bat, Devlin, Katherina, Ivera, or Christan in a magical game.</div>
+    <!-- GAME TABLE -->
+
+    <a
+      href="game.html"
+      class="activity-card"
+    >
+
+      <span
+        class="activity-icon"
+        aria-hidden="true"
+      >
+        🎲
+      </span>
+
+      <div class="activity-name">
+        Game Table
+      </div>
+
+      <div class="activity-desc">
+        Challenge Mouse, Bat, Devlin,
+        Katherina, Ivera, or Christan
+        in a magical game.
+      </div>
+
     </a>
 
-    <a href="tarot.html" class="activity-card">
-      <span class="activity-icon" style="--anim-d:3.6s;">🔮</span>
-      <div class="activity-name">Tarot Reading</div>
-      <div class="activity-desc">Pick a card and reveal your enchanted fortune.</div>
+    <!-- TAROT -->
+
+    <a
+      href="tarot.html"
+      class="activity-card"
+    >
+
+      <span
+        class="activity-icon"
+        aria-hidden="true"
+      >
+        🔮
+      </span>
+
+      <div class="activity-name">
+        Tarot Reading
+      </div>
+
+      <div class="activity-desc">
+        Pick a card and reveal
+        your enchanted fortune.
+      </div>
+
     </a>
+
   </section>
 
-  <footer>
-  <div class="footer-social-title">Follow the Adventure</div>
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-social-title">
+    Follow the Adventure
+  </div>
 
   <div class="footer-social-row">
-    <a href="https://www.facebook.com/profile.php?id=61575952349929" target="_blank" class="footer-social-btn">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"/>
+
+    <!-- FACEBOOK -->
+
+    <a
+      href="https://www.facebook.com/profile.php?id=61575952349929"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="footer-social-btn"
+    >
+
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+        alt=""
+      >
+
       Facebook
+
     </a>
 
-    <a href="https://www.youtube.com/@Mouse-Enchanted-Adventures" target="_blank" class="footer-social-btn">
-      <svg viewBox="0 0 24 24" fill="#FF0000" xmlns="http://www.w3.org/2000/svg">
+    <!-- YOUTUBE -->
+
+    <a
+      href="https://www.youtube.com/@Mouse-Enchanted-Adventures"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="footer-social-btn"
+    >
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="#FF0000"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+
         <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+
       </svg>
+
       YouTube
+
     </a>
 
-    <a href="https://www.instagram.com/mousesenchantedadventures2025/" target="_blank" class="footer-social-btn">
+    <!-- INSTAGRAM -->
+
+    <a
+      href="https://www.instagram.com/mousesenchantedadventures2025/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="footer-social-btn"
+    >
       Instagram
     </a>
 
-    <a href="https://www.tiktok.com/@mouseenchantedadventures" target="_blank" class="footer-social-btn">
+    <!-- TIKTOK -->
+
+    <a
+      href="https://www.tiktok.com/@mouseenchantedadventures"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="footer-social-btn"
+    >
       TikTok
     </a>
+
   </div>
 
   <div class="footer-divider"></div>
-  <p class="footer-copy">&copy; 2025 Mouse's Enchanted Adventures. All rights reserved.</p>
+
+  <p class="footer-copy">
+    &copy; 2025 Mouse's Enchanted Adventures.
+    All rights reserved.
+  </p>
+
 </footer>
-</main>
 
 <script>
-function toggleMenu(){
-  document.getElementById("navMenu").classList.toggle("show");
+
+/* MOBILE MENU */
+
+function toggleMenu() {
+
+  const menu = document.getElementById("navMenu");
+  const button = document.getElementById("menuButton");
+
+  const isOpen = menu.classList.toggle("show");
+
+  button.setAttribute(
+    "aria-expanded",
+    String(isOpen)
+  );
+
 }
-const magic=document.getElementById("magic");
-for(let i=0;i<36;i++){
-  const o=document.createElement("div");
-  o.className="orb";
-  const size=Math.random()*16+8;
-  o.style.width=size+"px";
-  o.style.height=size+"px";
-  o.style.left=Math.random()*100+"%";
-  o.style.animationDelay=Math.random()*9+"s";
-  o.style.setProperty("--time",Math.random()*8+7+"s");
-  magic.appendChild(o);
+
+/* FLOATING MAGIC */
+
+const magic = document.getElementById("magic");
+
+if (
+  magic &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+) {
+
+  for (let i = 0; i < 24; i++) {
+
+    const orb = document.createElement("div");
+
+    orb.className = "orb";
+
+    const size = Math.random() * 8 + 4;
+
+    orb.style.width = size + "px";
+    orb.style.height = size + "px";
+
+    orb.style.left = Math.random() * 100 + "%";
+
+    orb.style.animationDelay =
+      Math.random() * 9 + "s";
+
+    orb.style.setProperty(
+      "--time",
+      Math.random() * 8 + 7 + "s"
+    );
+
+    magic.appendChild(orb);
+
+  }
+
 }
+
 </script>
+
 </body>
 </html>
